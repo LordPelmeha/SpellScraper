@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private BoxCollider2D boxCollider;
+    private Vector3 moveDelta;
+    private void Start()
     {
-        
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        //Передеть направление
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+        moveDelta = new Vector3(x, y, 0);
+        //Отзеракливание спрайта
+        if (moveDelta.x > 0)
+            transform.localScale = new Vector3(1, 1, 1);
+        else if (moveDelta.x < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
+        //Перемещение игрока
+        transform.Translate(moveDelta * Time.deltaTime);
     }
 }

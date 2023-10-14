@@ -25,7 +25,6 @@ public class Player : MonoBehaviour
         //Поворот игрока за мышкой
         Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg;
-        Debug.Log(z);
         transform.rotation = Quaternion.Euler(0, 0, z);
     }
 }

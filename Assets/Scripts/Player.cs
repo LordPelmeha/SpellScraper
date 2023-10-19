@@ -1,4 +1,4 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,16 +16,16 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Передача направление
+        //РџРµСЂРµРґР°С‡Р° РЅР°РїСЂР°РІР»РµРЅРёРµ
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-        //Перемещение игрока
+        //РџРµСЂРµРјРµС‰РµРЅРёРµ РёРіСЂРѕРєР°
         moveDelta = new Vector3(x, y, 0);
-        transform.rotation = Quaternion.Euler(0, 0, 0); //фиксит баг с поворотом. Можно будет попробовать переделать
+        transform.rotation = Quaternion.Euler(0, 0, 0); //С„РёРєСЃРёС‚ Р±Р°Рі СЃ РїРѕРІРѕСЂРѕС‚РѕРј. РњРѕР¶РЅРѕ Р±СѓРґРµС‚ РїРѕРїСЂРѕР±РѕРІР°С‚СЊ РїРµСЂРµРґРµР»Р°С‚СЊ
         transform.Translate(moveDelta * Time.deltaTime);
 
-        //Поворот игрока за мышкой
+        //РџРѕРІРѕСЂРѕС‚ РёРіСЂРѕРєР° Р·Р° РјС‹С€РєРѕР№
         Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, z - 90);

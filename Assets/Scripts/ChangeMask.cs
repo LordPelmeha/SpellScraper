@@ -12,7 +12,6 @@ public class ChangeMask : MonoBehaviour
     public Sprite airMask;
     private int scrollMask = 0;
 
-    // Update is called once per frame
     void Update()
     {
         //Изменение счётчика масок за счёт прокурутки колёсика

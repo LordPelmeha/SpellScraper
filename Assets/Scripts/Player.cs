@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     private BoxCollider2D boxCollider;
     private Vector3 moveDelta;
-
+    private RaycastHit2D hit;
 
     private void Start()
     {
@@ -23,7 +23,14 @@ public class Player : MonoBehaviour
         //Перемещение игрока
         moveDelta = new Vector3(x, y, 0);
         transform.rotation = Quaternion.Euler(0, 0, 0); //фиксит баг с поворотом. Можно будет попробовать переделать
-        transform.Translate(moveDelta * Time.deltaTime);
+        //Коллизия
+        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector3(0, moveDelta.y,0), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Wall"));
+        if (hit.collider == null)
+            transform.Translate(0, moveDelta.y * Time.deltaTime, 0);
+        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector3(moveDelta.x, 0,0), Mathf.Abs(moveDelta.x * Time.deltaTime), LayerMask.GetMask("Wall"));
+        if (hit.collider == null)
+            transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
+        //transform.Translate(moveDelta * Time.deltaTime);
 
         //Поворот игрока за мышкой
         Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;

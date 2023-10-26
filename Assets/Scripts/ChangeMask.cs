@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +14,7 @@ public class ChangeMask : MonoBehaviour
 
     void Update()
     {
-        //Èçìåíåíèå ñ÷¸ò÷èêà ìàñîê çà ñ÷¸ò ïðîêóðóòêè êîë¸ñèêà
+        //Ð˜Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ ÑÑ‡Ñ‘Ñ‚Ñ‡Ð¸ÐºÐ° Ð¼Ð°ÑÐ¾Ðº Ð·Ð° ÑÑ‡Ñ‘Ñ‚ Ð¿Ñ€Ð¾ÐºÑƒÑ€ÑƒÑ‚ÐºÐ¸ ÐºÐ¾Ð»Ñ‘ÑÐ¸ÐºÐ°
         if (Input.mouseScrollDelta.y > 0)
             scrollMask = (scrollMask + 1) % 4;
         else if (Input.mouseScrollDelta.y < 0)
@@ -24,7 +24,7 @@ public class ChangeMask : MonoBehaviour
             scrollMask = (scrollMask - 1) % 4;
         }
 
-        //Ìåíÿåò ñïðàéò ìàñêè â çàâèñèìîñòè îò íàæàòîé êëàâèøè
+        //ÐœÐµÐ½ÑÐµÑ‚ ÑÐ¿Ñ€Ð°Ð¹Ñ‚ Ð¼Ð°ÑÐºÐ¸ Ð² Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¾Ñ‚ Ð½Ð°Ð¶Ð°Ñ‚Ð¾Ð¹ ÐºÐ»Ð°Ð²Ð¸ÑˆÐ¸
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Masks.sprite = fireMask;
@@ -45,7 +45,7 @@ public class ChangeMask : MonoBehaviour
             Masks.sprite = airMask;
             scrollMask = 3;
         }
-        //Ìåíÿåò ñïðàéò â çàâèñèìîñòè îò ñ÷¸ò÷èêà ïðîêðóòêè ìûøè
+        //ÐœÐµÐ½ÑÐµÑ‚ ÑÐ¿Ñ€Ð°Ð¹Ñ‚ Ð² Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¾Ñ‚ ÑÑ‡Ñ‘Ñ‚Ñ‡Ð¸ÐºÐ° Ð¿Ñ€Ð¾ÐºÑ€ÑƒÑ‚ÐºÐ¸ Ð¼Ñ‹ÑˆÐ¸
         else if (scrollMask == 0)
             Masks.sprite = fireMask;
         else if (scrollMask == 1)
@@ -54,7 +54,5 @@ public class ChangeMask : MonoBehaviour
             Masks.sprite = earthMask;
         else if (scrollMask == 3)
             Masks.sprite = airMask;
-
-
     }
 }

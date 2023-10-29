@@ -3,7 +3,12 @@ guid: 4144336fa8f3b2245832ef0631d3ef8c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Masks: {instanceID: 0}
+  - fireMask: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  - waterMask: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  - airMask: {instanceID: 0}
+  - earthMask: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

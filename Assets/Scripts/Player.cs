@@ -11,12 +11,7 @@ public class Player : MonoBehaviour
     private RaycastHit2D hit;
 
 
-    public GameObject bullet;
-    public Transform shotPoint;
-
-    public float timeBtwShots;
-    public float startTimeBtwShots;
-
+    
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
@@ -46,20 +41,11 @@ public class Player : MonoBehaviour
         float z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg - 90;
         transform.rotation = Quaternion.Euler(0, 0, z);
 
-        if (timeBtwShots <= 0)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Instantiate(bullet, shotPoint.position, transform.rotation);
-                timeBtwShots = startTimeBtwShots;
-            }
-            else
-                timeBtwShots -= Time.deltaTime;
-        }
+        
     }
 
-    public void Death()
-    {
-        Destroy(bullet);
-    }
+    //public void Death()
+    //{
+    //    Destroy(bullet);
+    //}
 }

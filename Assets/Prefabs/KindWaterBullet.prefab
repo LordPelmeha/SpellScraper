@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8129956207206264790}
   - component: {fileID: 7906034734308205526}
   m_Layer: 0
-  m_Name: Circle
-  m_TagString: Untagged
+  m_Name: KindWaterBullet
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  distance: 0.1
   WhatIsSolid:
     serializedVersion: 2
     m_Bits: 256
   enemyBullet: 0
+  emotion: 1
+  element: 1

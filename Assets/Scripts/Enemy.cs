@@ -20,8 +20,8 @@ public class Enemy : MonoBehaviour
     public float speed;
 
     //Блок переменных отвечающих за стрельбу
-    public GameObject bullet;
-    public Transform shotPoint;
+    //public GameObject bullet;
+    //public Transform shotPoint;
     public float timeBtwShots;
     private float rotZ;
     private Vector3 difference;
@@ -48,8 +48,9 @@ public class Enemy : MonoBehaviour
             if (Vector3.Distance(player.transform.position, transform.position) < shotRange)
                 if (timeBtwShots <= 0)
                 {
-                    Instantiate(bullet, shotPoint.position, shotPoint.rotation);
-                    timeBtwShots = startTimeBtwShots;
+                    //сюда анимацию стрельбы врага
+                    //Instantiate(bullet, shotPoint.position, shotPoint.rotation);
+                    //timeBtwShots = startTimeBtwShots;
                 }
                 else
                     timeBtwShots -= Time.deltaTime;
@@ -60,6 +61,7 @@ public class Enemy : MonoBehaviour
 
     public void Death()
     {
+        //сюда анимацию смерти врага
         Destroy(gameObject);
     }
 }

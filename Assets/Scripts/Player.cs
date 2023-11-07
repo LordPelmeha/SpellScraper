@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private RaycastHit2D hit;
 
 
-    
+
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
@@ -40,12 +40,11 @@ public class Player : MonoBehaviour
         Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg - 90;
         transform.rotation = Quaternion.Euler(0, 0, z);
-
-        
     }
 
-    //public void Death()
-    //{
-    //    Destroy(bullet);
-    //}
+    public void Death()
+    {
+        //сюда анимацию смерти игрока
+        Destroy(gameObject);
+    }
 }

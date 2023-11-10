@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Vector3 moveDelta;
     private RaycastHit2D hit;
-
+    public  double health;
 
 
     private void Start()
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
 
         //Перемещение игрока
         moveDelta = new Vector3(x, y, 0);
-        transform.rotation = Quaternion.Euler(0, 0, 0); //фиксит баг с поворотом. Можно будет попробовать переделать
+        //transform.rotation = Quaternion.Euler(0, 0, 0); //фиксит баг с поворотом. Можно будет попробовать переделать
 
         //Коллизия
         hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector3(0, moveDelta.y, 0), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Wall"));
@@ -37,9 +37,11 @@ public class Player : MonoBehaviour
         //transform.Translate(moveDelta * Time.deltaTime);
 
         //Поворот игрока за мышкой
+        Debug.Log($"{transform.rotation} player before");
         Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg - 90;
+        float z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg-90;
         transform.rotation = Quaternion.Euler(0, 0, z);
+        Debug.Log($"{transform.rotation} player after");
     }
 
     public void Death()

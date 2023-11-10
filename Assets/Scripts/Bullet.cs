@@ -8,9 +8,9 @@ public class Bullet : MonoBehaviour
     public float speed;
     public float distance;
 
-    public LayerMask WhatIsSolid;
-    private RaycastHit2D hitInfo;
+    [SerializeField] LayerMask WhatIsSolid;
     [SerializeField] bool enemyBullet;
+    private RaycastHit2D hitInfo;
     public EvilAndKind emotion;
     public Magic element;
 
@@ -30,11 +30,15 @@ public class Bullet : MonoBehaviour
                     //сюда счётчик для концовки
                 }
                 //hitInfo.collider.GetComponent<Enemy>().Death();
-                Debug.Log(emotion);
-                Debug.Log(element);
             }
             if (hitInfo.collider.CompareTag("Player") && enemyBullet)
-                hitInfo.collider.GetComponent<Player>().Death();
+            {
+                if (GetComponent<Player>().health > 0)
+                    GetComponent<Player>().health -= 1;
+                else
+                    hitInfo.collider.GetComponent<Player>().Death();
+            }
+
             DestroyBullet();
         }
         transform.Translate(speed * Time.deltaTime * Vector3.up);
@@ -44,5 +48,14 @@ public class Bullet : MonoBehaviour
     {
         //сюда анмиацию уничтожения пули
         Destroy(gameObject);
+    }
+    private double TakeDamage()
+    {
+        double dmg = 1;
+        return dmg-0.5*0;
+    }
+    private bool Counterattack()
+    {
+       // GameObject otherObj= 
     }
 }

@@ -1,11 +1,11 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.ParticleSystemJobs;
 
 public class Enemy : MonoBehaviour
 {
-    //Блок переменных для логики
+    //Р‘Р»РѕРє РїРµСЂРµРјРµРЅРЅС‹С… РґР»СЏ Р»РѕРіРёРєРё
     public float triggerLength = 10;
     public float shotRange = 10;
 
@@ -14,14 +14,14 @@ public class Enemy : MonoBehaviour
     public Vector3 startingPosition;
     public float offset;
 
-    //Блок переменных перемещения и коллизии
+    //Р‘Р»РѕРє РїРµСЂРµРјРµРЅРЅС‹С… РїРµСЂРµРјРµС‰РµРЅРёСЏ Рё РєРѕР»Р»РёР·РёРё
     public BoxCollider2D boxCollider;
     public Vector3 moveDelta;
-    public float speed ;
-    
-    //Блок переменных отвечающих за стрельбу
-    public GameObject bullet;
-    public Transform shotPoint;
+    public float speed;
+
+    //Р‘Р»РѕРє РїРµСЂРµРјРµРЅРЅС‹С… РѕС‚РІРµС‡Р°СЋС‰РёС… Р·Р° СЃС‚СЂРµР»СЊР±Сѓ
+    //public GameObject bullet;
+    //public Transform shotPoint;
     public float timeBtwShots;
     private float rotZ;
     private Vector3 difference;
@@ -32,13 +32,13 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
-        playerTransform = FindAnyObjectByType<Player>().transform;    
+        playerTransform = FindAnyObjectByType<Player>().transform;
 
     }
 
     private void Update()
     {
-        if(Vector3.Distance(player.transform.position, transform.position) < triggerLength)
+        if (Vector3.Distance(player.transform.position, transform.position) < triggerLength)
         {
             difference = player.transform.position - transform.position;
             rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
@@ -48,18 +48,20 @@ public class Enemy : MonoBehaviour
             if (Vector3.Distance(player.transform.position, transform.position) < shotRange)
                 if (timeBtwShots <= 0)
                 {
-                    Instantiate(bullet, shotPoint.position, shotPoint.rotation);
-                    timeBtwShots = startTimeBtwShots;
+                    //СЃСЋРґР° Р°РЅРёРјР°С†РёСЋ СЃС‚СЂРµР»СЊР±С‹ РІСЂР°РіР°
+                    //Instantiate(bullet, shotPoint.position, shotPoint.rotation);
+                    //timeBtwShots = startTimeBtwShots;
                 }
                 else
                     timeBtwShots -= Time.deltaTime;
             Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
-        
+
     }
 
     public void Death()
     {
+        //СЃСЋРґР° Р°РЅРёРјР°С†РёСЋ СЃРјРµСЂС‚Рё РІСЂР°РіР°
         Destroy(gameObject);
     }
 }

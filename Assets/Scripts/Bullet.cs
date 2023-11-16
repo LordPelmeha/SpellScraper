@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 public enum EvilAndKind { Evil, Kind };
 public enum Magic { Fire, Water, Earth, Air };
-public class Bullet : MonoBehaviour
+public class Bullet : MagicHand
 {
     public float speed;
     public float distance;
@@ -13,6 +15,7 @@ public class Bullet : MonoBehaviour
     private RaycastHit2D hitInfo;
     public EvilAndKind emotion;
     public Magic element;
+    private bool isCoounterMagic;
 
     void Update()
     {
@@ -34,11 +37,14 @@ public class Bullet : MonoBehaviour
             if (hitInfo.collider.CompareTag("Player") && enemyBullet)
             {
                 if (GetComponent<Player>().health > 0)
-                    GetComponent<Player>().health -= 1;
+                    GetComponent<Player>().health -= TakeDamage();
                 else
                     hitInfo.collider.GetComponent<Player>().Death();
             }
-
+            if (hitInfo.collider.CompareTag("Projectile"))
+            {
+                Counterattack(ref isCoounterMagic);
+            }
             DestroyBullet();
         }
         transform.Translate(speed * Time.deltaTime * Vector3.up);
@@ -50,12 +56,13 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
     private double TakeDamage()
-    {
-        double dmg = 1;
-        return dmg-0.5*0;
+    { 
+        return scrollMask-(int)element==0 ? 0.5 : 1;
     }
-    private bool Counterattack()
+    private void Counterattack(ref bool isCoounterMagic)
     {
-       // GameObject otherObj= 
+        Bullet obj = hitInfo.collider.GetComponent<Bullet>();
+        isCoounterMagic= math.abs((int)obj.element - (int)element) % 2 == 0;
+        Destroy(obj);
     }
 }

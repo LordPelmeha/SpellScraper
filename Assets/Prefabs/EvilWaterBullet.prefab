@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4309417522652299354}
   - component: {fileID: 8129956207206264790}
   - component: {fileID: 7906034734308205526}
+  - component: {fileID: 8217620227336219740}
   m_Layer: 0
   m_Name: EvilWaterBullet
   m_TagString: Projectile
@@ -105,3 +106,38 @@ MonoBehaviour:
   enemyBullet: 0
   emotion: 0
   element: 1
+--- !u!70 &8217620227336219740
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7971796923087094374}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0018810334, y: -0.00037628438}
+  m_Size: {x: 0.2756091, y: 0.15522875}
+  m_Direction: 1

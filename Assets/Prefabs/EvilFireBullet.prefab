@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4309417522652299354}
   - component: {fileID: 8129956207206264790}
   - component: {fileID: 7906034734308205526}
+  - component: {fileID: 4494295930955471791}
   m_Layer: 0
   m_Name: EvilFireBullet
   m_TagString: Projectile
@@ -97,6 +98,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e7b95c9ae225a4fa92e58c68013203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Masks: {fileID: 0}
+  fireMask: {fileID: 0}
+  airMask: {fileID: 0}
+  waterMask: {fileID: 0}
+  earthMask: {fileID: 0}
+  evilFireBullet: {fileID: 0}
+  evilAirBullet: {fileID: 0}
+  evilWaterBullet: {fileID: 0}
+  evilEarthBullet: {fileID: 0}
+  kindFireBullet: {fileID: 0}
+  kindAirBullet: {fileID: 0}
+  kindWaterBullet: {fileID: 0}
+  kindEarthBullet: {fileID: 0}
+  shotPoint: {fileID: 0}
+  evilStartTimeBtwShots: 0
+  kindStartTimeBtwShots: 0
   speed: 1
   distance: 0.1
   WhatIsSolid:
@@ -105,3 +122,38 @@ MonoBehaviour:
   enemyBullet: 0
   emotion: 0
   element: 0
+--- !u!70 &4494295930955471791
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7971796923087094374}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.023700213, y: 0.0015045733}
+  m_Size: {x: 0.28162834, y: 0.14544821}
+  m_Direction: 1

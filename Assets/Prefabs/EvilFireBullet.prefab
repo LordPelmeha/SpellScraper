@@ -114,8 +114,8 @@ MonoBehaviour:
   shotPoint: {fileID: 0}
   evilStartTimeBtwShots: 0
   kindStartTimeBtwShots: 0
-  speed: 1
-  distance: 0.1
+  speed: 4
+  distance: 0.09
   WhatIsSolid:
     serializedVersion: 2
     m_Bits: 256
@@ -154,6 +154,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023700213, y: 0.0015045733}
-  m_Size: {x: 0.28162834, y: 0.14544821}
-  m_Direction: 1
+  m_Offset: {x: -0.0017968714, y: -0.026161283}
+  m_Size: {x: 0.12740737, y: 0.3020137}
+  m_Direction: 0

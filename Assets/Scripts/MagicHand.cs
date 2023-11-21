@@ -26,7 +26,8 @@ public class MagicHand : ChangeMask
     void Update()
     {
         Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg - 90;
+        float z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg;
+        Quaternion bulletRotation = Quaternion.Euler(0, 0, z - 90f);
         Debug.Log($"{transform.rotation.z} before");
 
         Debug.Log($"{transform.rotation.z} after");
@@ -39,10 +40,10 @@ public class MagicHand : ChangeMask
                 //сюда анимацию стрельбы
                 switch (scrollMask)
                 {
-                    case 0: Instantiate(evilFireBullet, shotPoint.position, Quaternion.Euler(0, 0, z)); break;
-                    case 1: Instantiate(evilAirBullet, shotPoint.position, Quaternion.Euler(0, 0, z)); break;
-                    case 2: Instantiate(evilWaterBullet, shotPoint.position, Quaternion.Euler(0, 0, z)); break;
-                    case 3: Instantiate(evilEarthBullet, shotPoint.position, Quaternion.Euler(0, 0, z)); break;
+                    case 0: InstantiateWithRotation(evilFireBullet, z); break;
+                    case 1: InstantiateWithRotation(evilAirBullet, z); break;
+                    case 2: InstantiateWithRotation(evilWaterBullet, z); break;
+                    case 3: InstantiateWithRotation(evilEarthBullet, z); break;
                 }
                 evilTimeBtwShots = evilStartTimeBtwShots;
                 
@@ -58,15 +59,20 @@ public class MagicHand : ChangeMask
                 //сюда анимацию стрельбы
                 switch (scrollMask)
                 {
-                    case 0: Instantiate(kindFireBullet, shotPoint.position, Quaternion.Euler(0, 0, z)); break;
-                    case 1: Instantiate(kindAirBullet, shotPoint.position, Quaternion.Euler(0, 0, z)); break;
-                    case 2: Instantiate(kindWaterBullet, shotPoint.position, Quaternion.Euler(0, 0, z)); break;
-                    case 3: Instantiate(kindEarthBullet, shotPoint.position, Quaternion.Euler(0, 0, z)); break;
+                    case 0: Instantiate(kindFireBullet, shotPoint.position, bulletRotation); break;
+                    case 1: Instantiate(kindAirBullet, shotPoint.position, bulletRotation); break;
+                    case 2: Instantiate(kindWaterBullet, shotPoint.position, bulletRotation); break;
+                    case 3: Instantiate(kindEarthBullet, shotPoint.position, bulletRotation); break;
                 }
                 kindTimeBtwShots = kindStartTimeBtwShots;
             }
         }
         else
             kindTimeBtwShots -= Time.deltaTime;
+    }
+    void InstantiateWithRotation(GameObject bulletPrefab, float angle)
+    {
+        Quaternion bulletRotation = Quaternion.Euler(0, 0, angle - 90f);
+        Instantiate(bulletPrefab, shotPoint.position, bulletRotation);
     }
 }

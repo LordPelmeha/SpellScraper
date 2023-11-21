@@ -98,8 +98,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e7b95c9ae225a4fa92e58c68013203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  distance: 0.1
+  Masks: {fileID: 0}
+  fireMask: {fileID: 0}
+  airMask: {fileID: 0}
+  waterMask: {fileID: 0}
+  earthMask: {fileID: 0}
+  evilFireBullet: {fileID: 0}
+  evilAirBullet: {fileID: 0}
+  evilWaterBullet: {fileID: 0}
+  evilEarthBullet: {fileID: 0}
+  kindFireBullet: {fileID: 0}
+  kindAirBullet: {fileID: 0}
+  kindWaterBullet: {fileID: 0}
+  kindEarthBullet: {fileID: 0}
+  shotPoint: {fileID: 0}
+  evilStartTimeBtwShots: 0
+  kindStartTimeBtwShots: 0
+  speed: 4
+  distance: 0.09
   WhatIsSolid:
     serializedVersion: 2
     m_Bits: 256
@@ -138,6 +154,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012038232, y: 0.005266534}
-  m_Size: {x: 0.29592362, y: 0.14695176}
-  m_Direction: 1
+  m_Offset: {x: -0.008652478, y: -0.004890755}
+  m_Size: {x: 0.14770246, y: 0.27560905}
+  m_Direction: 0

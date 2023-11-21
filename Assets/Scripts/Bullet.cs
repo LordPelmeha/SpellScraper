@@ -19,7 +19,7 @@ public class Bullet : MagicHand
 
     void Update()
     {
-        hitInfo = Physics2D.Raycast(transform.position, transform.up, 0.01f, WhatIsSolid);
+        hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, WhatIsSolid);
         if (hitInfo.collider != null)
         {
             if (hitInfo.collider.CompareTag("Enemy"))

@@ -9,12 +9,25 @@ public class Player : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Vector3 moveDelta;
     private RaycastHit2D hit;
-    public  double health;
+    public double health;
 
+
+    [Range(0, 10f)] public float speed = 1f;
+
+    public Animator animator;
 
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
+    }
+
+    void Update()
+    {
+        moveDelta = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f);
+
+        animator.SetFloat("Move", Mathf.Abs(moveDelta.x));
+        animator.SetFloat("Move", Mathf.Abs(moveDelta.y));
+        animator.SetFloat("Move", Mathf.Abs(moveDelta.magnitude));
     }
 
     private void FixedUpdate()
@@ -39,7 +52,7 @@ public class Player : MonoBehaviour
         //Поворот игрока за мышкой
         Debug.Log($"{transform.rotation} player before");
         Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg-90;
+        float z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg - 90;
         transform.rotation = Quaternion.Euler(0, 0, z);
         Debug.Log($"{transform.rotation} player after");
     }

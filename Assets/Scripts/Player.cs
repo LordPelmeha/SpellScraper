@@ -37,11 +37,9 @@ public class Player : MonoBehaviour
         //transform.Translate(moveDelta * Time.deltaTime);
 
         //Поворот игрока за мышкой
-        Debug.Log($"{transform.rotation} player before");
         Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg-90;
         transform.rotation = Quaternion.Euler(0, 0, z);
-        Debug.Log($"{transform.rotation} player after");
     }
 
     public void Death()

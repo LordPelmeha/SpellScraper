@@ -927,6 +927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4144336fa8f3b2245832ef0631d3ef8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!4 &1092106199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4309417522652299354, guid: 3ad7112acfad50e4d86a2a5fbb04f1bc, type: 3}
@@ -1499,7 +1500,7 @@ GameObject:
   - component: {fileID: 2112239666}
   - component: {fileID: 2112239668}
   - component: {fileID: 2112239669}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Square
   m_TagString: Enemy
   m_Icon: {fileID: 0}

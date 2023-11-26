@@ -41,6 +41,10 @@ public class Bullet : MagicHand
                 else
                     hitInfo.collider.GetComponent<Player>().Death();
             }
+            if (hitInfo.collider.CompareTag("Enemy") && !enemyBullet)
+            {
+                hitInfo.collider.GetComponent<Enemy>().TakeDamage(hitInfo.collider.GetComponent<Enemy>().magicType - (int)element == 0 ? 0.5 : 1);
+            }
             if (hitInfo.collider.CompareTag("Projectile"))
             {
                 Counterattack(ref isCoounterMagic);

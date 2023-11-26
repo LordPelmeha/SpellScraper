@@ -58,7 +58,7 @@ public class MagicHand : ChangeMask
                     case 3: InstantiateWithRotation(evilEarthBullet, z); break;
                 }
                 evilTimeBtwShots = evilStartTimeBtwShots;
-
+                
             }
         }
         else
@@ -71,10 +71,10 @@ public class MagicHand : ChangeMask
                 //сюда анимацию стрельбы
                 switch (scrollMask)
                 {
-                    case 0: Instantiate(kindFireBullet, shotPoint.position, bulletRotation); break;
-                    case 1: Instantiate(kindAirBullet, shotPoint.position, bulletRotation); break;
-                    case 2: Instantiate(kindWaterBullet, shotPoint.position, bulletRotation); break;
-                    case 3: Instantiate(kindEarthBullet, shotPoint.position, bulletRotation); break;
+                    case 0: InstantiateWithRotation(kindFireBullet, z); break;
+                    case 1: InstantiateWithRotation(kindAirBullet, z); break;
+                    case 2: InstantiateWithRotation(kindWaterBullet, z); break;
+                    case 3: InstantiateWithRotation(kindEarthBullet, z); break;
                 }
                 kindTimeBtwShots = kindStartTimeBtwShots;
             }

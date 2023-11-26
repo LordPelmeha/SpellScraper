@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -7,20 +8,18 @@ public enum EvilAndKind { Evil, Kind };
 public enum Magic { Fire, Water, Earth, Air };
 public class Bullet : MagicHand
 {
-    public float speed;
-    public float distance;
-
+    [SerializeField] float speed;
     [SerializeField] LayerMask WhatIsSolid;
-    [SerializeField] bool enemyBullet;
+    public bool enemyBullet;
     private RaycastHit2D hitInfo;
-    public EvilAndKind emotion;
-    public Magic element;
+    [SerializeField] EvilAndKind emotion;
+    [SerializeField] Magic element;
     private bool isCoounterMagic;
 
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, WhatIsSolid);
-        if (hitInfo.collider != null)
+        // Проверяем столкновение с объектом
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             if (hitInfo.collider.CompareTag("Enemy"))
             {
@@ -49,8 +48,39 @@ public class Bullet : MagicHand
             {
                 Counterattack(ref isCoounterMagic);
             }
+            Debug.Log("enemy");
+            if (emotion == EvilAndKind.Evil)
+            {
+                // сюда счётчик для концовки
+            }
+            if (emotion == EvilAndKind.Kind)
+            {
+                // сюда счётчик для концовки
+            }
+             //collision.gameObject.GetComponent<Enemy>().Death();
+        }
+        if (collision.gameObject.CompareTag("Player") && enemyBullet)
+        {
+            if (GetComponent<Player>().health > 0)
+                GetComponent<Player>().health -= TakeDamage();
+            else
+                collision.gameObject.GetComponent<Player>().Death();
             DestroyBullet();
         }
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            Counterattack(ref isCoounterMagic);
+            if (isCoounterMagic)
+                Destroy(collision.gameObject.GetComponent<Bullet>());
+
+        }
+        if (collision.gameObject.layer == 8  || collision.gameObject.layer == 10)
+        {
+            DestroyBullet();
+        }
+    }
+    void Update()
+    {
         transform.Translate(speed * Time.deltaTime * Vector3.up);
     }
 
@@ -60,13 +90,13 @@ public class Bullet : MagicHand
         Destroy(gameObject);
     }
     private double TakeDamage()
-    { 
-        return scrollMask-(int)element==0 ? 0.5 : 1;
+    {
+        return scrollMask - (int)element == 0 ? 0.5 : 1;
     }
     private void Counterattack(ref bool isCoounterMagic)
     {
         Bullet obj = hitInfo.collider.GetComponent<Bullet>();
-        isCoounterMagic= math.abs((int)obj.element - (int)element) % 2 == 0;
+        isCoounterMagic = math.abs((int)obj.element - (int)element) % 2 == 0;
         Destroy(obj);
     }
 }

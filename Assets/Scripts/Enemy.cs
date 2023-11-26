@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) < detectionRange && CanSeePlayer())
         {
             Vector3 direction = (player.position - transform.position).normalized;
-            transform.Translate(direction * moveSpeed * Time.deltaTime);
+            transform.Translate(  moveSpeed * Time.deltaTime * direction);
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
 
             if (Time.time > lastShootTime + shootCooldown)
             {
-                Shoot();
+                //Shoot();
                 lastShootTime = Time.time;
             }
         }
@@ -72,14 +72,14 @@ public class Enemy : MonoBehaviour
             return false;
         }
     }
-    private void Shoot()
-    {
-        Vector3 shootDirection = (player.position - transform.position).normalized;
-        float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
-        Quaternion bulletRotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
+    //private void Shoot()
+    //{
+    //    Vector3 shootDirection = (player.position - transform.position).normalized;
+    //    float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
+    //    Quaternion bulletRotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
 
-        Instantiate(enemyBulletPrefab, shotPoint.position, bulletRotation);
-    }
+    //    Instantiate(enemyBulletPrefab, shotPoint.position, bulletRotation);
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

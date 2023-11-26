@@ -19,45 +19,33 @@ public class Bullet : MagicHand
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Проверяем столкновение с объектом
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && !enemyBullet)
         {
-            if (hitInfo.collider.CompareTag("Enemy"))
-            {
-                if (emotion == EvilAndKind.Evil)
-                {
-                    //сюда счётчик для концовки
-                }
-                if (emotion == EvilAndKind.Kind)
-                {
-                    //сюда счётчик для концовки
-                }
-                //hitInfo.collider.GetComponent<Enemy>().Death();
-            }
-            if (hitInfo.collider.CompareTag("Player") && enemyBullet)
+            
+            if (collision.gameObject.CompareTag("Player") && enemyBullet)
             {
                 if (GetComponent<Player>().health > 0)
                     GetComponent<Player>().health -= TakeDamage();
                 else
-                    hitInfo.collider.GetComponent<Player>().Death();
+                    collision.gameObject.GetComponent<Player>().Death();
             }
-            if (hitInfo.collider.CompareTag("Enemy") && !enemyBullet)
+            if (collision.gameObject.CompareTag("Enemy") )
             {
-                hitInfo.collider.GetComponent<Enemy>().TakeDamage(hitInfo.collider.GetComponent<Enemy>().magicType - (int)element == 0 ? 0.5 : 1);
-            }
-            if (hitInfo.collider.CompareTag("Projectile"))
-            {
-                Counterattack(ref isCoounterMagic);
+                collision.gameObject.GetComponent<Enemy>().TakeDamage(collision.gameObject.GetComponent<Enemy>().magicType - (int)element == 0 ? 0.5 : 1);
             }
             Debug.Log("enemy");
-            if (emotion == EvilAndKind.Evil)
+            if (collision.gameObject.GetComponent <Enemy>().health <= 0)
             {
-                // сюда счётчик для концовки
+                if (emotion == EvilAndKind.Evil)
+                {
+                    // сюда счётчик для концовки
+                }
+                if (emotion == EvilAndKind.Kind)
+                {
+                    // сюда счётчик для концовки
+                }
+                //collision.gameObject.GetComponent<Enemy>().Death();
             }
-            if (emotion == EvilAndKind.Kind)
-            {
-                // сюда счётчик для концовки
-            }
-             //collision.gameObject.GetComponent<Enemy>().Death();
         }
         if (collision.gameObject.CompareTag("Player") && enemyBullet)
         {

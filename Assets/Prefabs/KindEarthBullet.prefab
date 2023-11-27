@@ -104,6 +104,7 @@ MonoBehaviour:
   airMask: {fileID: 0}
   waterMask: {fileID: 0}
   earthMask: {fileID: 0}
+  ShooterType: 0
   evilFireBullet: {fileID: 0}
   evilAirBullet: {fileID: 0}
   evilWaterBullet: {fileID: 0}
@@ -116,7 +117,6 @@ MonoBehaviour:
   evilStartTimeBtwShots: 0
   kindStartTimeBtwShots: 0
   speed: 4
-  distance: 0.09
   WhatIsSolid:
     serializedVersion: 2
     m_Bits: 256
@@ -170,7 +170,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

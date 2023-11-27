@@ -32,18 +32,18 @@ public class Enemy : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) < detectionRange && CanSeePlayer())
         {
             Vector3 direction = (player.position - transform.position).normalized;
-            transform.Translate(  moveSpeed * Time.deltaTime * direction);
+            transform.Translate(moveSpeed * Time.deltaTime * direction);
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
 
             hit = Physics2D.Raycast(transform.position, direction, Mathf.Infinity, LayerMask.GetMask("Wall"));
 
-            if (hit.collider == null)
-            {
-                
-                transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-            }
+
+
+
+            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+
 
 
             if (Time.time > lastShootTime + shootCooldown)
@@ -89,12 +89,11 @@ public class Enemy : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
     }
-
-    public void TakeDamage(double damage)
+    public void EnemyTakeDamage(double damage)
     {
         if (health > 0)
             health -= damage;
-        else
+        if (health <= 0)
             Death();
     }
 

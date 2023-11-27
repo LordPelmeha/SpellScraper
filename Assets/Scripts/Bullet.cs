@@ -15,26 +15,14 @@ public class Bullet : MagicHand
     [SerializeField] EvilAndKind emotion;
     [SerializeField] Magic element;
     private bool isCoounterMagic;
-
+    // Проверяем столкновение с объектом
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Проверяем столкновение с объектом
         if (collision.gameObject.CompareTag("Enemy") && !enemyBullet)
         {
-            
-            if (collision.gameObject.CompareTag("Player") && enemyBullet)
-            {
-                if (GetComponent<Player>().health > 0)
-                    GetComponent<Player>().health -= TakeDamage();
-                else
-                    collision.gameObject.GetComponent<Player>().Death();
-            }
-            if (collision.gameObject.CompareTag("Enemy") )
-            {
-                collision.gameObject.GetComponent<Enemy>().TakeDamage(collision.gameObject.GetComponent<Enemy>().magicType - (int)element == 0 ? 0.5 : 1);
-            }
-            Debug.Log("enemy");
-            if (collision.gameObject.GetComponent <Enemy>().health <= 0)
+            collision.gameObject.GetComponent<Enemy>().EnemyTakeDamage(collision.gameObject.GetComponent<Enemy>().magicType - (int)element == 0 ? 0.5 : 1);
+            Debug.Log(collision.gameObject.GetComponent<Enemy>().health);
+            if (collision.gameObject.GetComponent<Enemy>().health <= 0)
             {
                 if (emotion == EvilAndKind.Evil)
                 {
@@ -44,13 +32,12 @@ public class Bullet : MagicHand
                 {
                     // сюда счётчик для концовки
                 }
-                //collision.gameObject.GetComponent<Enemy>().Death();
             }
         }
         if (collision.gameObject.CompareTag("Player") && enemyBullet)
         {
             if (GetComponent<Player>().health > 0)
-                GetComponent<Player>().health -= TakeDamage();
+                GetComponent<Player>().health -= PlayerTakeDamage();
             else
                 collision.gameObject.GetComponent<Player>().Death();
             DestroyBullet();
@@ -62,7 +49,7 @@ public class Bullet : MagicHand
                 Destroy(collision.gameObject.GetComponent<Bullet>());
 
         }
-        if (collision.gameObject.layer == 8  || collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == 8 || collision.gameObject.layer == 10)
         {
             DestroyBullet();
         }
@@ -77,7 +64,7 @@ public class Bullet : MagicHand
         //сюда анмиацию уничтожения пули
         Destroy(gameObject);
     }
-    private double TakeDamage()
+    private double PlayerTakeDamage()
     {
         return scrollMask - (int)element == 0 ? 0.5 : 1;
     }

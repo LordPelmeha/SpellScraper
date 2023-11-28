@@ -7,44 +7,43 @@ using UnityEngine.ParticleSystemJobs;
 
 public class Enemy : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    public float moveSpeed = 2f;
-    public float detectionRange = 10f;
+    public Rigidbody2D rb;
+    public float moveSpeed ;
+    public float detectionRange ;
+    public float retreatDistance;
     public float shootCooldown;
+    public LayerMask playerLayer;
     public double health;
     public Magic magicType;
     public GameObject enemyBulletPrefab;
     public Transform shotPoint;
-    private RaycastHit2D hit;
+    public RaycastHit2D hit;
+    public LayerMask obstacleLayer;
 
-    private Transform player;
-    private float lastShootTime;
+    public Transform player;
+    public float lastShootTime;
 
-    private void Start()
+
+    public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        
     }
 
-    private void Update()
+    public virtual void Update()
     {
 
-        if (Vector2.Distance(transform.position, player.position) < detectionRange && CanSeePlayer())
+        if (Vector2.Distance(transform.position, player.position) < detectionRange   /*CanSeePlayer()*/)
         {
             Vector3 direction = (player.position - transform.position).normalized;
             transform.Translate(moveSpeed * Time.deltaTime * direction);
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
 
-            hit = Physics2D.Raycast(transform.position, direction, Mathf.Infinity, LayerMask.GetMask("Wall"));
-
-
-
-
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-
-
 
             if (Time.time > lastShootTime + shootCooldown)
             {
@@ -52,26 +51,30 @@ public class Enemy : MonoBehaviour
                 lastShootTime = Time.time;
             }
         }
+        
+        
+        
+
     }
+
 
     bool CanSeePlayer()
     {
-        Vector2 direction = player.position - transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectionRange, LayerMask.GetMask("Wall"));
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        RaycastHit hit;
 
-        // Если луч не сталкивается с препятствием и достигает игрока, то игрок видим
-        if (hit.collider != null && hit.collider.CompareTag("Player"))
+        if (Physics.Linecast(player.position, transform.position, out hit))
         {
-            Debug.DrawLine(transform.position, hit.point, Color.red);
-            return true;
+            if (hit.collider.CompareTag("Player"))
+            {
+                return true;
+            }
         }
-        else
-        {
-            // Визуализация луча (для отладки)
-            Debug.DrawRay(transform.position, direction.normalized * detectionRange, Color.green);
-            return false;
-        }
+
+        return false;
     }
+
+
     //private void Shoot()
     //{
     //    Vector3 shootDirection = (player.position - transform.position).normalized;
@@ -91,7 +94,6 @@ public class Enemy : MonoBehaviour
     }
     public void EnemyTakeDamage(double damage)
     {
-        if (health > 0)
             health -= damage;
         if (health <= 0)
             Death();

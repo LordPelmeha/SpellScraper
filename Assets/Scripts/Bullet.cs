@@ -16,6 +16,7 @@ public class Bullet : MagicHand
     public EvilAndKind emotion;
     public Magic element;
     private bool isCoounterMagic;
+    public GameObject airHit;
 
     void Update()
     {
@@ -46,6 +47,9 @@ public class Bullet : MagicHand
                 Counterattack(ref isCoounterMagic);
             }
             DestroyBullet();
+            Destroy(airHit);
+
+
         }
         transform.Translate(speed * Time.deltaTime * Vector3.up);
     }
@@ -53,16 +57,20 @@ public class Bullet : MagicHand
     public void DestroyBullet()
     {
         //сюда анмиацию уничтожения пули
+
         Destroy(gameObject);
+        airHit = Instantiate(airHit, transform.position, transform.rotation);
     }
+
+
     private double TakeDamage()
-    { 
-        return scrollMask-(int)element==0 ? 0.5 : 1;
+    {
+        return scrollMask - (int)element == 0 ? 0.5 : 1;
     }
     private void Counterattack(ref bool isCoounterMagic)
     {
         Bullet obj = hitInfo.collider.GetComponent<Bullet>();
-        isCoounterMagic= math.abs((int)obj.element - (int)element) % 2 == 0;
+        isCoounterMagic = math.abs((int)obj.element - (int)element) % 2 == 0;
         Destroy(obj);
     }
 }

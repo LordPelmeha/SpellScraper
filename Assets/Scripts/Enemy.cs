@@ -33,7 +33,6 @@ public class Enemy : MonoBehaviour
 
     public virtual void Update()
     {
-
         if (Vector2.Distance(transform.position, player.position) < detectionRange   /*CanSeePlayer()*/)
         {
             Vector3 direction = (player.position - transform.position).normalized;
@@ -51,10 +50,6 @@ public class Enemy : MonoBehaviour
                 lastShootTime = Time.time;
             }
         }
-        
-        
-        
-
     }
 
 

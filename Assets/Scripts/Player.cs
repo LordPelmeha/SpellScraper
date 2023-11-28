@@ -15,10 +15,6 @@ public class Player : MonoBehaviour
 
     public Animator animator;
 
-    private void Start()
-    {
-        boxCollider = GetComponent<BoxCollider2D>();
-    }
 
     void Update()
     {

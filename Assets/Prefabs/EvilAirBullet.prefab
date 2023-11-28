@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7906034734308205526}
   - component: {fileID: 975586071498238582}
   - component: {fileID: 8906844835632293375}
+  - component: {fileID: 3883163134596509922}
   m_Layer: 0
   m_Name: EvilAirBullet
   m_TagString: Projectile
@@ -104,6 +105,7 @@ MonoBehaviour:
   airMask: {fileID: 0}
   waterMask: {fileID: 0}
   earthMask: {fileID: 0}
+  ShooterType: 0
   evilFireBullet: {fileID: 0}
   evilAirBullet: {fileID: 0}
   evilWaterBullet: {fileID: 0}
@@ -113,17 +115,15 @@ MonoBehaviour:
   kindWaterBullet: {fileID: 0}
   kindEarthBullet: {fileID: 0}
   shotPoint: {fileID: 0}
-  evilStartTimeBtwShots: 0
-  kindStartTimeBtwShots: 0
-  speed: 1
-  distance: 0.09
+  evilStartTimeBtwShots: 0.4
+  kindStartTimeBtwShots: 0.8
+  speed: 2
   WhatIsSolid:
     serializedVersion: 2
     m_Bits: 256
   enemyBullet: 0
   emotion: 0
   element: 3
-  airHit: {fileID: 7510387272398078157, guid: 67e1389071705b34b9ac848ea13444b5, type: 3}
 --- !u!70 &975586071498238582
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -180,3 +180,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &3883163134596509922
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7971796923087094374}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

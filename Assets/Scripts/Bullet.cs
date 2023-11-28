@@ -17,6 +17,9 @@ public class Bullet : MagicHand
     private bool isCoounterMagic;
     // Проверяем столкновение с объектом
     private void OnCollisionEnter2D(Collision2D collision)
+    public GameObject airHit;
+
+    void Update()
     {
         if (collision.gameObject.CompareTag("Enemy") && !enemyBullet)
         {
@@ -52,6 +55,9 @@ public class Bullet : MagicHand
         if (collision.gameObject.layer == 8 || collision.gameObject.layer == 10)
         {
             DestroyBullet();
+            Destroy(airHit);
+
+
         }
     }
     void Update()
@@ -62,7 +68,9 @@ public class Bullet : MagicHand
     public void DestroyBullet()
     {
         //сюда анмиацию уничтожения пули
+
         Destroy(gameObject);
+        airHit = Instantiate(airHit, transform.position, transform.rotation);
     }
     private double PlayerTakeDamage()
     {

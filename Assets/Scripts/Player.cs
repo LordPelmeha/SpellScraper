@@ -7,7 +7,27 @@ using UnityEngine.UIElements;
 public class Player : MonoBehaviour
 {
     private Vector3 moveDelta;
+    private RaycastHit2D hit;
     public double health;
+
+
+    [Range(0, 10f)] public float speed = 1f;
+
+    public Animator animator;
+
+    private void Start()
+    {
+        boxCollider = GetComponent<BoxCollider2D>();
+    }
+
+    void Update()
+    {
+        moveDelta = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f);
+
+        animator.SetFloat("Move", Mathf.Abs(moveDelta.x));
+        animator.SetFloat("Move", Mathf.Abs(moveDelta.y));
+        animator.SetFloat("Move", Mathf.Abs(moveDelta.magnitude));
+    }
 
     private void FixedUpdate()
     {

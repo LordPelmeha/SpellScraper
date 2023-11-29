@@ -7,10 +7,11 @@ public class ChangeMask : MonoBehaviour
 {
     public Image Masks;
     public Sprite fireMask;
+    public Sprite airMask;
     public Sprite waterMask;
     public Sprite earthMask;
-    public Sprite airMask;
-    private int scrollMask = 0;
+    protected static int scrollMask;
+    protected static int countEnd = 0;
 
     void Update()
     {
@@ -32,27 +33,35 @@ public class ChangeMask : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Masks.sprite = waterMask;
+            Masks.sprite = airMask;
             scrollMask = 1;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            Masks.sprite = earthMask;
+            Masks.sprite = waterMask;
             scrollMask = 2;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            Masks.sprite = airMask;
+            Masks.sprite = earthMask;
             scrollMask = 3;
         }
         //Меняет спрайт в зависимости от счётчика прокрутки мыши
         else if (scrollMask == 0)
             Masks.sprite = fireMask;
         else if (scrollMask == 1)
-            Masks.sprite = waterMask;
-        else if (scrollMask == 2)
-            Masks.sprite = earthMask;
-        else if (scrollMask == 3)
             Masks.sprite = airMask;
+        else if (scrollMask == 2)
+            Masks.sprite = waterMask;
+        else if (scrollMask == 3)
+            Masks.sprite = earthMask;
+    }
+    public int getMagic()
+    {
+        return scrollMask;
+    }
+    public int getEnding()
+    {
+        return countEnd;
     }
 }

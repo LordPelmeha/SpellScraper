@@ -2,16 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
-    private BoxCollider2D boxCollider;
     private Vector3 moveDelta;
     private RaycastHit2D hit;
+    public double health;
 
-    private void Start()
+
+    [Range(0, 10f)] public float speed;
+
+    public Animator animator;
+
+
+    void Update()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
+        moveDelta = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f);
+
+        animator.SetFloat("Move", Mathf.Abs(moveDelta.x));
+        animator.SetFloat("Move", Mathf.Abs(moveDelta.y));
+        animator.SetFloat("Move", Mathf.Abs(moveDelta.magnitude));
+
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            StartCoroutine(AnimationCorutine());
+
+
+    }
+
+    IEnumerator AnimationCorutine()
+    {
+        animator.SetFloat("Magic", 1);
+        yield return new WaitForSeconds(0.7f);
+        animator.SetFloat("Magic", 0);
     }
 
     private void FixedUpdate()
@@ -23,18 +46,18 @@ public class Player : MonoBehaviour
         //Перемещение игрока
         moveDelta = new Vector3(x, y, 0);
         transform.rotation = Quaternion.Euler(0, 0, 0); //фиксит баг с поворотом. Можно будет попробовать переделать
-        //Коллизия
-        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector3(0, moveDelta.y, 0), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Wall"));
-        if (hit.collider == null)
-            transform.Translate(0, moveDelta.y * Time.deltaTime, 0);
-        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector3(moveDelta.x, 0, 0), Mathf.Abs(moveDelta.x * Time.deltaTime), LayerMask.GetMask("Wall"));
-        if (hit.collider == null)
-            transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
-        //transform.Translate(moveDelta * Time.deltaTime);
+
+        transform.Translate(moveDelta * Time.deltaTime*3);
 
         //Поворот игрока за мышкой
         Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, z - 90);
+        float z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg - 90;
+        transform.rotation = Quaternion.Euler(0, 0, z);
+    }
+
+    public void Death()
+    {
+        //сюда анимацию смерти игрока
+        Destroy(gameObject);
     }
 }

@@ -6,10 +6,10 @@ using UnityEngine.UIElements;
 using UnityEngine;
 using Unity.VisualScripting;
 
-public class EnemyMagicHand : Enemy
+public class EnemyMagicHand : MonoBehaviour
 {
     [SerializeField] Enemy en;
-
+    [SerializeField] Transform player;
     [SerializeField] private Transform shotPoint;
     public GameObject Bullet;
 
@@ -18,13 +18,13 @@ public class EnemyMagicHand : Enemy
     private float TimeBtwShots;
     public float StartTimeBtwShots;
 
-    public override void Start()
+    private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
     
 
-    public override void Update()
+    private void Update()
     {
         Vector3 d = player.transform.position - transform.position;
         z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg;
@@ -50,5 +50,16 @@ public class EnemyMagicHand : Enemy
     {
         //Quaternion bulletRotation = Quaternion.Euler(0, 0, angle - 90f);
         Instantiate(bulletPrefab, shotPoint.position, shotPoint.rotation);
+    }
+    protected bool CanSeePlayer()
+    {
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, player.position);
+        RaycastHit2D hit = Physics2D.Linecast(transform.position, player.position, 1 << LayerMask.NameToLayer("Action"));
+
+        if (hit.collider != null)
+            if (hit.collider.gameObject.CompareTag("Player"))
+                return true;
+
+        return false;
     }
 }

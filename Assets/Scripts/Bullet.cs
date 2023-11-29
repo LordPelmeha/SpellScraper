@@ -37,19 +37,20 @@ public class Bullet : MagicHand
         }
         if (collision.gameObject.CompareTag("Player") && enemyBullet)
         {
+            
             if (GetComponent<Player>().health > 0)
                 GetComponent<Player>().health -= PlayerTakeDamage();
             else
                 collision.gameObject.GetComponent<Player>().Death();
             DestroyBullet();
         }
-        //if (collision.gameObject.CompareTag("Projectile"))
-        //{
-        //    Counterattack(ref isCounterMagic);
-        //    if (isCounterMagic)
-        //        Destroy(collision.gameObject.GetComponent<Bullet>());
-        //}
-        if (collision.gameObject.layer == 8 || collision.gameObject.layer == 10)
+        if (collision.gameObject.CompareTag("Projectile") && enemyBullet)
+        {
+            Counterattack(ref isCounterMagic);
+            if (isCounterMagic)
+                DestroyBullet();
+        }
+        if (collision.gameObject.layer == 8 || collision.gameObject.layer == 10 )
         {
             DestroyBullet();
             //Destroy(airHit);

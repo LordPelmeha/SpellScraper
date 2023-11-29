@@ -35,9 +35,9 @@ public class Enemy : MonoBehaviour
             Vector3 direction = (player.position - transform.position).normalized;
             transform.Translate(moveSpeed * Time.deltaTime * direction);
 
-            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-            //transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
 
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         }
@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour
 
     protected bool CanSeePlayer()
     {
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, player.position);
         RaycastHit2D hit = Physics2D.Linecast(transform.position, player.position, 1 << LayerMask.NameToLayer("Action"));
 
         if(hit.collider !=null)

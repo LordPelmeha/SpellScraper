@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public double health;
 
 
-    [Range(0, 10f)] public float speed = 1f;
+    [Range(0, 10f)] public float speed;
 
     public Animator animator;
 

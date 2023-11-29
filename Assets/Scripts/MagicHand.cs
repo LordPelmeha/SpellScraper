@@ -25,12 +25,14 @@ public class MagicHand : ChangeMask
     private float kindTimeBtwShots;
     public float kindStartTimeBtwShots;
 
+    
+
     void Update()
     {
         //Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         //z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg;
-        
-        
+
+
 
         //Quaternion bulletRotation = Quaternion.Euler(0, 0, z - 90f);
 
@@ -38,9 +40,9 @@ public class MagicHand : ChangeMask
         if (evilTimeBtwShots <= 0)
         {
 
-            if (Input.GetMouseButtonDown(0) )
+            if (Input.GetMouseButtonDown(0))
             {
-                //сюда анимацию стрельбы
+                
                 switch (scrollMask)
                 {
                     case 0: InstantiateWithRotation(evilFireBullet); break;
@@ -49,7 +51,7 @@ public class MagicHand : ChangeMask
                     case 3: InstantiateWithRotation(evilEarthBullet); break;
                 }
                 evilTimeBtwShots = evilStartTimeBtwShots;
-                
+
             }
         }
         else
@@ -59,7 +61,7 @@ public class MagicHand : ChangeMask
         {
             if (Input.GetMouseButtonDown(1))
             {
-                //сюда анимацию стрельбы
+                
                 switch (scrollMask)
                 {
                     case 0: InstantiateWithRotation(kindFireBullet); break;

@@ -105,7 +105,6 @@ MonoBehaviour:
   airMask: {fileID: 0}
   waterMask: {fileID: 0}
   earthMask: {fileID: 0}
-  ShooterType: 0
   evilFireBullet: {fileID: 0}
   evilAirBullet: {fileID: 0}
   evilWaterBullet: {fileID: 0}

@@ -22,16 +22,16 @@ public class EnemyMagicHand : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
-    
+
 
     private void Update()
     {
         Vector3 d = player.transform.position - transform.position;
         z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(0f,0f,z + offset);
+        transform.rotation = Quaternion.Euler(0f, 0f, z + offset);
 
-        if(Vector2.Distance(en.transform.position, player.position) < en.detectionRange  && CanSeePlayer())
+        if (Vector3.Distance(en.transform.position, player.position) < en.detectionRange && CanSeePlayer())
         {
 
             if (TimeBtwShots <= 0)

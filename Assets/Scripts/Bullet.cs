@@ -42,14 +42,14 @@ public class Bullet : MagicHand
                 GetComponent<Player>().health -= PlayerTakeDamage();
             else
                 collision.gameObject.GetComponent<Player>().Death();
-            DestroyBullet();
+            //DestroyBullet();
         }
-        if (collision.gameObject.CompareTag("Projectile") && enemyBullet)
-        {
-            Counterattack(ref isCounterMagic);
-            if (isCounterMagic)
-                DestroyBullet();
-        }
+        //if (collision.gameObject.CompareTag("Projectile") && enemyBullet)
+        //{
+        //    Counterattack(ref isCounterMagic);
+        //    if (isCounterMagic)
+        //        DestroyBullet();
+        //}
         if (collision.gameObject.layer == 8 || collision.gameObject.layer == 10 )
         {
             DestroyBullet();

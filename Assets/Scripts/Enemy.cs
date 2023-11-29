@@ -17,20 +17,27 @@ public class Enemy : MonoBehaviour
 
 
     public Transform player;
+    public Animator animator;
+    private Vector3 moveDelta;
 
 
     public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        
+
     }
 
     public virtual void Update()
     {
 
-        if (Vector2.Distance(transform.position, player.position) < detectionRange  && CanSeePlayer())
+        if (Vector3.Distance(transform.position, player.position) < detectionRange && CanSeePlayer())
         {
+            moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
+
+            animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.x));
+            animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.y));
+            animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.magnitude));
 
             Vector3 direction = (player.position - transform.position).normalized;
             transform.Translate(moveSpeed * Time.deltaTime * direction);
@@ -39,22 +46,22 @@ public class Enemy : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
 
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         }
 
     }
 
-    
+
 
     protected bool CanSeePlayer()
     {
         //RaycastHit2D hit = Physics2D.Raycast(transform.position, player.position);
         RaycastHit2D hit = Physics2D.Linecast(transform.position, player.position, 1 << LayerMask.NameToLayer("Action"));
 
-        if(hit.collider !=null)
+        if (hit.collider != null)
             if (hit.collider.gameObject.CompareTag("Player"))
                 return true;
-        
+
         return false;
     }
 
@@ -70,7 +77,7 @@ public class Enemy : MonoBehaviour
     }
     public void EnemyTakeDamage(double damage)
     {
-            health -= damage;
+        health -= damage;
         if (health <= 0)
             Death();
     }

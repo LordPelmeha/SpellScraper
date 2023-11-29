@@ -6,9 +6,6 @@ public enum MagicHandType { Player, Enemy }
 
 public class MagicHand : ChangeMask
 {
-    public MagicHandType ShooterType;
-    private Player player;
-
     public GameObject evilFireBullet;
     public GameObject evilAirBullet;
     public GameObject evilWaterBullet;
@@ -20,7 +17,7 @@ public class MagicHand : ChangeMask
     public GameObject kindEarthBullet;
 
     public Transform shotPoint;
-    private float z;
+    //private float z;
 
     private float evilTimeBtwShots;
     public float evilStartTimeBtwShots;
@@ -30,32 +27,26 @@ public class MagicHand : ChangeMask
 
     void Update()
     {
-        if(ShooterType == MagicHandType.Player)
-        {
-            Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg;
-        }
-        else 
-        {
-            Vector3 d = player.transform.position - transform.position;
-            z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg;
-        }
+        //Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        //z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg;
+        
+        
 
-        Quaternion bulletRotation = Quaternion.Euler(0, 0, z - 90f);
+        //Quaternion bulletRotation = Quaternion.Euler(0, 0, z - 90f);
 
         //кулдаун стрельбы
         if (evilTimeBtwShots <= 0)
         {
 
-            if (Input.GetMouseButtonDown(0) || ShooterType == MagicHandType.Enemy)
+            if (Input.GetMouseButtonDown(0) )
             {
                 //сюда анимацию стрельбы
                 switch (scrollMask)
                 {
-                    case 0: InstantiateWithRotation(evilFireBullet, z); break;
-                    case 1: InstantiateWithRotation(evilAirBullet, z); break;
-                    case 2: InstantiateWithRotation(evilWaterBullet, z); break;
-                    case 3: InstantiateWithRotation(evilEarthBullet, z); break;
+                    case 0: InstantiateWithRotation(evilFireBullet); break;
+                    case 1: InstantiateWithRotation(evilAirBullet); break;
+                    case 2: InstantiateWithRotation(evilWaterBullet); break;
+                    case 3: InstantiateWithRotation(evilEarthBullet); break;
                 }
                 evilTimeBtwShots = evilStartTimeBtwShots;
                 
@@ -71,10 +62,10 @@ public class MagicHand : ChangeMask
                 //сюда анимацию стрельбы
                 switch (scrollMask)
                 {
-                    case 0: InstantiateWithRotation(kindFireBullet, z); break;
-                    case 1: InstantiateWithRotation(kindAirBullet, z); break;
-                    case 2: InstantiateWithRotation(kindWaterBullet, z); break;
-                    case 3: InstantiateWithRotation(kindEarthBullet, z); break;
+                    case 0: InstantiateWithRotation(kindFireBullet); break;
+                    case 1: InstantiateWithRotation(kindAirBullet); break;
+                    case 2: InstantiateWithRotation(kindWaterBullet); break;
+                    case 3: InstantiateWithRotation(kindEarthBullet); break;
                 }
                 kindTimeBtwShots = kindStartTimeBtwShots;
             }
@@ -82,7 +73,7 @@ public class MagicHand : ChangeMask
         else
             kindTimeBtwShots -= Time.deltaTime;
     }
-    void InstantiateWithRotation(GameObject bulletPrefab, float angle)
+    void InstantiateWithRotation(GameObject bulletPrefab)
     {
         //Quaternion bulletRotation = Quaternion.Euler(0, 0, angle - 90f);
         Instantiate(bulletPrefab, shotPoint.position, shotPoint.rotation);

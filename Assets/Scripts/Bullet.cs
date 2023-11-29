@@ -14,7 +14,7 @@ public class Bullet : MagicHand
     private RaycastHit2D hitInfo;
     [SerializeField] EvilAndKind emotion;
     [SerializeField] Magic element;
-    private bool isCoounterMagic;
+    private bool isCounterMagic;
     //public GameObject airHit;
     // Проверяем столкновение с объектом
     private void OnCollisionEnter2D(Collision2D collision)
@@ -45,8 +45,8 @@ public class Bullet : MagicHand
         }
         //if (collision.gameObject.CompareTag("Projectile"))
         //{
-        //    Counterattack(ref isCoounterMagic);
-        //    if (isCoounterMagic)
+        //    Counterattack(ref isCounterMagic);
+        //    if (isCounterMagic)
         //        Destroy(collision.gameObject.GetComponent<Bullet>());
         //}
         if (collision.gameObject.layer == 8 || collision.gameObject.layer == 10)
@@ -71,10 +71,10 @@ public class Bullet : MagicHand
     {
         return scrollMask - (int)element == 0 ? 0.5 : 1;
     }
-    private void Counterattack(ref bool isCoounterMagic)
+    private void Counterattack(ref bool isCounterMagic)
     {
         Bullet obj = hitInfo.collider.GetComponent<Bullet>();
-        isCoounterMagic = math.abs((int)obj.element - (int)element) % 2 == 0;
+        isCounterMagic = math.abs((int)obj.element - (int)element) % 2 == 0;
         Destroy(obj);
     }
 }

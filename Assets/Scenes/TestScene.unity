@@ -261,6 +261,61 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb86e4ad0d396314cb428b525f5887ac, type: 3}
+--- !u!1 &335065714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 335065715}
+  - component: {fileID: 335065716}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &335065715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335065714}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00999999, y: -0.72, z: 1.008856}
+  m_LocalScale: {x: -2.2425, y: 0.575, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2112239667}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &335065716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335065714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1f22bbdae0cb74f8565615fb888083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  moveSpeed: 0
+  magicType: 0
+  detectionRange: 0
+  health: 0
+  player: {fileID: 1068875541}
+  en: {fileID: 2112239669}
+  shotPoint: {fileID: 335065715}
+  Bullet: {fileID: 915387223}
+  offset: 90
+  StartTimeBtwShots: 1
 --- !u!1 &347319522
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +328,7 @@ GameObject:
   - component: {fileID: 347319524}
   - component: {fileID: 347319525}
   - component: {fileID: 347319526}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: testSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,8 +344,8 @@ Transform:
   m_GameObject: {fileID: 347319522}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.117299974, y: 0.29058933, z: -0.072137244}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.73, y: 0.42, z: -0.072137244}
+  m_LocalScale: {x: 2.1875, y: 14.104746, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1170709585}
@@ -795,7 +850,6 @@ MonoBehaviour:
   airMask: {fileID: 0}
   waterMask: {fileID: 0}
   earthMask: {fileID: 0}
-  ShooterType: 0
   evilFireBullet: {fileID: 7971796923087094374, guid: c2ced6ab48f64f740aa77794b4e0d854, type: 3}
   evilAirBullet: {fileID: 7971796923087094374, guid: cc0a06edb7d9c8241854c5bac0046c20, type: 3}
   evilWaterBullet: {fileID: 7971796923087094374, guid: f20c4f6f4afbfb2499d11455a1a2ad23, type: 3}
@@ -812,6 +866,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4309417522652299354, guid: 29073447005deeb42827e78cf1853284, type: 3}
   m_PrefabInstance: {fileID: 1764917689}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &915387223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7971796923087094374, guid: c2ced6ab48f64f740aa77794b4e0d854, type: 3}
+  m_PrefabInstance: {fileID: 1716795790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1068875539
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +885,7 @@ GameObject:
   - component: {fileID: 1068875544}
   - component: {fileID: 1068875546}
   - component: {fileID: 1068875545}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -894,7 +953,7 @@ Transform:
   m_GameObject: {fileID: 1068875539}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.16, y: -2.383, z: -1}
+  m_LocalPosition: {x: 0.36, y: 0.06, z: -1}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -913,7 +972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4144336fa8f3b2245832ef0631d3ef8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 1
   speed: 6.18
   animator: {fileID: 1068875544}
 --- !u!95 &1068875544
@@ -8265,7 +8324,7 @@ GameObject:
   - component: {fileID: 2112239668}
   - component: {fileID: 2112239669}
   - component: {fileID: 2112239670}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Square
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -8333,10 +8392,11 @@ Transform:
   m_GameObject: {fileID: 2112239665}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.572, y: 0.275, z: -1}
+  m_LocalPosition: {x: -3.15, y: 0.275, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 335065715}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2112239668
@@ -8391,28 +8451,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112239665}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3eab70be3ab2f3b419197c9b89987851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  moveSpeed: 0
-  detectionRange: 0
-  retreatDistance: 0
-  shootCooldown: 0
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  health: 0
+  moveSpeed: 0.2
   magicType: 0
-  enemyBulletPrefab: {fileID: 0}
-  shotPoint: {fileID: 0}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  detectionRange: 10
+  health: 1
   player: {fileID: 0}
-  lastShootTime: 0
 --- !u!50 &2112239670
 Rigidbody2D:
   serializedVersion: 4

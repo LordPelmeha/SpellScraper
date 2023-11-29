@@ -5,25 +5,19 @@ using UnityEngine;
 public class PatrolingEnemy : Enemy
 {
 
-    private float waitTime;
-    public float startWaitTime;
 
     public Transform[] spots;
-    private int ransdomSpot;
+    private int currentSpot;
+    public Transform currentGoal;
 
 
-    void Start()
+
+    public override void Update()
     {
-
-        waitTime = startWaitTime;
-        ransdomSpot = Random.Range(0, spots.Length);
-    }
-
-    void Update()
-    {
-
-        if (Vector2.Distance(transform.position, player.position) < detectionRange   /*CanSeePlayer()*/)
+        if ((Vector2.Distance(transform.position, player.position) < detectionRange) && CanSeePlayer())
         {
+            moveSpeed *= 2;
+
             Vector3 direction = (player.position - transform.position).normalized;
             transform.Translate(moveSpeed * Time.deltaTime * direction);
 
@@ -32,28 +26,32 @@ public class PatrolingEnemy : Enemy
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
 
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+        }
+        //else if (Vector2.Distance(transform.position, player.position) <= stoppingDistance && (Vector2.Distance(transform.position, player.position) < detectionRange))
+        //    transform.position = this.transform.position;
+        else
+        {
+            if (Vector2.Distance(transform.position, spots[currentSpot].position) < 0.2)
+                transform.position = Vector2.MoveTowards(transform.position, spots[currentSpot].position, moveSpeed * Time.deltaTime);
+            else
+                ChangeSpot();
+        }
+    }
 
-            if (Time.time > lastShootTime + shootCooldown)
-            {
-                //Shoot();
-                lastShootTime = Time.time;
-            }
+    private void ChangeSpot() 
+    {
+        if (currentSpot == spots.Length - 1)
+        {
+            currentSpot = 0;
+            currentGoal = spots[0];
         }
         else
         {
-            moveSpeed *= 2;
-            transform.position = Vector2.MoveTowards(transform.position, spots[ransdomSpot].position, moveSpeed * Time.deltaTime);
-
-            if (Vector2.Distance(transform.position, spots[ransdomSpot].position) < 0.2f)
-            {
-                if (waitTime <= 0)
-                {
-                    ransdomSpot = Random.Range(0, spots.Length);
-                    waitTime = startWaitTime;
-                }
-                else
-                    waitTime -= Time.deltaTime;
-            }
+            currentSpot++;
+            currentGoal = spots[currentSpot];
         }
     }
+
+
+
 }

@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         moveDelta = new Vector3(x, y, 0);
         transform.rotation = Quaternion.Euler(0, 0, 0); //фиксит баг с поворотом. Можно будет попробовать переделать
 
-        transform.Translate(moveDelta * Time.deltaTime);
+        transform.Translate(moveDelta * Time.deltaTime*3);
 
         //Поворот игрока за мышкой
         Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;

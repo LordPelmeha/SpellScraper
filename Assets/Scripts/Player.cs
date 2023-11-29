@@ -23,6 +23,18 @@ public class Player : MonoBehaviour
         animator.SetFloat("Move", Mathf.Abs(moveDelta.x));
         animator.SetFloat("Move", Mathf.Abs(moveDelta.y));
         animator.SetFloat("Move", Mathf.Abs(moveDelta.magnitude));
+
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            StartCoroutine(AnimationCorutine());
+
+
+    }
+
+    IEnumerator AnimationCorutine()
+    {
+        animator.SetFloat("Magic", 1);
+        yield return new WaitForSeconds(0.7f);
+        animator.SetFloat("Magic", 0);
     }
 
     private void FixedUpdate()

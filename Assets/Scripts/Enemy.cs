@@ -48,6 +48,14 @@ public class Enemy : MonoBehaviour
 
             transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         }
+        else
+        {
+            moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
+
+            animator.SetFloat("MoveEnemy", 0);
+            animator.SetFloat("MoveEnemy", 0);
+            animator.SetFloat("MoveEnemy", 0);
+        }
 
     }
 

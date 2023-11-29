@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 347319526}
   m_Layer: 12
   m_Name: testSprite
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -712,7 +712,7 @@ Transform:
   m_GameObject: {fileID: 687325279}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.004, y: 0.089, z: 0}
+  m_LocalPosition: {x: -0.004, y: 0.168, z: 0}
   m_LocalScale: {x: 0.0386, y: 0.0468, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8213,7 +8213,7 @@ Transform:
   m_GameObject: {fileID: 1986540177}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.71207523, w: 0.70210326}
-  m_LocalPosition: {x: 0.009, y: 0.253, z: 1}
+  m_LocalPosition: {x: 0.011, y: 0.136, z: 1}
   m_LocalScale: {x: 0.03, y: 0.03, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8235,7 +8235,7 @@ MonoBehaviour:
   player: {fileID: 1068875541}
   shotPoint: {fileID: 1986540178}
   Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
-  offset: 0
+  offset: -90
   StartTimeBtwShots: 1
 --- !u!212 &1986540180
 SpriteRenderer:

@@ -14,7 +14,7 @@ public class PatrolingEnemy : Enemy
 
     public override void Update()
     {
-        if ((Vector2.Distance(transform.position, player.position) < detectionRange) && CanSeePlayer())
+        if ((Vector3.Distance(transform.position, player.position) < detectionRange) && CanSeePlayer())
         {
             moveSpeed *= 2;
 
@@ -25,14 +25,14 @@ public class PatrolingEnemy : Enemy
 
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
 
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         }
-        //else if (Vector2.Distance(transform.position, player.position) <= stoppingDistance && (Vector2.Distance(transform.position, player.position) < detectionRange))
+        //else if (Vector3.Distance(transform.position, player.position) <= stoppingDistance && (Vector3.Distance(transform.position, player.position) < detectionRange))
         //    transform.position = this.transform.position;
         else
         {
-            if (Vector2.Distance(transform.position, spots[currentSpot].position) < 0.2)
-                transform.position = Vector2.MoveTowards(transform.position, spots[currentSpot].position, moveSpeed * Time.deltaTime);
+            if (Vector3.Distance(transform.position, spots[currentSpot].position) < 0.2)
+                transform.position = Vector3.MoveTowards(transform.position, spots[currentSpot].position, moveSpeed * Time.deltaTime);
             else
                 ChangeSpot();
         }

@@ -11,6 +11,7 @@ public class ChangeMask : MonoBehaviour
     public Sprite waterMask;
     public Sprite earthMask;
     protected static int scrollMask;
+    protected static int countEnd = 0;
 
     void Update()
     {
@@ -58,5 +59,9 @@ public class ChangeMask : MonoBehaviour
     public int getMagic()
     {
         return scrollMask;
+    }
+    public int getEnding()
+    {
+        return countEnd;
     }
 }

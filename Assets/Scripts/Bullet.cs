@@ -27,21 +27,22 @@ public class Bullet : MagicHand
             {
                 if (emotion == EvilAndKind.Evil)
                 {
-                    // сюда счётчик для концовки
+                    countEnd--;
                 }
                 if (emotion == EvilAndKind.Kind)
                 {
-                    // сюда счётчик для концовки
+                    countEnd++;
                 }
+                
             }
         }
         if (collision.gameObject.CompareTag("Player") && enemyBullet)
         {
             
-            if (GetComponent<Player>().health > 0)
-                GetComponent<Player>().health -= PlayerTakeDamage();
-            else
-                collision.gameObject.GetComponent<Player>().Death();
+            //if (GetComponent<Player>().health > 0)
+            //    GetComponent<Player>().health -= PlayerTakeDamage();
+            //else
+            //    collision.gameObject.GetComponent<Player>().Death();
             //DestroyBullet();
         }
         //if (collision.gameObject.CompareTag("Projectile") && enemyBullet)
@@ -50,10 +51,14 @@ public class Bullet : MagicHand
         //    if (isCounterMagic)
         //        DestroyBullet();
         //}
-        if (collision.gameObject.layer == 8 || collision.gameObject.layer == 10 )
+        if (!enemyBullet&& (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Enemy")))
         {
             DestroyBullet();
             //Destroy(airHit);
+        }
+        if (enemyBullet && (collision.gameObject.CompareTag("Player")|| collision.gameObject.CompareTag("Wall")))
+        {
+            DestroyBullet();
         }
     }
     void Update()

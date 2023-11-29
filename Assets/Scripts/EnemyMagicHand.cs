@@ -36,7 +36,6 @@ public class EnemyMagicHand : MonoBehaviour
 
             if (TimeBtwShots <= 0)
             {
-                UnityEngine.Debug.Log("ßÏÈÄÀÐÀÑ");
                 InstantiateWithRotation(Bullet);
                 TimeBtwShots = StartTimeBtwShots;
             }

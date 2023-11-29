@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour
         if (collision.collider.CompareTag("Wall"))
         {
             // Если столкнулись со стеной, останавливаемся
-            rb.velocity = Vector2.zero;
+            rb.velocity = Vector3.zero;
         }
     }
     public void EnemyTakeDamage(double damage)

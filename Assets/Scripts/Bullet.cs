@@ -5,7 +5,7 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 public enum EvilAndKind { Evil, Kind };
-public enum Magic { Fire, Water, Earth, Air };
+public enum Magic { Fire, Air, Water, Earth };
 public class Bullet : MagicHand
 {
     [SerializeField] float speed;
@@ -15,6 +15,7 @@ public class Bullet : MagicHand
     [SerializeField] EvilAndKind emotion;
     [SerializeField] Magic element;
     private bool isCounterMagic;
+
     //public GameObject airHit;
     // Проверяем столкновение с объектом
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,30 +34,36 @@ public class Bullet : MagicHand
                 {
                     countEnd++;
                 }
-                
+
             }
         }
         if (collision.gameObject.CompareTag("Player") && enemyBullet)
         {
-            
-            //if (GetComponent<Player>().health > 0)
-            //    GetComponent<Player>().health -= PlayerTakeDamage();
-            //else
-            //    collision.gameObject.GetComponent<Player>().Death();
-            //DestroyBullet();
+            Player player = collision.gameObject.GetComponent<Player>();
+            if (player != null && player.health > 0)
+                player.health -= PlayerTakeDamage();
+            DestroyBullet();
         }
-        //if (collision.gameObject.CompareTag("Projectile") && enemyBullet)
-        //{
-        //    Counterattack(ref isCounterMagic);
-        //    if (isCounterMagic)
-        //        DestroyBullet();
-        //}
-        if (!enemyBullet&& (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Enemy")))
+        if (collision.gameObject.CompareTag("Projectile") && enemyBullet)
+        {
+            Counterattack(ref isCounterMagic, collision);
+            if (isCounterMagic)
+            {
+                DestroyBullet();
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(),collision.collider,true);
+            }
+
+        }
+        if (!enemyBullet && (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Enemy")))
         {
             DestroyBullet();
             //Destroy(airHit);
         }
-        if (enemyBullet && (collision.gameObject.CompareTag("Player")|| collision.gameObject.CompareTag("Wall")))
+        if (enemyBullet && (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Wall")))
         {
             DestroyBullet();
         }
@@ -77,10 +84,10 @@ public class Bullet : MagicHand
     {
         return scrollMask - (int)element == 0 ? 0.5 : 1;
     }
-    private void Counterattack(ref bool isCounterMagic)
+    private void Counterattack(ref bool isCounterMagic, Collision2D collision)
     {
-        Bullet obj = hitInfo.collider.GetComponent<Bullet>();
-        isCounterMagic = math.abs((int)obj.element - (int)element) % 2 == 0;
-        Destroy(obj);
+        Bullet obj = collision.gameObject.GetComponent<Bullet>();
+        Debug.Log($"{(int)obj.element} {(int)element}");
+        isCounterMagic = (math.abs((int)obj.element - (int)element) % 2 == 0) &&(obj.element!=element);
     }
 }

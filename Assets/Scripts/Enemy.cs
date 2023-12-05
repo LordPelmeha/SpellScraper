@@ -34,12 +34,16 @@ public class Enemy : MonoBehaviour
         if (Vector3.Distance(transform.position, player.position) < detectionRange && CanSeePlayer())
         {
             moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
-
+            if (moveDelta.magnitude > 1f)
+                moveDelta.Normalize();
             animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.x));
             animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.y));
             animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.magnitude));
 
-            Vector3 direction = (player.position - transform.position).normalized;
+            Vector3 targetPosition = (transform.position + player.position) / 2f;
+
+            // Вычисляем вектор направления к центру игрока
+            Vector3 direction = (targetPosition - transform.position).normalized;
             transform.Translate(moveSpeed * Time.deltaTime * direction);
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;

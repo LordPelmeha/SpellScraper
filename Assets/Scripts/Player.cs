@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     private Vector3 moveDelta;
@@ -26,7 +27,8 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             StartCoroutine(AnimationCorutine());
-
+        if (health<=0)
+            Death();
 
     }
 
@@ -46,8 +48,9 @@ public class Player : MonoBehaviour
         //Перемещение игрока
         moveDelta = new Vector3(x, y, 0);
         transform.rotation = Quaternion.Euler(0, 0, 0); //фиксит баг с поворотом. Можно будет попробовать переделать
-
-        transform.Translate(moveDelta * Time.deltaTime*3);
+        if (moveDelta.magnitude > 1f)
+            moveDelta.Normalize();
+        transform.Translate(moveDelta * Time.deltaTime*speed);
 
         //Поворот игрока за мышкой
         Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -59,5 +62,6 @@ public class Player : MonoBehaviour
     {
         //сюда анимацию смерти игрока
         Destroy(gameObject);
+        SceneManager.LoadScene("Level1");
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -50,7 +49,7 @@ public class Player : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, 0); //фиксит баг с поворотом. Можно будет попробовать переделать
         if (moveDelta.magnitude > 1f)
             moveDelta.Normalize();
-        transform.Translate(moveDelta * Time.deltaTime*speed);
+        transform.Translate(Time.deltaTime*speed*moveDelta);
 
         //Поворот игрока за мышкой
         Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;

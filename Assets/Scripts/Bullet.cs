@@ -8,7 +8,7 @@ public enum EvilAndKind { Evil, Kind };
 public enum Magic { Fire, Air, Water, Earth };
 public class Bullet : MagicHand
 {
-    [SerializeField] float speed;
+    [SerializeField] public float speed;
     [SerializeField] LayerMask WhatIsSolid;
     public bool enemyBullet;
     private RaycastHit2D hitInfo;
@@ -23,7 +23,6 @@ public class Bullet : MagicHand
         if (collision.gameObject.CompareTag("Enemy") && !enemyBullet)
         {
             collision.gameObject.GetComponent<Enemy>().EnemyTakeDamage(collision.gameObject.GetComponent<Enemy>().magicType - (int)element == 0 ? 0.5 : 1);
-            Debug.Log(collision.gameObject.GetComponent<Enemy>().health);
             if (collision.gameObject.GetComponent<Enemy>().health <= 0)
             {
                 if (emotion == EvilAndKind.Evil)
@@ -34,7 +33,6 @@ public class Bullet : MagicHand
                 {
                     countEnd++;
                 }
-
             }
         }
         if (collision.gameObject.CompareTag("Player") && enemyBullet)
@@ -56,7 +54,6 @@ public class Bullet : MagicHand
             {
                 Physics2D.IgnoreCollision(GetComponent<Collider2D>(),collision.collider,true);
             }
-
         }
         if (!enemyBullet && (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Enemy")))
         {
@@ -87,7 +84,7 @@ public class Bullet : MagicHand
     private void Counterattack(ref bool isCounterMagic, Collision2D collision)
     {
         Bullet obj = collision.gameObject.GetComponent<Bullet>();
-        Debug.Log($"{(int)obj.element} {(int)element}");
+       // Debug.Log($"{(int)obj.element} {(int)element}");
         isCounterMagic = (math.abs((int)obj.element - (int)element) % 2 == 0) &&(obj.element!=element);
     }
 }

@@ -116,7 +116,7 @@ MonoBehaviour:
   shotPoint: {fileID: 0}
   evilStartTimeBtwShots: 0.4
   kindStartTimeBtwShots: 0.8
-  speed: 2
+  speed: 3
   WhatIsSolid:
     serializedVersion: 2
     m_Bits: 256

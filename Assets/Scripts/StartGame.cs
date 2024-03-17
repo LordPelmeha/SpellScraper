@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class StartGame : MonoBehaviour
 {
-    void Update()
+    public void GameStart()
     {
-        if (Input.GetMouseButtonDown(0)) // Измените на клавишу, которую вы хотите использовать
-        {
-            SceneManager.LoadScene("Level1");
-        }
+        SceneManager.LoadScene("Level1");
     }
 }

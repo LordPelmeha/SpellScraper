@@ -19,7 +19,6 @@ public class Settings : MonoBehaviour
         resolutions = Screen.resolutions;
 
         int currentResolutionIndex = 0;
-        float musicVolume = 1f;
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + "x" + resolutions[i].height;

@@ -16,7 +16,7 @@ public class Reflection : MonoBehaviour
         {
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
             bullet.GetComponent<SpriteRenderer>().flipY = true ;
-            bullet.speed *= -2;
+            bullet.bulletSpead *= -2;
             bullet.enemyBullet = false;
             currentTimer = startTimer;
         }   

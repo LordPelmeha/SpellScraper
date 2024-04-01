@@ -8,7 +8,7 @@ public enum EvilAndKind { Evil, Kind };
 public enum Magic { Fire, Air, Water, Earth };
 public class Bullet : MagicHand
 {
-    [SerializeField] public float speed;
+    public float bulletSpead;
     [SerializeField] LayerMask WhatIsSolid;
     public bool enemyBullet;
     private RaycastHit2D hitInfo;
@@ -67,7 +67,7 @@ public class Bullet : MagicHand
     }
     void Update()
     {
-        transform.Translate(speed * Time.deltaTime * Vector3.up);
+        transform.Translate(bulletSpead * Time.deltaTime * Vector3.up);
     }
 
     public void DestroyBullet()

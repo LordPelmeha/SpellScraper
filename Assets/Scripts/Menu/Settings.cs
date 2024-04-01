@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class Settings : MonoBehaviour
 {
     public TMP_Dropdown resolutionDropdown;
 
     Resolution[] resolutions;
+    public AudioSource audioSrc;
     void Start()
     {
         resolutionDropdown.ClearOptions();
@@ -17,7 +19,6 @@ public class Settings : MonoBehaviour
         resolutions = Screen.resolutions;
 
         int currentResolutionIndex = 0;
-
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + "x" + resolutions[i].height;
@@ -28,6 +29,10 @@ public class Settings : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.RefreshShownValue();
         LoadSettings(currentResolutionIndex);
+    }
+    public void SetMusicVolume(float volume)
+    {
+        audioSrc.volume = volume;
     }
     public void SetFullscreen(bool isfullscreen)
 
@@ -54,6 +59,8 @@ public class Settings : MonoBehaviour
     {
         PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
         PlayerPrefs.SetInt("FullscreenPreference", System.Convert.ToInt32(Screen.fullScreen));
+        PlayerPrefs.SetFloat("MusicVolumePreference", audioSrc.volume);
+        PlayerPrefs.Save();
     }
     public void LoadSettings(int currentResolutionIndex)
     {
@@ -67,5 +74,11 @@ public class Settings : MonoBehaviour
 
         if (PlayerPrefs.HasKey("FullscreenPreference"))
             Screen.fullScreen = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
+        if (PlayerPrefs.HasKey("MusicVolumePreference"))
+        {
+            audioSrc.volume = PlayerPrefs.GetFloat("MusicVolumePreference");
+            Console.WriteLine("fafsa");
+        }
+            
     }
 }

@@ -6,50 +6,108 @@ public class PatrolingEnemy : Enemy
 {
 
 
-    public Transform[] spots;
-    private int currentSpot;
-    public Transform currentGoal;
+    [SerializeField] Transform[] targetPoints;
+    [SerializeField] int currentPoint;
 
+    [Space]
+    [Header("Timers")]
+    [SerializeField] float maxWaitTime;
+    [SerializeField] float minWaitTime;
+
+    private int scale = 2;
+
+    private float waitTime;
+    private float waitTimeCounter;
+
+    public override void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        currentPoint = Random.Range(0, targetPoints.Length);
+
+        waitTimeCounter = SetWaitTime();
+    }
 
 
     public override void Update()
     {
         if ((Vector3.Distance(transform.position, player.position) < detectionRange) && CanSeePlayer())
         {
-            moveSpeed *= 2;
 
-            Vector3 direction = (player.position - transform.position).normalized;
-            transform.Translate(moveSpeed * Time.deltaTime * direction);
+            moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
+            if (moveDelta.magnitude > 1f)
+                moveDelta.Normalize();
+            animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.x));
+            animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.y));
+            animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.magnitude));    
 
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Vector3 difference = player.position - transform.position;
+            rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
+            Quaternion rotation = Quaternion.AngleAxis(rotZ + rotationOffset, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * _speedRotate);
+
+            moveSpeed *= scale;
+            scale /= scale;
 
             transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         }
-        //else if (Vector3.Distance(transform.position, player.position) <= stoppingDistance && (Vector3.Distance(transform.position, player.position) < detectionRange))
-        //    transform.position = this.transform.position;
         else
         {
-            if (Vector3.Distance(transform.position, spots[currentSpot].position) < 0.2)
-                transform.position = Vector3.MoveTowards(transform.position, spots[currentSpot].position, moveSpeed * Time.deltaTime);
-            else
-                ChangeSpot();
+            Patroling();
         }
     }
 
-    private void ChangeSpot() 
+    private void Patroling()
     {
-        if (currentSpot == spots.Length - 1)
+        moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
+        if (moveDelta.magnitude > 1f)
+            moveDelta.Normalize();
+        animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.x));
+        animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.y));
+        animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.magnitude));
+
+        if (transform.position == targetPoints[currentPoint].position)
         {
-            currentSpot = 0;
-            currentGoal = spots[0];
+            animator.SetFloat("MoveEnemy", 0);
+            animator.SetFloat("MoveEnemy", 0);
+            animator.SetFloat("MoveEnemy", 0);
+
+            if (waitTimeCounter <= 0)
+            {
+                IncreaseCurrentPoint();
+                waitTimeCounter = SetWaitTime();
+            }
+            else
+                waitTimeCounter -= Time.deltaTime;
+            
+
         }
-        else
+
+        Vector3 difference = targetPoints[currentPoint].position - transform.position;
+        rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+
+        Quaternion rotation = Quaternion.AngleAxis(rotZ + rotationOffset, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * _speedRotate);
+
+        transform.position = Vector3.MoveTowards(transform.position, targetPoints[currentPoint].position, moveSpeed * Time.deltaTime);
+    }
+
+    private void IncreaseCurrentPoint()
+    {
+        currentPoint++;
+        if (currentPoint >= targetPoints.Length)
         {
-            currentSpot++;
-            currentGoal = spots[currentSpot];
+            currentPoint = 0;
         }
+    }
+
+    private float SetWaitTime()
+    {
+        waitTime = Random.Range(minWaitTime, maxWaitTime);
+
+        return waitTime;
     }
 
 

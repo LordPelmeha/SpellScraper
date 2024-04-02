@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
 using Unity.Burst.CompilerServices;
@@ -16,9 +17,13 @@ public class Enemy : MonoBehaviour
     public double health;
 
 
+
     public Transform player;
     public Animator animator;
-    private Vector3 moveDelta;
+    public Vector3 moveDelta;
+    public float _speedRotate = 5f;
+    public int rotationOffset = -90;
+    public float rotZ;
 
 
     public virtual void Start()
@@ -40,15 +45,12 @@ public class Enemy : MonoBehaviour
             animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.y));
             animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.magnitude));
 
-            Vector3 targetPosition = (transform.position + player.position) / 2f;
 
-            // Вычисляем вектор направления к центру игрока
-            Vector3 direction = (targetPosition - transform.position).normalized;
-            transform.Translate(moveSpeed * Time.deltaTime * direction);
+            Vector3 difference = player.position - transform.position;
+            rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
+            Quaternion rotation = Quaternion.AngleAxis(rotZ + rotationOffset, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * _speedRotate);
 
             transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         }
@@ -100,3 +102,5 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
+

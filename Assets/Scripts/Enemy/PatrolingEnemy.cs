@@ -19,6 +19,7 @@ public class PatrolingEnemy : Enemy
     private float waitTime;
     private float waitTimeCounter;
 
+
     public override void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,29 +33,27 @@ public class PatrolingEnemy : Enemy
 
     public override void Update()
     {
-        if ((Vector3.Distance(transform.position, player.position) < detectionRange) && CanSeePlayer())
+        distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        if ((distanceToPlayer <= detectionRange) && CanSeePlayer())
         {
 
-            moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
-            if (moveDelta.magnitude > 1f)
-                moveDelta.Normalize();
-            animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.x));
-            animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.y));
-            animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.magnitude));    
-
-            Vector3 difference = player.position - transform.position;
-            rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-
-            Quaternion rotation = Quaternion.AngleAxis(rotZ + rotationOffset, Vector3.forward);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * _speedRotate);
+            MoveEnemy(player.position);
 
             moveSpeed *= scale;
             scale /= scale;
 
             transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            playerPath.Enqueue(player.position);
+            if (playerPath.Count > 100)
+                playerPath.Dequeue();
         }
+        //else if (distanceToPlayer <= detectionRange)
+        //{
+        //    ChasePlayer();
+        //}
         else
         {
+            playerPath.Clear();
             Patroling();
         }
     }
@@ -81,7 +80,7 @@ public class PatrolingEnemy : Enemy
             }
             else
                 waitTimeCounter -= Time.deltaTime;
-            
+
 
         }
 

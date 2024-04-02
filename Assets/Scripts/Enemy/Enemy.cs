@@ -29,10 +29,15 @@ public class Enemy : MonoBehaviour
     protected Queue<Vector3> playerPath = new Queue<Vector3>();
     protected Vector3 difference;
     protected Quaternion rotation;
+    protected string animType;
     public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        if (magicType == Magic.Fire)
+            animType = "MoveEnemy";
+        else if (magicType == Magic.Earth)
+            animType = "EarthMove";
     }
 
     public virtual void Update()
@@ -54,9 +59,9 @@ public class Enemy : MonoBehaviour
             playerPath.Clear();
             moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
 
-            animator.SetFloat("MoveEnemy", 0);
-            animator.SetFloat("MoveEnemy", 0);
-            animator.SetFloat("MoveEnemy", 0);
+            animator.SetFloat(animType, 0);
+            animator.SetFloat(animType, 0);
+            animator.SetFloat(animType, 0);
         }
 
     }
@@ -111,9 +116,9 @@ public class Enemy : MonoBehaviour
         moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
         if (moveDelta.magnitude > 1f)
             moveDelta.Normalize();
-        animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.x));
-        animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.y));
-        animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.magnitude));
+        animator.SetFloat(animType, Mathf.Abs(moveDelta.x));
+        animator.SetFloat(animType, Mathf.Abs(moveDelta.y));
+        animator.SetFloat(animType, Mathf.Abs(moveDelta.magnitude));
 
 
         difference = pos - transform.position;

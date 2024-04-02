@@ -28,6 +28,10 @@ public class PatrolingEnemy : Enemy
         currentPoint = Random.Range(0, targetPoints.Length);
 
         waitTimeCounter = SetWaitTime();
+        if (magicType == Magic.Fire)
+            animType = "MoveEnemy";
+        else if (magicType == Magic.Earth)
+            animType = "EarthMove";
     }
 
 
@@ -63,15 +67,15 @@ public class PatrolingEnemy : Enemy
         moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
         if (moveDelta.magnitude > 1f)
             moveDelta.Normalize();
-        animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.x));
-        animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.y));
-        animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.magnitude));
+        animator.SetFloat(animType, Mathf.Abs(moveDelta.x));
+        animator.SetFloat(animType, Mathf.Abs(moveDelta.y));
+        animator.SetFloat(animType, Mathf.Abs(moveDelta.magnitude));
 
         if (transform.position == targetPoints[currentPoint].position)
         {
-            animator.SetFloat("MoveEnemy", 0);
-            animator.SetFloat("MoveEnemy", 0);
-            animator.SetFloat("MoveEnemy", 0);
+            animator.SetFloat(animType, 0);
+            animator.SetFloat(animType, 0);
+            animator.SetFloat(animType, 0);
 
             if (waitTimeCounter <= 0)
             {

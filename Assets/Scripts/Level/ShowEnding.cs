@@ -12,7 +12,7 @@ public class ShowEnding : ChangeMask
      private void Start()
     {
         ending = getEnding() >= 0 ? "хорошую" : "плохую";
-        MyText.text = $"Поздравлем! Вы прошли игру на {ending} концовку. Дальше будет больше.\nСпасибо, что играли!";
+        MyText.text = $"Поздравляем! Вы прошли игру на {ending} концовку. Дальше будет больше.\nСпасибо, что играли!";
     }
     void Update()
     {

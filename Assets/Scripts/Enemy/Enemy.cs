@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
 using Unity.Burst.CompilerServices;
@@ -16,49 +17,51 @@ public class Enemy : MonoBehaviour
     public double health;
 
 
+
     public Transform player;
     public Animator animator;
-    private Vector3 moveDelta;
+    public Vector3 moveDelta;
+    public float _speedRotate = 5f;
+    public int rotationOffset = -90;
+    public float rotZ;
 
-
+    protected float distanceToPlayer;
+    protected Queue<Vector3> playerPath = new Queue<Vector3>();
+    protected Vector3 difference;
+    protected Quaternion rotation;
+    protected string animType;
     public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
+        if (magicType == Magic.Fire)
+            animType = "MoveEnemy";
+        else if (magicType == Magic.Earth)
+            animType = "EarthMove";
     }
 
     public virtual void Update()
     {
-
-        if (Vector3.Distance(transform.position, player.position) < detectionRange && CanSeePlayer())
+        distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        if ((distanceToPlayer <= detectionRange) && CanSeePlayer())
         {
-            moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
-            if (moveDelta.magnitude > 1f)
-                moveDelta.Normalize();
-            animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.x));
-            animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.y));
-            animator.SetFloat("MoveEnemy", Mathf.Abs(moveDelta.magnitude));
 
-            Vector3 targetPosition = (transform.position + player.position) / 2f;
-
-            // Вычисляем вектор направления к центру игрока
-            Vector3 direction = (targetPosition - transform.position).normalized;
-            transform.Translate(moveSpeed * Time.deltaTime * direction);
-
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
-
+            MoveEnemy(player.position);
             transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            playerPath.Clear();
         }
+        //else /*if (distanceToPlayer <= detectionRange)*/
+        //{
+        //    ChasePlayer();
+        //}
         else
         {
+            playerPath.Clear();
             moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
 
-            animator.SetFloat("MoveEnemy", 0);
-            animator.SetFloat("MoveEnemy", 0);
-            animator.SetFloat("MoveEnemy", 0);
+            animator.SetFloat(animType, 0);
+            animator.SetFloat(animType, 0);
+            animator.SetFloat(animType, 0);
         }
 
     }
@@ -99,4 +102,31 @@ public class Enemy : MonoBehaviour
         //сюда анимацию смерти врага
         Destroy(gameObject);
     }
+    protected void ChasePlayer()
+    {
+        playerPath.Enqueue(player.position);
+        MoveEnemy(playerPath.Peek());
+        Debug.Log($"{playerPath.Peek()} {transform.position} ");
+        if (transform.position == playerPath.Peek())
+            playerPath.Dequeue();
+
+    }
+    protected void MoveEnemy(Vector3 pos)
+    {
+        moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
+        if (moveDelta.magnitude > 1f)
+            moveDelta.Normalize();
+        animator.SetFloat(animType, Mathf.Abs(moveDelta.x));
+        animator.SetFloat(animType, Mathf.Abs(moveDelta.y));
+        animator.SetFloat(animType, Mathf.Abs(moveDelta.magnitude));
+
+
+        difference = pos - transform.position;
+        rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+
+        rotation = Quaternion.AngleAxis(rotZ + rotationOffset, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * _speedRotate);
+    }
 }
+
+

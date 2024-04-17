@@ -6,15 +6,31 @@ using UnityEngine.UI;
 public class ChangeMask : MonoBehaviour
 {
     public Image Masks;
+
     public Sprite fireMask;
     public Sprite airMask;
     public Sprite waterMask;
     public Sprite earthMask;
+
+    public Sprite brokenFireMask;
+    public Sprite brokenAirMask;
+    public Sprite brokenWaterMask;
+    public Sprite brokeEearthMask;
+
     protected static int scrollMask;
     protected static int countEnd = 0;
+    [SerializeField] Player player;
+    private bool checkHPDecrease = true;
 
     void Update()
     {
+
+        if (player.health == 0.5)
+        {
+            if (checkHPDecrease)
+                breakMask();
+            checkHPDecrease = false;
+        }
         //Изменение счётчика масок за счёт прокурутки колёсика
         if (Input.mouseScrollDelta.y > 0)
             scrollMask = (scrollMask + 1) % 4;
@@ -63,5 +79,12 @@ public class ChangeMask : MonoBehaviour
     public int getEnding()
     {
         return countEnd;
+    }
+    private void breakMask()
+    {
+        fireMask = brokenFireMask;
+        airMask = brokenAirMask;
+        waterMask = brokenWaterMask;
+        earthMask = brokeEearthMask;
     }
 }

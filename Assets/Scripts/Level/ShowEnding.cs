@@ -12,13 +12,11 @@ public class ShowEnding : ChangeMask
      private void Start()
     {
         ending = getEnding() >= 0 ? "хорошую" : "плохую";
-        //MyText = GameObject.Find("Text").
-        
-        MyText=FindAnyObjectByType<TextMeshProUGUI>();
+        MyText.text = $"Поздравляем! Вы прошли игру на {ending} концовку. Дальше будет больше.\nСпасибо, что играли!";
     }
     void Update()
     {
-        MyText.text = $"Поздравлем! Вы прошли игру на {ending} концовку. Дальше будет больше.\nСпасибо, что играли!";
+        
     }
 
 }

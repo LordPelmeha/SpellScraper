@@ -8,6 +8,7 @@ public class PatrolingEnemy : Enemy
 
     [SerializeField] Transform[] targetPoints;
     [SerializeField] int currentPoint;
+    public bool isPatrolingRandom;
 
     [Space]
     [Header("Timers")]
@@ -25,7 +26,10 @@ public class PatrolingEnemy : Enemy
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        currentPoint = Random.Range(0, targetPoints.Length);
+        if (isPatrolingRandom)
+            currentPoint = Random.Range(0, targetPoints.Length);
+        else
+            currentPoint = 0;
 
         waitTimeCounter = SetWaitTime();
         if (magicType == Magic.Fire)
@@ -79,7 +83,10 @@ public class PatrolingEnemy : Enemy
 
             if (waitTimeCounter <= 0)
             {
-                IncreaseCurrentPoint();
+                if(isPatrolingRandom) 
+                    RandomizeCurrentPoint();
+                else
+                    IncreaseCurrentPoint();
                 waitTimeCounter = SetWaitTime();
             }
             else
@@ -100,6 +107,15 @@ public class PatrolingEnemy : Enemy
     private void IncreaseCurrentPoint()
     {
         currentPoint++;
+        if (currentPoint >= targetPoints.Length)
+        {
+            currentPoint = 0;
+        }
+    }
+
+    private void RandomizeCurrentPoint()
+    {
+        currentPoint = Random.Range(0, targetPoints.Length);
         if (currentPoint >= targetPoints.Length)
         {
             currentPoint = 0;

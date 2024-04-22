@@ -890,8 +890,9 @@ GameObject:
   - component: {fileID: 245158779}
   - component: {fileID: 245158781}
   - component: {fileID: 245158780}
+  - component: {fileID: 245158782}
   m_Layer: 10
-  m_Name: EnemyHand
+  m_Name: MiniBossHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -919,12 +920,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245158778}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da1f22bbdae0cb74f8565615fb888083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  en: {fileID: 583304574}
+  Owner: {fileID: 583304574}
   player: {fileID: 1068875541}
   shotPoint: {fileID: 245158779}
   Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
@@ -982,6 +983,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &245158782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245158778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ec4c3b810dff942bfa400551f36ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Owner: {fileID: 583304574}
+  player: {fileID: 1068875541}
+  shotPoint: {fileID: 245158779}
+  Bullet: {fileID: 0}
+  offset: -90
+  StartTimeBtwShots: 1
+  Bullets:
+  - {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
+  - {fileID: 7971796923087094374, guid: cc86845aebbadc341a843e8859e3613f, type: 3}
 --- !u!1001 &250690006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1829,7 +1851,7 @@ GameObject:
   - component: {fileID: 440831396}
   - component: {fileID: 440831395}
   m_Layer: 10
-  m_Name: Enemy (4)
+  m_Name: PatrolingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1851,7 +1873,7 @@ MonoBehaviour:
   moveSpeed: 1
   magicType: 0
   detectionRange: 6
-  health: 10
+  health: 1
   player: {fileID: 1068875541}
   animator: {fileID: 440831397}
   moveDelta: {x: 0, y: 0, z: 0}
@@ -1864,6 +1886,7 @@ MonoBehaviour:
   - {fileID: 1703492958}
   - {fileID: 505643630}
   currentPoint: 0
+  isPatrolingRandom: 1
   maxWaitTime: 4
   minWaitTime: 1
 --- !u!50 &440831396
@@ -2941,7 +2964,7 @@ GameObject:
   - component: {fileID: 583304572}
   - component: {fileID: 583304571}
   m_Layer: 10
-  m_Name: Enemy (3)
+  m_Name: KindaMiniBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3046,7 +3069,7 @@ MonoBehaviour:
   moveSpeed: 0.4
   magicType: 0
   detectionRange: 10
-  health: 1
+  health: 5
   player: {fileID: 1068875541}
   animator: {fileID: 583304572}
   moveDelta: {x: 0, y: 0, z: 0}
@@ -4949,7 +4972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1f22bbdae0cb74f8565615fb888083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  en: {fileID: 965205623}
+  Owner: {fileID: 965205623}
   player: {fileID: 1068875541}
   shotPoint: {fileID: 902352042}
   Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
@@ -5344,7 +5367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1f22bbdae0cb74f8565615fb888083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  en: {fileID: 440831395}
+  Owner: {fileID: 440831395}
   player: {fileID: 1068875541}
   shotPoint: {fileID: 964421890}
   Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
@@ -5590,7 +5613,7 @@ Transform:
   m_GameObject: {fileID: 965205619}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.9999968, w: -0.0025698757}
-  m_LocalPosition: {x: -7.4, y: 0.88, z: -1}
+  m_LocalPosition: {x: 3.32, y: 8.89, z: -1}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6465,7 +6488,7 @@ Transform:
   m_GameObject: {fileID: 1068875539}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.01, y: -0.03, z: -1}
+  m_LocalPosition: {x: -6.34, y: -0.12, z: -1}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6626,7 +6649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1f22bbdae0cb74f8565615fb888083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  en: {fileID: 628871673}
+  Owner: {fileID: 628871673}
   player: {fileID: 1068875541}
   shotPoint: {fileID: 1180287406}
   Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
@@ -33141,7 +33164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1f22bbdae0cb74f8565615fb888083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  en: {fileID: 371897112}
+  Owner: {fileID: 371897112}
   player: {fileID: 1068875541}
   shotPoint: {fileID: 1804428295}
   Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
@@ -33718,7 +33741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1f22bbdae0cb74f8565615fb888083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  en: {fileID: 2112239669}
+  Owner: {fileID: 2112239669}
   player: {fileID: 1068875541}
   shotPoint: {fileID: 1986540178}
   Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
@@ -34056,7 +34079,7 @@ Transform:
   m_GameObject: {fileID: 2112239665}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.9999968, w: -0.0025698757}
-  m_LocalPosition: {x: -11.78, y: -2.5, z: -1}
+  m_LocalPosition: {x: 9.05, y: 8.77, z: -1}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

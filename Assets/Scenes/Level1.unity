@@ -713,9 +713,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 463865456}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 0.5
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -6267,6 +6267,7 @@ MonoBehaviour:
   - {fileID: 1806282770}
   - {fileID: 367043991}
   currentPoint: 0
+  isPatrolingRandom: 0
   maxWaitTime: 4
   minWaitTime: 1
 --- !u!50 &389672469
@@ -12704,7 +12705,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 09840fecdd53e7e44a71de296fe90be6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -13525,8 +13526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1f22bbdae0cb74f8565615fb888083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  en: {fileID: 725443188}
-  player: {fileID: 0}
+  Owner: {fileID: 725443188}
+  player: {fileID: 1497298663}
   shotPoint: {fileID: 1059085658}
   Bullet: {fileID: 7971796923087094374, guid: 02a02510a955ca54cb72c2b45b805f06, type: 3}
   offset: -90
@@ -15354,6 +15355,7 @@ MonoBehaviour:
   - {fileID: 1686690978}
   - {fileID: 1107805641}
   currentPoint: 0
+  isPatrolingRandom: 0
   maxWaitTime: 4
   minWaitTime: 1
 --- !u!50 &1244479316
@@ -17344,8 +17346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1f22bbdae0cb74f8565615fb888083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  en: {fileID: 389672468}
-  player: {fileID: 0}
+  Owner: {fileID: 389672468}
+  player: {fileID: 1497298663}
   shotPoint: {fileID: 1381697025}
   Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
   offset: -90
@@ -17758,6 +17760,7 @@ GameObject:
   - component: {fileID: 1428129118}
   - component: {fileID: 1428129117}
   - component: {fileID: 1428129120}
+  - component: {fileID: 1428129121}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -17852,6 +17855,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookAt: {fileID: 1497298663}
+--- !u!114 &1428129121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428129116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa91a4d90aedd944aff3575490f43cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSrc: {fileID: 914816307}
 --- !u!1 &1430600596
 GameObject:
   m_ObjectHideFlags: 0
@@ -18990,6 +19006,7 @@ MonoBehaviour:
   - {fileID: 688483553}
   - {fileID: 2106399512}
   currentPoint: 0
+  isPatrolingRandom: 0
   maxWaitTime: 4
   minWaitTime: 1
 --- !u!50 &1529453001
@@ -19690,8 +19707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1f22bbdae0cb74f8565615fb888083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  en: {fileID: 762922111}
-  player: {fileID: 0}
+  Owner: {fileID: 762922111}
+  player: {fileID: 1497298663}
   shotPoint: {fileID: 1551564429}
   Bullet: {fileID: 7971796923087094374, guid: 02a02510a955ca54cb72c2b45b805f06, type: 3}
   offset: -90
@@ -106929,8 +106946,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1f22bbdae0cb74f8565615fb888083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  en: {fileID: 1244479315}
-  player: {fileID: 0}
+  Owner: {fileID: 1244479315}
+  player: {fileID: 1497298663}
   shotPoint: {fileID: 1759678307}
   Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
   offset: -90
@@ -109125,8 +109142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1f22bbdae0cb74f8565615fb888083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  en: {fileID: 583803783}
-  player: {fileID: 0}
+  Owner: {fileID: 583803783}
+  player: {fileID: 1497298663}
   shotPoint: {fileID: 1976735693}
   Bullet: {fileID: 7971796923087094374, guid: 02a02510a955ca54cb72c2b45b805f06, type: 3}
   offset: -90
@@ -109850,8 +109867,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1f22bbdae0cb74f8565615fb888083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  en: {fileID: 1529453000}
-  player: {fileID: 0}
+  Owner: {fileID: 1529453000}
+  player: {fileID: 1497298663}
   shotPoint: {fileID: 2134894896}
   Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
   offset: -90

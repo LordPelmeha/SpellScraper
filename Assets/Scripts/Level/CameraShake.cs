@@ -43,8 +43,4 @@ public class CameraShake : MonoBehaviour
     }
 
     // Возвращает объект к исходной позиции
-    void ResetPosition()
-    {
-        transform.position = originalPosition;
-    }
 }

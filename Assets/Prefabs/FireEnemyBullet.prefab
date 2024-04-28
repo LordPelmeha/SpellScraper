@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7906034734308205526}
   - component: {fileID: 4494295930955471791}
   - component: {fileID: -4554338628150572754}
-  - component: {fileID: 5891876444549721697}
+  - component: {fileID: 7180277105024543213}
   m_Layer: 9
   m_Name: FireEnemyBullet
   m_TagString: Projectile
@@ -184,7 +184,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &5891876444549721697
+--- !u!50 &7180277105024543213
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

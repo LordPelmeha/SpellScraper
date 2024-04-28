@@ -8,12 +8,13 @@ public class OutElevator : MonoBehaviour
     public GameObject door;
     string previousScene;
     private float activationDelay;
-
+    public FadeScreen fadeScreen;
     void Start()
     {
         activationDelay = GameObject.Find("shaker").GetComponent<CameraShake>().shakesDuration;
         previousScene = PlayerPrefs.GetString("PreviousScene");
         door.GetComponent<Collider2D>().enabled = false;
+        StartCoroutine(fadeScreen.Inlight());
         StartCoroutine(ActivateObjectDelayed()); // Запускаем корутину
     }
 

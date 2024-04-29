@@ -12,19 +12,30 @@ public class ChangeMask : MonoBehaviour
     public Sprite waterMask;
     public Sprite earthMask;
 
+    public Sprite[] forBossSprite;
+
     public Sprite brokenFireMask;
     public Sprite brokenAirMask;
     public Sprite brokenWaterMask;
     public Sprite brokeEearthMask;
 
+
+    private MiniBoss boss;
+    private bool isBossOnLevel;
     protected static int scrollMask;
     protected static int countEnd = 0;
     [SerializeField] Player player;
     private bool checkHPDecrease = true;
-
+    private void Start()
+    {
+        isBossOnLevel = GameObject.FindWithTag("Enemy")!=null;
+        if (isBossOnLevel) 
+            boss = GetComponent<MiniBoss>();
+    }
     void Update()
     {
-
+        if (isBossOnLevel) 
+            getBossMagic();
         if (player.health == 0.5)
         {
             if (checkHPDecrease)
@@ -86,5 +97,9 @@ public class ChangeMask : MonoBehaviour
         airMask = brokenAirMask;
         waterMask = brokenWaterMask;
         earthMask = brokeEearthMask;
+    }
+    private void getBossMagic()
+    {
+        Masks.sprite = forBossSprite[(int)boss.magicType + scrollMask];
     }
 }

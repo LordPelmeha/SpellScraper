@@ -6,7 +6,6 @@ using UnityEngine.UIElements;
 using UnityEngine;
 using Unity.VisualScripting;
 
-
 public class EnemyMagicHand : MonoBehaviour
 {
     [SerializeField] protected Enemy Owner;

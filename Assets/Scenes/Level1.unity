@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 5720894}
   - component: {fileID: 5720895}
   m_Layer: 12
-  m_Name: Level1 disign_36 (4)
+  m_Name: Level1 OfficeChairNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &11829670
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +435,7 @@ GameObject:
   - component: {fileID: 30973740}
   - component: {fileID: 30973741}
   m_Layer: 12
-  m_Name: Level1 disign_21
+  m_Name: Level1 CornerSofaNorthWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,7 +501,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30973736}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.53, y: 4.033, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -591,7 +592,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e6531aa6904d184c9b7ddca7c18c5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 2
+  broken: {fileID: 21300000, guid: 8bb81009383b1e84d8165b9ed835b40e, type: 3}
 --- !u!1 &43908617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,7 +1063,7 @@ GameObject:
   - component: {fileID: 83291073}
   - component: {fileID: 83291074}
   m_Layer: 12
-  m_Name: Level1 disign_7 (3)
+  m_Name: Level1 Table
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1219,6 +1221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &83303115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,7 +1533,7 @@ GameObject:
   - component: {fileID: 136909154}
   - component: {fileID: 136909155}
   m_Layer: 12
-  m_Name: Level1 disign_7 (9)
+  m_Name: Level1 Table
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1688,6 +1691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &151584311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,7 +1864,7 @@ GameObject:
   - component: {fileID: 154735149}
   - component: {fileID: 154735150}
   m_Layer: 12
-  m_Name: Level1 disign_35 (2)
+  m_Name: Level1 OfficeChairEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2018,6 +2022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &161335876
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,7 +2195,7 @@ GameObject:
   - component: {fileID: 163479856}
   - component: {fileID: 163479857}
   m_Layer: 12
-  m_Name: Level1 disign_18
+  m_Name: Level1 PlantWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2348,6 +2353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &175120920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2496,7 +2502,7 @@ GameObject:
   - component: {fileID: 178616954}
   - component: {fileID: 178616955}
   m_Layer: 12
-  m_Name: Level1 disign_17 (1)
+  m_Name: Level1 CornerSofaSouthEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2654,6 +2660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 21300000, guid: 8bb81009383b1e84d8165b9ed835b40e, type: 3}
 --- !u!1 &182199104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2802,7 +2809,7 @@ GameObject:
   - component: {fileID: 194566535}
   - component: {fileID: 194566536}
   m_Layer: 12
-  m_Name: Level1 disign_6 (2)
+  m_Name: Level1 WoodChairNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2960,6 +2967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &195949753
 GameObject:
   m_ObjectHideFlags: 0
@@ -2974,7 +2982,7 @@ GameObject:
   - component: {fileID: 195949757}
   - component: {fileID: 195949758}
   m_Layer: 12
-  m_Name: Level1 disign_36 (8)
+  m_Name: Level1 OfficeChairNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3132,6 +3140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &202360138
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,7 +3155,7 @@ GameObject:
   - component: {fileID: 202360142}
   - component: {fileID: 202360143}
   m_Layer: 12
-  m_Name: Level1 disign_22
+  m_Name: Level1 DisignSouthEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3304,6 +3313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &203981202
 GameObject:
   m_ObjectHideFlags: 0
@@ -3339,7 +3349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5.9959717, y: 1.9987183}
+  m_AnchoredPosition: {x: 10.820007, y: 0.5499878}
   m_SizeDelta: {x: 254.6328, y: 143.25989}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &203981205
@@ -4529,7 +4539,7 @@ GameObject:
   - component: {fileID: 279151024}
   - component: {fileID: 279151025}
   m_Layer: 12
-  m_Name: Level1 disign_38
+  m_Name: Level1 CoolerNorthWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4687,6 +4697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &280688670
 GameObject:
   m_ObjectHideFlags: 0
@@ -4701,7 +4712,7 @@ GameObject:
   - component: {fileID: 280688674}
   - component: {fileID: 280688675}
   m_Layer: 12
-  m_Name: Level1 disign_14 (3)
+  m_Name: Level1 LongVertivalTable
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4859,6 +4870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &288519993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5080,7 +5092,7 @@ GameObject:
   - component: {fileID: 326588150}
   - component: {fileID: 326588151}
   m_Layer: 12
-  m_Name: Level1 disign_38 (2)
+  m_Name: Level1 CoolerNorthWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5238,6 +5250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &332189328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5252,7 +5265,7 @@ GameObject:
   - component: {fileID: 332189332}
   - component: {fileID: 332189333}
   m_Layer: 12
-  m_Name: Level1 disign_33 (3)
+  m_Name: Level1 WoodChairSouth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5410,6 +5423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &332759745
 GameObject:
   m_ObjectHideFlags: 0
@@ -5424,7 +5438,7 @@ GameObject:
   - component: {fileID: 332759749}
   - component: {fileID: 332759750}
   m_Layer: 12
-  m_Name: Level1 disign_23
+  m_Name: Level1 PlantNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5582,6 +5596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &336915857
 GameObject:
   m_ObjectHideFlags: 0
@@ -5596,7 +5611,7 @@ GameObject:
   - component: {fileID: 336915861}
   - component: {fileID: 336915862}
   m_Layer: 12
-  m_Name: Level1 disign_20
+  m_Name: Level1 SofaEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5754,6 +5769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &339470603
 GameObject:
   m_ObjectHideFlags: 0
@@ -5768,7 +5784,7 @@ GameObject:
   - component: {fileID: 339470607}
   - component: {fileID: 339470608}
   m_Layer: 12
-  m_Name: Level1 disign_33
+  m_Name: Level1 WoodChairSouth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5926,6 +5942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &347322146
 GameObject:
   m_ObjectHideFlags: 0
@@ -6683,7 +6700,7 @@ GameObject:
   - component: {fileID: 414626254}
   - component: {fileID: 414626255}
   m_Layer: 12
-  m_Name: Level1 disign_31
+  m_Name: Level1 DisignSouthWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6841,6 +6858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &427523272
 GameObject:
   m_ObjectHideFlags: 0
@@ -7296,7 +7314,7 @@ GameObject:
   - component: {fileID: 488947464}
   - component: {fileID: 488947465}
   m_Layer: 12
-  m_Name: Level1 disign_7 (6)
+  m_Name: Level1 LongHorizontalTable
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7454,6 +7472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!4 &499695387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4309417522652299354, guid: cc0a06edb7d9c8241854c5bac0046c20, type: 3}
@@ -7739,7 +7758,7 @@ GameObject:
   - component: {fileID: 541122679}
   - component: {fileID: 541122680}
   m_Layer: 12
-  m_Name: Level1 disign_14 (1)
+  m_Name: Level1 Table
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7897,6 +7916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &583391274
 GameObject:
   m_ObjectHideFlags: 0
@@ -7911,7 +7931,7 @@ GameObject:
   - component: {fileID: 583391278}
   - component: {fileID: 583391279}
   m_Layer: 12
-  m_Name: Level1 disign_39
+  m_Name: Level1 OfficeChairSouth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8069,6 +8089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &583803779
 GameObject:
   m_ObjectHideFlags: 0
@@ -8283,7 +8304,7 @@ GameObject:
   - component: {fileID: 611585055}
   - component: {fileID: 611585056}
   m_Layer: 12
-  m_Name: Level1 disign_16
+  m_Name: Level1 SofaWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8441,6 +8462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &617180236
 GameObject:
   m_ObjectHideFlags: 0
@@ -8560,14 +8582,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 336915859}
-  - {fileID: 414626252}
-  - {fileID: 1574065289}
-  - {fileID: 332759747}
-  - {fileID: 279151022}
   - {fileID: 30973738}
-  - {fileID: 1314919715}
-  - {fileID: 731192335}
+  - {fileID: 737081699}
+  - {fileID: 178616952}
+  - {fileID: 1693525928}
+  - {fileID: 1743374501}
+  - {fileID: 1204597287}
+  - {fileID: 1951667219}
+  - {fileID: 488947462}
+  - {fileID: 1237137162}
+  - {fileID: 1544046018}
+  - {fileID: 829245111}
+  - {fileID: 280688672}
+  - {fileID: 83291071}
+  - {fileID: 1150656914}
+  - {fileID: 669934697}
+  - {fileID: 1125237475}
+  - {fileID: 136909152}
+  - {fileID: 1306930823}
+  - {fileID: 541122677}
+  - {fileID: 1048828248}
   - {fileID: 1342717021}
   - {fileID: 1553099939}
   - {fileID: 1433803988}
@@ -8578,69 +8612,57 @@ Transform:
   - {fileID: 701641333}
   - {fileID: 195949755}
   - {fileID: 1603110855}
-  - {fileID: 1743374501}
-  - {fileID: 1204597287}
-  - {fileID: 1951667219}
-  - {fileID: 488947462}
-  - {fileID: 1237137162}
-  - {fileID: 83291071}
-  - {fileID: 1150656914}
-  - {fileID: 669934697}
-  - {fileID: 1125237475}
-  - {fileID: 136909152}
-  - {fileID: 1360413141}
-  - {fileID: 1769057603}
+  - {fileID: 1263741588}
+  - {fileID: 583391276}
+  - {fileID: 154735147}
+  - {fileID: 1317300721}
+  - {fileID: 1387967831}
+  - {fileID: 2033280808}
+  - {fileID: 1798981614}
+  - {fileID: 1533298008}
+  - {fileID: 847652763}
+  - {fileID: 2000674275}
+  - {fileID: 1309879030}
+  - {fileID: 1655888491}
+  - {fileID: 746382333}
+  - {fileID: 194566533}
+  - {fileID: 1563869104}
   - {fileID: 339470605}
   - {fileID: 1220686981}
   - {fileID: 1638608516}
-  - {fileID: 163479854}
-  - {fileID: 737081699}
-  - {fileID: 326588148}
-  - {fileID: 1893925836}
-  - {fileID: 1573906353}
-  - {fileID: 671220851}
-  - {fileID: 1553464346}
-  - {fileID: 712044068}
   - {fileID: 332189330}
-  - {fileID: 1655888491}
   - {fileID: 1713505892}
-  - {fileID: 1798981614}
-  - {fileID: 1739773882}
+  - {fileID: 336915859}
+  - {fileID: 671220851}
+  - {fileID: 720107975}
+  - {fileID: 1769057603}
+  - {fileID: 1573906353}
+  - {fileID: 1574065289}
+  - {fileID: 1605442361}
   - {fileID: 611585053}
   - {fileID: 1868323122}
-  - {fileID: 583391276}
+  - {fileID: 1553464346}
+  - {fileID: 1893925836}
   - {fileID: 1343382265}
-  - {fileID: 746382333}
-  - {fileID: 194566533}
-  - {fileID: 202360140}
-  - {fileID: 1306930823}
-  - {fileID: 541122677}
-  - {fileID: 1387967831}
-  - {fileID: 154735147}
-  - {fileID: 1317300721}
-  - {fileID: 2033280808}
-  - {fileID: 829245111}
-  - {fileID: 280688672}
+  - {fileID: 332759747}
   - {fileID: 2023351150}
-  - {fileID: 718031647}
-  - {fileID: 178616952}
-  - {fileID: 1563869104}
-  - {fileID: 1263741588}
-  - {fileID: 1048828248}
-  - {fileID: 1309879030}
+  - {fileID: 163479854}
   - {fileID: 1196046123}
-  - {fileID: 720107975}
-  - {fileID: 1857276540}
-  - {fileID: 2000674275}
-  - {fileID: 1693525928}
-  - {fileID: 860809821}
   - {fileID: 762743922}
   - {fileID: 637971300}
-  - {fileID: 1605442361}
-  - {fileID: 1544046018}
+  - {fileID: 1360413141}
   - {fileID: 1396381724}
-  - {fileID: 1533298008}
-  - {fileID: 847652763}
+  - {fileID: 1739773882}
+  - {fileID: 414626252}
+  - {fileID: 860809821}
+  - {fileID: 1857276540}
+  - {fileID: 202360140}
+  - {fileID: 279151022}
+  - {fileID: 1314919715}
+  - {fileID: 326588148}
+  - {fileID: 712044068}
+  - {fileID: 718031647}
+  - {fileID: 731192335}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &637971298
@@ -8657,7 +8679,7 @@ GameObject:
   - component: {fileID: 637971302}
   - component: {fileID: 637971303}
   m_Layer: 12
-  m_Name: Level1 disign_18 (3)
+  m_Name: Level1 PlantWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8815,6 +8837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1001 &642622430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8894,7 +8917,7 @@ GameObject:
   - component: {fileID: 669934699}
   - component: {fileID: 669934700}
   m_Layer: 12
-  m_Name: Level1 disign_7 (5)
+  m_Name: Level1 Table
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9052,6 +9075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &671220849
 GameObject:
   m_ObjectHideFlags: 0
@@ -9066,7 +9090,7 @@ GameObject:
   - component: {fileID: 671220853}
   - component: {fileID: 671220854}
   m_Layer: 12
-  m_Name: Level1 disign_20 (1)
+  m_Name: Level1 SofaEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9224,6 +9248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &688483552
 GameObject:
   m_ObjectHideFlags: 0
@@ -9344,7 +9369,7 @@ GameObject:
   - component: {fileID: 701641335}
   - component: {fileID: 701641336}
   m_Layer: 12
-  m_Name: Level1 disign_36 (5)
+  m_Name: Level1 OfficeChairNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9502,6 +9527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &712044066
 GameObject:
   m_ObjectHideFlags: 0
@@ -9516,7 +9542,7 @@ GameObject:
   - component: {fileID: 712044070}
   - component: {fileID: 712044071}
   m_Layer: 12
-  m_Name: Level1 disign_38 (3)
+  m_Name: Level1 CoolerNorthWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9674,6 +9700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &718031645
 GameObject:
   m_ObjectHideFlags: 0
@@ -9688,7 +9715,7 @@ GameObject:
   - component: {fileID: 718031649}
   - component: {fileID: 718031650}
   m_Layer: 12
-  m_Name: Level1 disign_38 (4)
+  m_Name: Level1 CoolerNorthEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9846,6 +9873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &720107973
 GameObject:
   m_ObjectHideFlags: 0
@@ -9860,7 +9888,7 @@ GameObject:
   - component: {fileID: 720107977}
   - component: {fileID: 720107978}
   m_Layer: 12
-  m_Name: Level1 disign_20 (2)
+  m_Name: Level1 SofaEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10018,6 +10046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &723419327
 GameObject:
   m_ObjectHideFlags: 0
@@ -10579,7 +10608,7 @@ GameObject:
   - component: {fileID: 737081701}
   - component: {fileID: 737081702}
   m_Layer: 12
-  m_Name: Level1 disign_17
+  m_Name: Level1 CornerSofaSouthWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10737,6 +10766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 21300000, guid: 8bb81009383b1e84d8165b9ed835b40e, type: 3}
 --- !u!1 &743845499
 GameObject:
   m_ObjectHideFlags: 0
@@ -10905,7 +10935,7 @@ GameObject:
   - component: {fileID: 746382335}
   - component: {fileID: 746382336}
   m_Layer: 12
-  m_Name: Level1 disign_6 (1)
+  m_Name: Level1 WoodChairNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11063,6 +11093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &762743920
 GameObject:
   m_ObjectHideFlags: 0
@@ -11077,7 +11108,7 @@ GameObject:
   - component: {fileID: 762743924}
   - component: {fileID: 762743925}
   m_Layer: 12
-  m_Name: Level1 disign_18 (2)
+  m_Name: Level1 PlantWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11235,6 +11266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &762922107
 GameObject:
   m_ObjectHideFlags: 0
@@ -11612,7 +11644,7 @@ GameObject:
   - component: {fileID: 829245113}
   - component: {fileID: 829245114}
   m_Layer: 12
-  m_Name: Level1 disign_14 (2)
+  m_Name: Level1 LongVertivalTable
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11770,6 +11802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &841740139
 GameObject:
   m_ObjectHideFlags: 0
@@ -12075,7 +12108,7 @@ GameObject:
   - component: {fileID: 847652765}
   - component: {fileID: 847652766}
   m_Layer: 12
-  m_Name: Level1 disign_26 (3)
+  m_Name: Level1 WoodChairEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12233,6 +12266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &860809819
 GameObject:
   m_ObjectHideFlags: 0
@@ -12247,7 +12281,7 @@ GameObject:
   - component: {fileID: 860809823}
   - component: {fileID: 860809824}
   m_Layer: 12
-  m_Name: Level1 disign_1
+  m_Name: Level1 DisignNorthWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12405,6 +12439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &861362010
 GameObject:
   m_ObjectHideFlags: 0
@@ -12419,7 +12454,7 @@ GameObject:
   - component: {fileID: 861362014}
   - component: {fileID: 861362015}
   m_Layer: 12
-  m_Name: Level1 disign_36 (3)
+  m_Name: Level1 OfficeChairNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12577,6 +12612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &913273599
 GameObject:
   m_ObjectHideFlags: 0
@@ -13414,7 +13450,7 @@ GameObject:
   - component: {fileID: 1048828250}
   - component: {fileID: 1048828251}
   m_Layer: 12
-  m_Name: Level1 disign_14 (4)
+  m_Name: Level1 Table
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13572,6 +13608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1059085657
 GameObject:
   m_ObjectHideFlags: 0
@@ -14086,7 +14123,7 @@ GameObject:
   - component: {fileID: 1125237477}
   - component: {fileID: 1125237478}
   m_Layer: 12
-  m_Name: Level1 disign_7 (8)
+  m_Name: Level1 Table
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14244,6 +14281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1150656912
 GameObject:
   m_ObjectHideFlags: 0
@@ -14258,7 +14296,7 @@ GameObject:
   - component: {fileID: 1150656916}
   - component: {fileID: 1150656917}
   m_Layer: 12
-  m_Name: Level1 disign_7 (4)
+  m_Name: Level1 Table
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14416,6 +14454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1196046121
 GameObject:
   m_ObjectHideFlags: 0
@@ -14430,7 +14469,7 @@ GameObject:
   - component: {fileID: 1196046125}
   - component: {fileID: 1196046126}
   m_Layer: 12
-  m_Name: Level1 disign_18 (1)
+  m_Name: Level1 PlantWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14588,6 +14627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1203580985
 GameObject:
   m_ObjectHideFlags: 0
@@ -14760,7 +14800,7 @@ GameObject:
   - component: {fileID: 1204597289}
   - component: {fileID: 1204597290}
   m_Layer: 12
-  m_Name: Level1 disign_7 (1)
+  m_Name: Level1 LongHorizontalTable
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14918,6 +14958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1220686979
 GameObject:
   m_ObjectHideFlags: 0
@@ -14932,7 +14973,7 @@ GameObject:
   - component: {fileID: 1220686983}
   - component: {fileID: 1220686984}
   m_Layer: 12
-  m_Name: Level1 disign_33 (1)
+  m_Name: Level1 WoodChairSouth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15090,6 +15131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1229569754
 GameObject:
   m_ObjectHideFlags: 0
@@ -15238,7 +15280,7 @@ GameObject:
   - component: {fileID: 1237137164}
   - component: {fileID: 1237137165}
   m_Layer: 12
-  m_Name: Level1 disign_7 (7)
+  m_Name: Level1 LongHorizontalTable
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15396,6 +15438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1244479314
 GameObject:
   m_ObjectHideFlags: 0
@@ -15777,7 +15820,7 @@ GameObject:
   - component: {fileID: 1263741590}
   - component: {fileID: 1263741591}
   m_Layer: 12
-  m_Name: Level1 disign_37
+  m_Name: Level1 OfficeChairWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15935,6 +15978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1306930821
 GameObject:
   m_ObjectHideFlags: 0
@@ -15949,7 +15993,7 @@ GameObject:
   - component: {fileID: 1306930825}
   - component: {fileID: 1306930826}
   m_Layer: 12
-  m_Name: Level1 disign_14
+  m_Name: Level1 Table
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16107,6 +16151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1309879028
 GameObject:
   m_ObjectHideFlags: 0
@@ -16121,7 +16166,7 @@ GameObject:
   - component: {fileID: 1309879032}
   - component: {fileID: 1309879033}
   m_Layer: 12
-  m_Name: Level1 disign_28 (1)
+  m_Name: Level1 WoodChairWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16279,6 +16324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1314919713
 GameObject:
   m_ObjectHideFlags: 0
@@ -16293,7 +16339,7 @@ GameObject:
   - component: {fileID: 1314919717}
   - component: {fileID: 1314919718}
   m_Layer: 12
-  m_Name: Level1 disign_38 (1)
+  m_Name: Level1 CoolerNorthWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16451,6 +16497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1317300719
 GameObject:
   m_ObjectHideFlags: 0
@@ -16465,7 +16512,7 @@ GameObject:
   - component: {fileID: 1317300723}
   - component: {fileID: 1317300724}
   m_Layer: 12
-  m_Name: Level1 disign_35 (3)
+  m_Name: Level1 OfficeChairEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16623,6 +16670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1342717019
 GameObject:
   m_ObjectHideFlags: 0
@@ -16637,7 +16685,7 @@ GameObject:
   - component: {fileID: 1342717023}
   - component: {fileID: 1342717024}
   m_Layer: 12
-  m_Name: Level1 disign_36
+  m_Name: Level1 OfficeChairNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16795,6 +16843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1343382263
 GameObject:
   m_ObjectHideFlags: 0
@@ -16809,7 +16858,7 @@ GameObject:
   - component: {fileID: 1343382267}
   - component: {fileID: 1343382268}
   m_Layer: 12
-  m_Name: Level1 disign_10
+  m_Name: Level1 HorizontalTableWithPapers
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16967,6 +17016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1001 &1350412679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17046,7 +17096,7 @@ GameObject:
   - component: {fileID: 1360413143}
   - component: {fileID: 1360413144}
   m_Layer: 12
-  m_Name: Level1 disign_13
+  m_Name: Level1 PlantSouth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17204,6 +17254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1001 &1362905870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17509,7 +17560,7 @@ GameObject:
   - component: {fileID: 1387967833}
   - component: {fileID: 1387967834}
   m_Layer: 12
-  m_Name: Level1 disign_35
+  m_Name: Level1 OfficeChairEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17667,6 +17718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1396381722
 GameObject:
   m_ObjectHideFlags: 0
@@ -17681,7 +17733,7 @@ GameObject:
   - component: {fileID: 1396381726}
   - component: {fileID: 1396381727}
   m_Layer: 12
-  m_Name: Level1 disign_13 (1)
+  m_Name: Level1 PlantSouth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17839,6 +17891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1428129116
 GameObject:
   m_ObjectHideFlags: 0
@@ -18048,7 +18101,7 @@ GameObject:
   - component: {fileID: 1433803990}
   - component: {fileID: 1433803991}
   m_Layer: 12
-  m_Name: Level1 disign_36 (2)
+  m_Name: Level1 OfficeChairNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18206,6 +18259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1001 &1462048059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18285,7 +18339,7 @@ GameObject:
   - component: {fileID: 1463514553}
   - component: {fileID: 1463514554}
   m_Layer: 12
-  m_Name: Level1 disign_36 (7)
+  m_Name: Level1 OfficeChairNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18443,6 +18497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1489577973
 GameObject:
   m_ObjectHideFlags: 0
@@ -19423,7 +19478,7 @@ GameObject:
   - component: {fileID: 1533298010}
   - component: {fileID: 1533298011}
   m_Layer: 12
-  m_Name: Level1 disign_26 (2)
+  m_Name: Level1 WoodChairEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19581,6 +19636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1544046016
 GameObject:
   m_ObjectHideFlags: 0
@@ -19595,7 +19651,7 @@ GameObject:
   - component: {fileID: 1544046020}
   - component: {fileID: 1544046021}
   m_Layer: 12
-  m_Name: Level1 disign_7 (10)
+  m_Name: Level1 LongHorizontalTable
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19753,6 +19809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1551564428
 GameObject:
   m_ObjectHideFlags: 0
@@ -19870,7 +19927,7 @@ GameObject:
   - component: {fileID: 1553099941}
   - component: {fileID: 1553099942}
   m_Layer: 12
-  m_Name: Level1 disign_36 (1)
+  m_Name: Level1 OfficeChairNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20028,6 +20085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1553464344
 GameObject:
   m_ObjectHideFlags: 0
@@ -20042,7 +20100,7 @@ GameObject:
   - component: {fileID: 1553464348}
   - component: {fileID: 1553464349}
   m_Layer: 12
-  m_Name: Level1 disign_29
+  m_Name: Level1 TableWithPlates
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20200,6 +20258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1563869102
 GameObject:
   m_ObjectHideFlags: 0
@@ -20214,7 +20273,7 @@ GameObject:
   - component: {fileID: 1563869106}
   - component: {fileID: 1563869107}
   m_Layer: 12
-  m_Name: Level1 disign_33 (4)
+  m_Name: Level1 WoodChairSouth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20372,6 +20431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1573906351
 GameObject:
   m_ObjectHideFlags: 0
@@ -20386,7 +20446,7 @@ GameObject:
   - component: {fileID: 1573906355}
   - component: {fileID: 1573906356}
   m_Layer: 12
-  m_Name: Level1 disign_0 (2)
+  m_Name: Level1 SofaSouth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20544,6 +20604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1574065287
 GameObject:
   m_ObjectHideFlags: 0
@@ -20558,7 +20619,7 @@ GameObject:
   - component: {fileID: 1574065291}
   - component: {fileID: 1574065292}
   m_Layer: 12
-  m_Name: Level1 disign_0
+  m_Name: Level1 SofaSouth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20716,6 +20777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1603110853
 GameObject:
   m_ObjectHideFlags: 0
@@ -20730,7 +20792,7 @@ GameObject:
   - component: {fileID: 1603110857}
   - component: {fileID: 1603110858}
   m_Layer: 12
-  m_Name: Level1 disign_36 (9)
+  m_Name: Level1 OfficeChairNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20888,6 +20950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1605442359
 GameObject:
   m_ObjectHideFlags: 0
@@ -20902,7 +20965,7 @@ GameObject:
   - component: {fileID: 1605442363}
   - component: {fileID: 1605442364}
   m_Layer: 12
-  m_Name: Level1 disign_0 (3)
+  m_Name: Level1 SofaSouth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21060,6 +21123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1623391862
 GameObject:
   m_ObjectHideFlags: 0
@@ -21390,7 +21454,7 @@ GameObject:
   - component: {fileID: 1638608518}
   - component: {fileID: 1638608519}
   m_Layer: 12
-  m_Name: Level1 disign_33 (2)
+  m_Name: Level1 WoodChairSouth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21548,6 +21612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1655888489
 GameObject:
   m_ObjectHideFlags: 0
@@ -21562,7 +21627,7 @@ GameObject:
   - component: {fileID: 1655888493}
   - component: {fileID: 1655888494}
   m_Layer: 12
-  m_Name: Level1 disign_6
+  m_Name: Level1 WoodChairNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21720,6 +21785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1675452598
 GameObject:
   m_ObjectHideFlags: 0
@@ -106095,7 +106161,7 @@ GameObject:
   - component: {fileID: 1693525930}
   - component: {fileID: 1693525931}
   m_Layer: 12
-  m_Name: Level1 disign_30
+  m_Name: Level1 CornerSofaNorthWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106253,6 +106319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 21300000, guid: 8bb81009383b1e84d8165b9ed835b40e, type: 3}
 --- !u!1001 &1693599376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106490,7 +106557,7 @@ GameObject:
   - component: {fileID: 1713505894}
   - component: {fileID: 1713505895}
   m_Layer: 12
-  m_Name: Level1 disign_28
+  m_Name: Level1 WoodChairWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106648,6 +106715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1739773880
 GameObject:
   m_ObjectHideFlags: 0
@@ -106662,7 +106730,7 @@ GameObject:
   - component: {fileID: 1739773884}
   - component: {fileID: 1739773885}
   m_Layer: 12
-  m_Name: Level1 disign_5
+  m_Name: Level1 PlantEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106820,6 +106888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1743374499
 GameObject:
   m_ObjectHideFlags: 0
@@ -106834,7 +106903,7 @@ GameObject:
   - component: {fileID: 1743374503}
   - component: {fileID: 1743374504}
   m_Layer: 12
-  m_Name: Level1 disign_7
+  m_Name: Level1 LongHorizontalTable
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106992,6 +107061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1759678306
 GameObject:
   m_ObjectHideFlags: 0
@@ -107109,7 +107179,7 @@ GameObject:
   - component: {fileID: 1769057605}
   - component: {fileID: 1769057606}
   m_Layer: 12
-  m_Name: Level1 disign_0 (1)
+  m_Name: Level1 SofaSouth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107267,6 +107337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1798981612
 GameObject:
   m_ObjectHideFlags: 0
@@ -107281,7 +107352,7 @@ GameObject:
   - component: {fileID: 1798981616}
   - component: {fileID: 1798981617}
   m_Layer: 12
-  m_Name: Level1 disign_26
+  m_Name: Level1 WoodChairEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107439,6 +107510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1806282769
 GameObject:
   m_ObjectHideFlags: 0
@@ -108007,7 +108079,7 @@ GameObject:
   - component: {fileID: 1857276542}
   - component: {fileID: 1857276543}
   m_Layer: 12
-  m_Name: Level1 disign_9
+  m_Name: Level1 DisignNorthEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108165,6 +108237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1868323120
 GameObject:
   m_ObjectHideFlags: 0
@@ -108179,7 +108252,7 @@ GameObject:
   - component: {fileID: 1868323124}
   - component: {fileID: 1868323125}
   m_Layer: 12
-  m_Name: Level1 disign_16 (1)
+  m_Name: Level1 SofaWest
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108337,6 +108410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1875018891
 GameObject:
   m_ObjectHideFlags: 0
@@ -108351,7 +108425,7 @@ GameObject:
   - component: {fileID: 1875018895}
   - component: {fileID: 1875018896}
   m_Layer: 12
-  m_Name: Level1 disign_36 (6)
+  m_Name: Level1 OfficeChairNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108509,6 +108583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1001 &1890682498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108588,7 +108663,7 @@ GameObject:
   - component: {fileID: 1893925838}
   - component: {fileID: 1893925839}
   m_Layer: 12
-  m_Name: Level1 disign_15
+  m_Name: Level1 VerticalTableWithPapers
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108746,6 +108821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1900750665
 GameObject:
   m_ObjectHideFlags: 0
@@ -109030,7 +109106,7 @@ GameObject:
   - component: {fileID: 1951667221}
   - component: {fileID: 1951667222}
   m_Layer: 12
-  m_Name: Level1 disign_7 (2)
+  m_Name: Level1 LongHorizontalTable
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109188,6 +109264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &1976735692
 GameObject:
   m_ObjectHideFlags: 0
@@ -109305,7 +109382,7 @@ GameObject:
   - component: {fileID: 2000674277}
   - component: {fileID: 2000674278}
   m_Layer: 12
-  m_Name: Level1 disign_26 (1)
+  m_Name: Level1 WoodChairEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109463,6 +109540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &2023351148
 GameObject:
   m_ObjectHideFlags: 0
@@ -109477,7 +109555,7 @@ GameObject:
   - component: {fileID: 2023351152}
   - component: {fileID: 2023351153}
   m_Layer: 12
-  m_Name: Level1 disign_23 (1)
+  m_Name: Level1 PlantNorth
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109635,6 +109713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &2033280806
 GameObject:
   m_ObjectHideFlags: 0
@@ -109649,7 +109728,7 @@ GameObject:
   - component: {fileID: 2033280810}
   - component: {fileID: 2033280811}
   m_Layer: 12
-  m_Name: Level1 disign_35 (1)
+  m_Name: Level1 OfficeChairEast
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109807,6 +109886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  broken: {fileID: 0}
 --- !u!1 &2036066834
 GameObject:
   m_ObjectHideFlags: 0

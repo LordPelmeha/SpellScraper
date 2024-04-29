@@ -8,10 +8,10 @@ using UnityEngine.ParticleSystemJobs;
 
 public class Enemy : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float moveSpeed;
     public Magic magicType;
-
+    protected LayerMask excludeLayers ;
     public float detectionRange;
     public float stoppingRange;
 
@@ -33,7 +33,6 @@ public class Enemy : MonoBehaviour
     protected string animType;
     protected virtual void Start()
     {
-
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         switch (magicType)
@@ -89,9 +88,8 @@ public class Enemy : MonoBehaviour
 
         hit = Physics2D.Linecast(transform.position, player.position, 1 << LayerMask.NameToLayer("Action"));
 
-        if (hit.collider != null)
-            if (hit.collider.gameObject.CompareTag("Player"))
-                return true;
+        if (hit.collider != null && hit.collider.gameObject.CompareTag("Player"))
+            return true;
 
         return false;
     }
@@ -107,13 +105,17 @@ public class Enemy : MonoBehaviour
         }
         else if(collision.collider.CompareTag("Projectile"))
         {
+
             Bullet info = collision.gameObject.GetComponent<Bullet>();
             Magic buletElement = info.element;
 
             if(!info.enemyBullet)
                 TakeDamage(buletElement);
         }
+        
+
     }
+
     public void TakeDamage(Magic buletMagicType)
     {
         int difference = Math.Abs(magicType - buletMagicType);

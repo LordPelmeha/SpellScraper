@@ -5,7 +5,6 @@ using UnityEngine;
 public class PatrolingEnemy : Enemy
 {
 
-    private Rigidbody2D rb;
     [SerializeField] protected Transform[] targetPoints;
     [SerializeField] protected int currentPoint;
     public bool isPatrolingRandom;
@@ -26,9 +25,8 @@ public class PatrolingEnemy : Enemy
     {
         chasingSpeed = moveSpeed * 2;
         patrolingSpeed = moveSpeed;
-        rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
+        rb = GetComponent<Rigidbody2D>();
         if (isPatrolingRandom)
             currentPoint = Random.Range(0, targetPoints.Length);
         else
@@ -142,6 +140,24 @@ public class PatrolingEnemy : Enemy
         return waitTime;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Wall"))
+        {
+            // ≈сли столкнулись со стеной, останавливаемс€
+            rb.velocity = Vector3.zero;
+        }
+        else if (collision.collider.CompareTag("Projectile"))
+        {
 
+            Bullet info = collision.gameObject.GetComponent<Bullet>();
+            Magic buletElement = info.element;
+
+            if (!info.enemyBullet)
+                TakeDamage(buletElement);
+        }
+
+
+    }
 
 }

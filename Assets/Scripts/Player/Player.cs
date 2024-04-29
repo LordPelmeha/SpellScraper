@@ -57,6 +57,18 @@ public class Player : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, z);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            // Если столкнулись со стеной, останавливаемся
+            
+            GetComponent<Player>().GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
+        }
+        
+    }
+
     public void Death()
     {
         //сюда анимацию смерти игрока

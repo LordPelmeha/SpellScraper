@@ -5,24 +5,27 @@ using UnityEngine;
 public class PatrolingEnemy : Enemy
 {
 
-
-    [SerializeField] Transform[] targetPoints;
-    [SerializeField] int currentPoint;
+    private Rigidbody2D rb;
+    [SerializeField] protected Transform[] targetPoints;
+    [SerializeField] protected int currentPoint;
     public bool isPatrolingRandom;
 
     [Space]
     [Header("Timers")]
-    [SerializeField] float maxWaitTime;
-    [SerializeField] float minWaitTime;
+    [SerializeField] protected float maxWaitTime;
+    [SerializeField] protected float minWaitTime;
 
-    private int scale = 2;
+    protected float chasingSpeed;
+    protected float patrolingSpeed;
 
-    private float waitTime;
-    private float waitTimeCounter;
+    protected float waitTime;
+    protected float waitTimeCounter;
 
 
-    public override void Start()
+    protected override void Start()
     {
+        chasingSpeed = moveSpeed * 2;
+        patrolingSpeed = moveSpeed;
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
@@ -32,41 +35,51 @@ public class PatrolingEnemy : Enemy
             currentPoint = 0;
 
         waitTimeCounter = SetWaitTime();
-        if (magicType == Magic.Fire)
-            animType = "MoveEnemy";
-        else if (magicType == Magic.Earth)
-            animType = "EarthMove";
+        switch (magicType)
+        {
+            case Magic.Fire:
+                animType = "MoveEnemy";
+                break;
+            case Magic.Earth:
+                animType = "EarthMove";
+                break;
+            case Magic.Air:
+                animType = "AirEnemy";
+                break;
+            case Magic.Water:
+                animType = "WaterEnemy";
+                break;
+        }
     }
 
 
-    public override void Update()
+    protected override void Update()
     {
         distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if ((distanceToPlayer <= detectionRange) && CanSeePlayer())
+        if ((distanceToPlayer <= detectionRange) && CanSeePlayer() && (distanceToPlayer > stoppingRange))
         {
 
-            MoveEnemy(player.position);
+            ChasePlayer();
 
-            moveSpeed *= scale;
-            scale /= scale;
+            moveSpeed = chasingSpeed;
 
             transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-            playerPath.Enqueue(player.position);
-            if (playerPath.Count > 100)
-                playerPath.Dequeue();
+
         }
-        //else if (distanceToPlayer <= detectionRange)
-        //{
-        //    ChasePlayer();
-        //}
+        else if ((distanceToPlayer <= detectionRange) && (distanceToPlayer <= stoppingRange) && CanSeePlayer())
+        {          
+            moveDelta = new Vector3(0f, 0f, 0f);
+            animator.SetFloat(animType, 0);
+            animator.SetFloat(animType, 0); 
+        }
         else
         {
-            playerPath.Clear();
+            moveSpeed = patrolingSpeed;
             Patroling();
         }
     }
 
-    private void Patroling()
+    protected virtual void Patroling()
     {
         moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
         if (moveDelta.magnitude > 1f)
@@ -113,7 +126,7 @@ public class PatrolingEnemy : Enemy
         }
     }
 
-    private void RandomizeCurrentPoint()
+    protected void RandomizeCurrentPoint()
     {
         currentPoint = Random.Range(0, targetPoints.Length);
         if (currentPoint >= targetPoints.Length)
@@ -122,7 +135,7 @@ public class PatrolingEnemy : Enemy
         }
     }
 
-    private float SetWaitTime()
+    protected float SetWaitTime()
     {
         waitTime = Random.Range(minWaitTime, maxWaitTime);
 

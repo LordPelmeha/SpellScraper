@@ -6,26 +6,24 @@ using UnityEngine;
 
 public class MiniBoss : PatrolingEnemy
 {
-    //Collider2D bulletCollider;
-    //Collider2D enemyCollider;
+    
     public Magic[] elements;
     bool DashAble = false;
-    Vector3 dashDirection;
-    RaycastHit2D hit;
     
-    public Rigidbody2D  miniBossRb;
+    Vector3 dashDirection;
     readonly float _speedRotatee = 30f;
     public float dashSpeed;
-    public float dashLength ;
+    public float maxDashLength ;
+    private GameObject[] walls;
 
     protected override void Start()
     {
         Invoke(nameof(UnlockDash), 1f);
-        //bulletCollider = GetComponent<MiniBossMagicHand>().GetComponent<Bullet>().GetComponent<CapsuleCollider2D>();
-        //enemyCollider = GetComponent<CapsuleCollider2D>();
-        miniBossRb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         currentPoint = Random.Range(0, targetPoints.Length);
+
+        walls = GameObject.FindGameObjectsWithTag("Wall");
 
         waitTimeCounter = SetWaitTime();
         switch (magicType)
@@ -105,49 +103,44 @@ public class MiniBoss : PatrolingEnemy
 
     private void Dash()
     {
+        
         if (DashAble)
         {
-            
-            //Debug.Log("completing");
-            //hit = Physics2D.Linecast(transform.position, dashDirection * 50f, 1 << LayerMask.NameToLayer("Action"));
+           
             DashAble = false;
-            Invoke(nameof(UnlockDash), 1f);
-            miniBossRb.velocity = new Vector3(0, 0, 0);
+            
+            Invoke(nameof(UnlockDash), 0.5f);
+
+            rb.velocity = new Vector3(0, 0, 0);
             
             dashDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
-            Debug.Log("drawing ray");
-            hit = Physics2D.CircleCast(transform.position, dashLength, dashDirection,  LayerMask.NameToLayer("Action"));
-            
-            if(hit.collider.gameObject.layer == LayerMask.NameToLayer("Action"))
+            Vector3 move = dashDirection * dashSpeed;
+
+            foreach (GameObject wall in walls)
             {
-                Debug.Log("recounting");
-                dashDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
-                hit = Physics2D.CircleCast(transform.position, dashLength, dashDirection, LayerMask.NameToLayer("Action"));
-                return;
+                if (Vector3.Distance(wall.transform.position, transform.position)< maxDashLength)
+                {
+                    Debug.Log("wall detected");
+                    return;
+                }
+                    
             }
 
-            Debug.Log("pushing");
-            Vector3 move = dashDirection * dashSpeed;
-            
-            miniBossRb.velocity = move;
+            rb.velocity = move;
 
             StartCoroutine(DashCoroutine());
 
-            //Debug.Log($" {hit.collider.gameObject.layer == LayerMask.NameToLayer("Action")}, перерасчёт, {dashDirection * 50f}=dashDirection*50, {dashDirection * dashSpeed}=dashDirection * dashSpeed");
+            
         }
     }
 
 
     protected virtual IEnumerator DashCoroutine()
-    {
-        Debug.Log("Awit");
-      //  Physics2D.IgnoreCollision(bulletCollider, enemyCollider, true);
-        yield return new WaitForSeconds(0.2f);
-        //Physics2D.IgnoreCollision(bulletCollider, enemyCollider, false);
-        //StopCoroutine(DisableColliderCoroutine());
+    {        
+        yield return new WaitForSeconds(0.3f);
         StopCoroutine(DashCoroutine());
 
-        miniBossRb.velocity = new Vector3(0, 0, 0);
+        rb.velocity = new Vector3(0, 0, 0);
         ChangeElement();
     }
 
@@ -158,22 +151,30 @@ public class MiniBoss : PatrolingEnemy
 
     protected virtual void ChangeElement()
     {
-        Debug.Log("Changed");
         int curMagicType =Random.Range(0,elements.Length);
         magicType = elements[curMagicType];
     }
 
-    //protected virtual IEnumerator DisableColliderCoroutine()
-    //{
-    //    Debug.Log("Disabled");
-    //    Physics2D.IgnoreCollision(bulletCollider, enemyCollider, true);
-    //    yield return new WaitForSeconds(0.1f);
-    //    Physics2D.IgnoreCollision(bulletCollider, enemyCollider, false);
-    //    StartCoroutine(DashCoroutine());
 
-    //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Wall"))
+        {
+            // Если столкнулись со стеной, останавливаемся
+            rb.velocity = Vector3.zero;
+        }
+        else if (collision.collider.CompareTag("Projectile"))
+        {
+
+            Bullet info = collision.gameObject.GetComponent<Bullet>();
+            Magic buletElement = info.element;
+
+            if (!info.enemyBullet)
+                TakeDamage(buletElement);
+        }
 
 
+    }
 
 
 }

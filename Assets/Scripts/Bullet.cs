@@ -11,6 +11,7 @@ public class Bullet : MagicHand
     public Rigidbody2D bulletrb;
     public float bulletSpead;
     [SerializeField] LayerMask WhatIsSolid;
+    protected LayerMask excludeLayers;
     public bool enemyBullet;
     [SerializeField] EvilAndKind emotion;
     [SerializeField] public Magic element;
@@ -63,6 +64,7 @@ public class Bullet : MagicHand
         {
             DestroyBullet();
         }
+        
     }
     void Update()
     {

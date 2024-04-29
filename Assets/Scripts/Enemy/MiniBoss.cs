@@ -18,7 +18,7 @@ public class MiniBoss : PatrolingEnemy
 
     protected override void Start()
     {
-        Invoke(nameof(UnlockDash), 1f);
+        Invoke(nameof(UnlockDash), 4f);
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         currentPoint = Random.Range(0, targetPoints.Length);
@@ -109,7 +109,7 @@ public class MiniBoss : PatrolingEnemy
            
             DashAble = false;
             
-            Invoke(nameof(UnlockDash), 0.5f);
+            Invoke(nameof(UnlockDash), 4f);
 
             rb.velocity = new Vector3(0, 0, 0);
             

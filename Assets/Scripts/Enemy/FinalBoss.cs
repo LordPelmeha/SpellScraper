@@ -13,7 +13,7 @@ public class FinalBoss : MiniBoss
 
     protected override void Start()
     {
-        Invoke(nameof(UnlockTeleportation), 1f);
+        Invoke(nameof(UnlockTeleportation), 4f);
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         currentPoint = Random.Range(0, targetPoints.Length);
@@ -53,16 +53,7 @@ public class FinalBoss : MiniBoss
 
     }
 
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Projectile") && !(collision.gameObject.GetComponent<Bullet>().enemyBullet))
-        {
-            Bullet bullet = collision.gameObject.GetComponent<Bullet>();
-            bullet.GetComponent<SpriteRenderer>().flipY = true;
-            bullet.bulletSpead *= -5;
-            bullet.enemyBullet = true;
-        }
-    }
+    
 
     private void Teleportation()
     {
@@ -70,7 +61,7 @@ public class FinalBoss : MiniBoss
         {
             
             TeleportationAble = false;
-            Invoke(nameof(UnlockTeleportation), 0.5f);
+            Invoke(nameof(UnlockTeleportation), 4f);
             rb.velocity = new Vector3(0, 0, 0);
             destinationPoint = new Vector3(transform.position.x-Random.Range(-tpLength, tpLength), transform.position.y-Random.Range(-tpLength, tpLength), 0);
             

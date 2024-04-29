@@ -576,7 +576,23 @@ MonoBehaviour:
   airMask: {fileID: 21300000, guid: e05b29f5f966da842bf7dc920b4f20c5, type: 3}
   waterMask: {fileID: 21300000, guid: dc02354117e8fb145b68f1b16c69a12f, type: 3}
   earthMask: {fileID: 21300000, guid: 36f42b680dc5f19479fae55a4bf4f9b3, type: 3}
-  forBossSprite: []
+  forBossSprite:
+  - {fileID: 21300000, guid: c44339d15e575524e9927af0d60cea40, type: 3}
+  - {fileID: 21300000, guid: ca74de135be230f4db67fedc4002ced4, type: 3}
+  - {fileID: 21300000, guid: f56bd81f836f97d4c9b4673283f115a9, type: 3}
+  - {fileID: 21300000, guid: 91d207d6c571d4d4ca0d4f1f9dc8dad4, type: 3}
+  - {fileID: 21300000, guid: c44339d15e575524e9927af0d60cea40, type: 3}
+  - {fileID: 21300000, guid: ca74de135be230f4db67fedc4002ced4, type: 3}
+  - {fileID: 21300000, guid: f56bd81f836f97d4c9b4673283f115a9, type: 3}
+  - {fileID: 21300000, guid: 91d207d6c571d4d4ca0d4f1f9dc8dad4, type: 3}
+  - {fileID: 21300000, guid: c44339d15e575524e9927af0d60cea40, type: 3}
+  - {fileID: 21300000, guid: ca74de135be230f4db67fedc4002ced4, type: 3}
+  - {fileID: 21300000, guid: f56bd81f836f97d4c9b4673283f115a9, type: 3}
+  - {fileID: 21300000, guid: 91d207d6c571d4d4ca0d4f1f9dc8dad4, type: 3}
+  - {fileID: 21300000, guid: c44339d15e575524e9927af0d60cea40, type: 3}
+  - {fileID: 21300000, guid: ca74de135be230f4db67fedc4002ced4, type: 3}
+  - {fileID: 21300000, guid: f56bd81f836f97d4c9b4673283f115a9, type: 3}
+  - {fileID: 21300000, guid: 91d207d6c571d4d4ca0d4f1f9dc8dad4, type: 3}
   brokenFireMask: {fileID: 21300000, guid: df9ce43287a588d49972d64134f80f78, type: 3}
   brokenAirMask: {fileID: 21300000, guid: b9311b0b45882f54f87dcc52ff0bb37c, type: 3}
   brokenWaterMask: {fileID: 21300000, guid: 1fc40f9b1867e374e8b20431450a6c08, type: 3}
@@ -1194,6 +1210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c62f8bcae49fdb489f08fe6420836b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   moveSpeed: 1
   magicType: 0
   detectionRange: 15
@@ -1214,9 +1231,8 @@ MonoBehaviour:
   maxWaitTime: 0
   minWaitTime: 0
   elements: 0000000003000000
-  miniBossRb: {fileID: 0}
   dashSpeed: 10
-  dashLength: 15
+  maxDashLength: 0
 --- !u!50 &41157667
 Rigidbody2D:
   serializedVersion: 4
@@ -4586,7 +4602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10.820007, y: 0.5499878}
+  m_AnchoredPosition: {x: 10.820068, y: 0.5500488}
   m_SizeDelta: {x: 254.6328, y: 143.25989}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &203981205
@@ -7339,6 +7355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ad2cc82e6eee643bd03de461919a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   moveSpeed: 1
   magicType: 0
   detectionRange: 6
@@ -9318,6 +9335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eab70be3ab2f3b419197c9b89987851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   moveSpeed: 4
   magicType: 3
   detectionRange: 6
@@ -11744,6 +11762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eab70be3ab2f3b419197c9b89987851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   moveSpeed: 4
   magicType: 3
   detectionRange: 6
@@ -12872,6 +12891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eab70be3ab2f3b419197c9b89987851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   moveSpeed: 4
   magicType: 3
   detectionRange: 6
@@ -18078,6 +18098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ad2cc82e6eee643bd03de461919a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   moveSpeed: 1
   magicType: 0
   detectionRange: 6
@@ -22187,6 +22208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ad2cc82e6eee643bd03de461919a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   moveSpeed: 1
   magicType: 0
   detectionRange: 6

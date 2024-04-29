@@ -30,12 +30,11 @@ public class ChangeMask : MonoBehaviour
     {
         isBossOnLevel = GameObject.FindWithTag("Enemy")!=null;
         if (isBossOnLevel) 
-            boss = GetComponent<MiniBoss>();
+            boss = GameObject.FindWithTag("Enemy").GetComponent<MiniBoss>();
     }
     void Update()
     {
-        if (isBossOnLevel) 
-            getBossMagic();
+        
         if (player.health == 0.5)
         {
             if (checkHPDecrease)
@@ -82,6 +81,8 @@ public class ChangeMask : MonoBehaviour
             Masks.sprite = waterMask;
         else if (scrollMask == 3)
             Masks.sprite = earthMask;
+        if (isBossOnLevel)
+            getBossMagic();
     }
     public int getMagic()
     {
@@ -101,5 +102,6 @@ public class ChangeMask : MonoBehaviour
     private void getBossMagic()
     {
         Masks.sprite = forBossSprite[(int)boss.magicType + scrollMask];
+        Debug.Log((int)boss.magicType + scrollMask);
     }
 }

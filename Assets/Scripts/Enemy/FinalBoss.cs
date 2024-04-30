@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class FinalBoss : MiniBoss
@@ -9,7 +10,6 @@ public class FinalBoss : MiniBoss
     private Vector3 destinationPoint;
     public float tpLength = 10f;
     public float maxTpLength;
-    private GameObject[] walls;
 
     protected override void Start()
     {
@@ -17,7 +17,7 @@ public class FinalBoss : MiniBoss
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         currentPoint = Random.Range(0, targetPoints.Length);
-        walls = GameObject.FindGameObjectsWithTag("Wall");
+        walls = GameObject.FindGameObjectsWithTag("Wall").ToList();
 
         waitTimeCounter = SetWaitTime();
         switch (magicType)
@@ -65,16 +65,10 @@ public class FinalBoss : MiniBoss
             rb.velocity = new Vector3(0, 0, 0);
             destinationPoint = new Vector3(transform.position.x-Random.Range(-tpLength, tpLength), transform.position.y-Random.Range(-tpLength, tpLength), 0);
             
-            
             foreach (GameObject wall in walls)
-            {
                 if (Vector3.Distance(wall.transform.position, transform.position) < maxTpLength)
-                {
-                    Debug.Log("wall detected");
                     return;
-                }
 
-            }
             transform.position = Vector3.MoveTowards(transform.position, destinationPoint, 3f);
             rb.velocity = new Vector3(0,0,0);
         }

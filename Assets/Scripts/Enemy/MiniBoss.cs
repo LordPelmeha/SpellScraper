@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,7 +15,7 @@ public class MiniBoss : PatrolingEnemy
     readonly float _speedRotatee = 30f;
     public float dashSpeed;
     public float maxDashLength ;
-    private GameObject[] walls;
+    public List<GameObject> walls;
 
     protected override void Start()
     {
@@ -23,7 +24,8 @@ public class MiniBoss : PatrolingEnemy
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         currentPoint = Random.Range(0, targetPoints.Length);
 
-        walls = GameObject.FindGameObjectsWithTag("Wall");
+        walls = GameObject.FindGameObjectsWithTag("Wall").ToList();
+        
 
         waitTimeCounter = SetWaitTime();
         switch (magicType)
@@ -46,19 +48,16 @@ public class MiniBoss : PatrolingEnemy
 
     protected override void Update()
     {
+        Debug.Log(walls.Count);
         distanceToPlayer = Vector3.Distance(transform.position, player.position);
         if ((distanceToPlayer <= detectionRange) && CanSeePlayer())
         {
-
             Patroling();
-
             Dash();
             transform.position = Vector3.MoveTowards(transform.position, targetPoints[currentPoint].position, moveSpeed * Time.deltaTime);
             //transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
 
         }
-        
-
     }
 
     
@@ -108,29 +107,18 @@ public class MiniBoss : PatrolingEnemy
         {
            
             DashAble = false;
-            
             Invoke(nameof(UnlockDash), 4f);
-
             rb.velocity = new Vector3(0, 0, 0);
-            
             dashDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
             Vector3 move = dashDirection * dashSpeed;
 
             foreach (GameObject wall in walls)
-            {
                 if (Vector3.Distance(wall.transform.position, transform.position)< maxDashLength)
-                {
-                    Debug.Log("wall detected");
                     return;
-                }
-                    
-            }
-
+    
             rb.velocity = move;
-
             StartCoroutine(DashCoroutine());
 
-            
         }
     }
 
@@ -179,19 +167,3 @@ public class MiniBoss : PatrolingEnemy
 
 }
 
-//protected override void ChasePlayer()
-//{
-//    moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
-//    if (moveDelta.magnitude > 1f)
-//        moveDelta.Normalize();
-//    animator.SetFloat(animType, Mathf.Abs(moveDelta.x));
-//    animator.SetFloat(animType, Mathf.Abs(moveDelta.y));
-//    animator.SetFloat(animType, Mathf.Abs(moveDelta.magnitude));
-
-
-//    difference = player.position - transform.position;
-//    rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-
-//    rotation = Quaternion.AngleAxis(rotZ + rotationOffset, Vector3.forward);
-//    transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * _speedRotatee);
-//}

@@ -14,5 +14,6 @@ public class CameraMove : MonoBehaviour
             float deltaY = lookAt.position.y - transform.position.y;
             transform.position += new Vector3(deltaX, deltaY, 0);
         }
+        
     }
 }

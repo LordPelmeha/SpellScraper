@@ -11,54 +11,69 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     public float moveSpeed;
     public Magic magicType;
-
+    protected LayerMask excludeLayers ;
     public float detectionRange;
+    public float stoppingRange;
 
     public double health;
 
-
+    RaycastHit2D hit;
 
     public Transform player;
     public Animator animator;
     public Vector3 moveDelta;
-    public float _speedRotate = 5f;
+    protected float _speedRotate = 5f;
     public int rotationOffset = -90;
     public float rotZ;
-
-    protected float distanceToPlayer;
-    protected Queue<Vector3> playerPath = new Queue<Vector3>();
     protected Vector3 difference;
     protected Quaternion rotation;
+
+    protected float distanceToPlayer;
+    
     protected string animType;
-    public virtual void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        if (magicType == Magic.Fire)
-            animType = "MoveEnemy";
-        else if (magicType == Magic.Earth)
-            animType = "EarthMove";
+        switch (magicType)
+        {
+            case Magic.Fire:
+                animType = "MoveEnemy";
+                break;
+            case Magic.Earth:
+                animType = "EarthMove";
+                break;
+            case Magic.Air:
+                animType = "AirEnemy";
+                break;
+            case Magic.Water:
+                animType = "WaterEnemy";
+                break;
+        }
+            
+
     }
 
-    public virtual void Update()
+    protected virtual void Update()
     {
         distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if ((distanceToPlayer <= detectionRange) && CanSeePlayer())
+        if ((distanceToPlayer <= detectionRange) && CanSeePlayer() && (distanceToPlayer > stoppingRange))
         {
 
-            MoveEnemy(player.position);
+            ChasePlayer();
             transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-            playerPath.Clear();
+            
         }
-        //else /*if (distanceToPlayer <= detectionRange)*/
-        //{
-        //    ChasePlayer();
-        //}
+        else if((distanceToPlayer <= detectionRange) && (distanceToPlayer == stoppingRange) && CanSeePlayer())
+        {
+            rb.velocity = Vector3.zero;
+            animator.SetFloat(animType, 0);
+            animator.SetFloat(animType, 0);
+            animator.SetFloat(animType, 0);
+        }
         else
         {
-            playerPath.Clear();
             moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
-
             animator.SetFloat(animType, 0);
             animator.SetFloat(animType, 0);
             animator.SetFloat(animType, 0);
@@ -70,12 +85,11 @@ public class Enemy : MonoBehaviour
 
     protected bool CanSeePlayer()
     {
-        //RaycastHit2D hit = Physics2D.Raycast(transform.position, player.position);
-        RaycastHit2D hit = Physics2D.Linecast(transform.position, player.position, 1 << LayerMask.NameToLayer("Action"));
 
-        if (hit.collider != null)
-            if (hit.collider.gameObject.CompareTag("Player"))
-                return true;
+        hit = Physics2D.Linecast(transform.position, player.position, 1 << LayerMask.NameToLayer("Action"));
+
+        if (hit.collider != null && hit.collider.gameObject.CompareTag("Player"))
+            return true;
 
         return false;
     }
@@ -89,10 +103,33 @@ public class Enemy : MonoBehaviour
             // Если столкнулись со стеной, останавливаемся
             rb.velocity = Vector3.zero;
         }
+        else if(collision.collider.CompareTag("Projectile"))
+        {
+
+            Bullet info = collision.gameObject.GetComponent<Bullet>();
+            Magic buletElement = info.element;
+
+            if(!info.enemyBullet)
+                TakeDamage(buletElement);
+        }
+        
+
     }
-    public void EnemyTakeDamage(double damage)
+
+    public void TakeDamage(Magic buletMagicType)
     {
-        health -= damage;
+        int difference = Math.Abs(magicType - buletMagicType);
+        switch(difference)
+        {
+            case 0:
+                health -= 0.34;
+            break;
+            case 2:
+                health -= 1;
+            break;
+            default: break;
+        }
+
         if (health <= 0)
             Death();
     }
@@ -102,16 +139,8 @@ public class Enemy : MonoBehaviour
         //сюда анимацию смерти врага
         Destroy(gameObject);
     }
-    protected void ChasePlayer()
-    {
-        playerPath.Enqueue(player.position);
-        MoveEnemy(playerPath.Peek());
-        Debug.Log($"{playerPath.Peek()} {transform.position} ");
-        if (transform.position == playerPath.Peek())
-            playerPath.Dequeue();
-
-    }
-    protected void MoveEnemy(Vector3 pos)
+    
+    protected virtual void ChasePlayer()
     {
         moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
         if (moveDelta.magnitude > 1f)
@@ -121,12 +150,15 @@ public class Enemy : MonoBehaviour
         animator.SetFloat(animType, Mathf.Abs(moveDelta.magnitude));
 
 
-        difference = pos - transform.position;
+        difference = player.position - transform.position;
         rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
         rotation = Quaternion.AngleAxis(rotZ + rotationOffset, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * _speedRotate);
     }
+
+   
+
 }
 
 

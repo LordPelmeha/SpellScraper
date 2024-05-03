@@ -8,21 +8,21 @@ public enum EvilAndKind { Evil, Kind };
 public enum Magic { Fire, Air, Water, Earth };
 public class Bullet : MagicHand
 {
+    public Rigidbody2D bulletrb;
     public float bulletSpead;
     [SerializeField] LayerMask WhatIsSolid;
+    protected LayerMask excludeLayers;
     public bool enemyBullet;
-    private RaycastHit2D hitInfo;
     [SerializeField] EvilAndKind emotion;
-    [SerializeField] Magic element;
+    [SerializeField] public Magic element;
     private bool isCounterMagic;
 
-    //public GameObject airHit;
-    // Проверяем столкновение с объектом
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && !enemyBullet)
         {
-            collision.gameObject.GetComponent<Enemy>().EnemyTakeDamage(collision.gameObject.GetComponent<Enemy>().magicType - (int)element == 0 ? 0.5 : 1);
+            
             if (collision.gameObject.GetComponent<Enemy>().health <= 0)
             {
                 if (emotion == EvilAndKind.Evil)
@@ -64,6 +64,7 @@ public class Bullet : MagicHand
         {
             DestroyBullet();
         }
+        
     }
     void Update()
     {
@@ -75,7 +76,7 @@ public class Bullet : MagicHand
         //сюда анмиацию уничтожения пули
 
         Destroy(gameObject);
-        //airHit = Instantiate(airHit, transform.position, transform.rotation);
+        
     }
     private double PlayerTakeDamage()
     {

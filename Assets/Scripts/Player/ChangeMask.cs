@@ -29,7 +29,7 @@ public class ChangeMask : MonoBehaviour
     private bool checkHPDecrease = true;
     private void Start()
     {
-        isBossOnLevel = GameObject.FindWithTag("Enemy") != null;
+        isBossOnLevel = GameObject.Find("Boss") != null;
         if (isBossOnLevel)
             boss = GameObject.FindWithTag("Enemy").GetComponent<MiniBoss>();
     }
@@ -41,6 +41,11 @@ public class ChangeMask : MonoBehaviour
             if (checkHPDecrease)
                 breakMask();
             checkHPDecrease = false;
+        }
+        if (!checkHPDecrease && player.health>0.5)
+        {
+            healMask();
+            checkHPDecrease=true;
         }
         //Изменение счётчика масок за счёт прокурутки колёсика
         if (Input.mouseScrollDelta.y > 0)
@@ -100,12 +105,19 @@ public class ChangeMask : MonoBehaviour
         waterMask = brokenWaterMask;
         earthMask = brokeEearthMask;
     }
+    private void healMask()
+    {
+        fireMask = forBossSprite[0];
+        airMask = forBossSprite[15];
+        waterMask = forBossSprite[10];
+        earthMask = forBossSprite[5];
+    }
     private void getBossMagic()
     {
         if (player.health > 0.5)
-            Masks.sprite = forBossSprite[4*(int)boss.magicType + scrollMask];
+            Masks.sprite = forBossSprite[4 * (int)boss.magicType + scrollMask];
         else
-            Masks.sprite = brokenForBossSprite[4*(int)boss.magicType + scrollMask];
+            Masks.sprite = brokenForBossSprite[4 * (int)boss.magicType + scrollMask];
         Debug.Log((int)boss.magicType + scrollMask);
     }
 }

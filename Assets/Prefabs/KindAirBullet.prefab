@@ -105,10 +105,12 @@ MonoBehaviour:
   airMask: {fileID: 0}
   waterMask: {fileID: 0}
   earthMask: {fileID: 0}
+  forBossSprite: []
   brokenFireMask: {fileID: 0}
   brokenAirMask: {fileID: 0}
   brokenWaterMask: {fileID: 0}
   brokeEearthMask: {fileID: 0}
+  brokenForBossSprite: []
   player: {fileID: 0}
   evilFireBullet: {fileID: 0}
   evilAirBullet: {fileID: 0}
@@ -121,13 +123,14 @@ MonoBehaviour:
   shotPoint: {fileID: 0}
   evilStartTimeBtwShots: 0.4
   kindStartTimeBtwShots: 0.8
+  bulletrb: {fileID: 0}
   bulletSpead: 18
   WhatIsSolid:
     serializedVersion: 2
     m_Bits: 256
   enemyBullet: 0
   emotion: 1
-  element: 1
+  element: 3
 --- !u!70 &1400064650461913331
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

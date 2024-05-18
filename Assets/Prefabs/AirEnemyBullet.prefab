@@ -105,10 +105,12 @@ MonoBehaviour:
   airMask: {fileID: 0}
   waterMask: {fileID: 0}
   earthMask: {fileID: 0}
+  forBossSprite: []
   brokenFireMask: {fileID: 0}
   brokenAirMask: {fileID: 0}
   brokenWaterMask: {fileID: 0}
   brokeEearthMask: {fileID: 0}
+  brokenForBossSprite: []
   player: {fileID: 0}
   evilFireBullet: {fileID: 0}
   evilAirBullet: {fileID: 0}
@@ -128,7 +130,7 @@ MonoBehaviour:
     m_Bits: 256
   enemyBullet: 1
   emotion: 0
-  element: 1
+  element: 3
 --- !u!70 &975586071498238582
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

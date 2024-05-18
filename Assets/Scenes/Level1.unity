@@ -576,10 +576,12 @@ MonoBehaviour:
   airMask: {fileID: 21300000, guid: e05b29f5f966da842bf7dc920b4f20c5, type: 3}
   waterMask: {fileID: 21300000, guid: dc02354117e8fb145b68f1b16c69a12f, type: 3}
   earthMask: {fileID: 21300000, guid: 36f42b680dc5f19479fae55a4bf4f9b3, type: 3}
+  forBossSprite: []
   brokenFireMask: {fileID: 21300000, guid: df9ce43287a588d49972d64134f80f78, type: 3}
   brokenAirMask: {fileID: 21300000, guid: b9311b0b45882f54f87dcc52ff0bb37c, type: 3}
   brokenWaterMask: {fileID: 21300000, guid: 1fc40f9b1867e374e8b20431450a6c08, type: 3}
   brokeEearthMask: {fileID: 21300000, guid: ad5aa11d2e46d4c41bbd69c0eb60f2f0, type: 3}
+  brokenForBossSprite: []
   player: {fileID: 1497298661}
 --- !u!114 &11829673
 MonoBehaviour:
@@ -4882,9 +4884,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 203981203}
   - {fileID: 11829671}
   - {fileID: 914816308}
-  - {fileID: 203981203}
   - {fileID: 882560088}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7100,6 +7102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ad2cc82e6eee643bd03de461919a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   moveSpeed: 1
   magicType: 0
   detectionRange: 6
@@ -9017,6 +9020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eab70be3ab2f3b419197c9b89987851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   moveSpeed: 4
   magicType: 3
   detectionRange: 6
@@ -11443,6 +11447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eab70be3ab2f3b419197c9b89987851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   moveSpeed: 4
   magicType: 3
   detectionRange: 6
@@ -12571,6 +12576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eab70be3ab2f3b419197c9b89987851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   moveSpeed: 4
   magicType: 3
   detectionRange: 6
@@ -17715,6 +17721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ad2cc82e6eee643bd03de461919a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   moveSpeed: 1
   magicType: 0
   detectionRange: 6
@@ -21691,10 +21698,12 @@ MonoBehaviour:
   airMask: {fileID: 0}
   waterMask: {fileID: 0}
   earthMask: {fileID: 0}
+  forBossSprite: []
   brokenFireMask: {fileID: 0}
   brokenAirMask: {fileID: 0}
   brokenWaterMask: {fileID: 0}
   brokeEearthMask: {fileID: 0}
+  brokenForBossSprite: []
   player: {fileID: 0}
   evilFireBullet: {fileID: 7971796923087094374, guid: c2ced6ab48f64f740aa77794b4e0d854, type: 3}
   evilAirBullet: {fileID: 7971796923087094374, guid: cc0a06edb7d9c8241854c5bac0046c20, type: 3}
@@ -21792,6 +21801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ad2cc82e6eee643bd03de461919a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   moveSpeed: 1
   magicType: 0
   detectionRange: 6

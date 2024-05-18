@@ -46,9 +46,9 @@ public class MagicHand : ChangeMask
                 switch (scrollMask)
                 {
                     case 0: InstantiateWithRotation(evilFireBullet); break;
-                    case 1: InstantiateWithRotation(evilAirBullet); break;
+                    case 1: InstantiateWithRotation(evilEarthBullet); break;
                     case 2: InstantiateWithRotation(evilWaterBullet); break;
-                    case 3: InstantiateWithRotation(evilEarthBullet); break;
+                    case 3: InstantiateWithRotation(evilAirBullet); break;
                 }
                 evilTimeBtwShots = evilStartTimeBtwShots;
 
@@ -65,9 +65,9 @@ public class MagicHand : ChangeMask
                 switch (scrollMask)
                 {
                     case 0: InstantiateWithRotation(kindFireBullet); break;
-                    case 1: InstantiateWithRotation(kindAirBullet); break;
+                    case 1: InstantiateWithRotation(kindEarthBullet); break;
                     case 2: InstantiateWithRotation(kindWaterBullet); break;
-                    case 3: InstantiateWithRotation(kindEarthBullet); break;
+                    case 3: InstantiateWithRotation(kindAirBullet); break;
                 }
                 kindTimeBtwShots = kindStartTimeBtwShots;
             }

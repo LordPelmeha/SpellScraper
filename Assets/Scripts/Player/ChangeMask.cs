@@ -19,6 +19,7 @@ public class ChangeMask : MonoBehaviour
     public Sprite brokenWaterMask;
     public Sprite brokeEearthMask;
 
+    public Sprite[] brokenForBossSprite;
 
     private MiniBoss boss;
     private bool isBossOnLevel;
@@ -28,13 +29,13 @@ public class ChangeMask : MonoBehaviour
     private bool checkHPDecrease = true;
     private void Start()
     {
-        isBossOnLevel = GameObject.FindWithTag("Enemy")!=null;
-        if (isBossOnLevel) 
+        isBossOnLevel = GameObject.FindWithTag("Enemy") != null;
+        if (isBossOnLevel)
             boss = GameObject.FindWithTag("Enemy").GetComponent<MiniBoss>();
     }
     void Update()
     {
-        
+
         if (player.health == 0.5)
         {
             if (checkHPDecrease)
@@ -59,7 +60,7 @@ public class ChangeMask : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Masks.sprite = airMask;
+            Masks.sprite = earthMask;
             scrollMask = 1;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -69,18 +70,18 @@ public class ChangeMask : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            Masks.sprite = earthMask;
+            Masks.sprite = airMask;
             scrollMask = 3;
         }
         //Меняет спрайт в зависимости от счётчика прокрутки мыши
         else if (scrollMask == 0)
             Masks.sprite = fireMask;
         else if (scrollMask == 1)
-            Masks.sprite = airMask;
+            Masks.sprite = earthMask;
         else if (scrollMask == 2)
             Masks.sprite = waterMask;
         else if (scrollMask == 3)
-            Masks.sprite = earthMask;
+            Masks.sprite = airMask;
         if (isBossOnLevel)
             getBossMagic();
     }
@@ -101,7 +102,10 @@ public class ChangeMask : MonoBehaviour
     }
     private void getBossMagic()
     {
-        Masks.sprite = forBossSprite[(int)boss.magicType + scrollMask];
+        if (player.health > 0.5)
+            Masks.sprite = forBossSprite[4*(int)boss.magicType + scrollMask];
+        else
+            Masks.sprite = brokenForBossSprite[4*(int)boss.magicType + scrollMask];
         Debug.Log((int)boss.magicType + scrollMask);
     }
 }

@@ -48,7 +48,7 @@ public class MiniBoss : PatrolingEnemy
 
     protected override void Update()
     {
-        Debug.Log(walls.Count);
+        //Debug.Log(walls.Count);
         distanceToPlayer = Vector3.Distance(transform.position, player.position);
         if ((distanceToPlayer <= detectionRange) && CanSeePlayer())
         {

@@ -113,7 +113,7 @@ public class MiniBoss : PatrolingEnemy
             Vector3 move = dashDirection * dashSpeed;
 
             foreach (GameObject wall in walls)
-                if (Vector3.Distance(wall.transform.position, transform.position)< maxDashLength)
+                if (wall.gameObject!=null && Vector3.Distance(wall.transform.position, transform.position)< maxDashLength)
                     return;
     
             rb.velocity = move;

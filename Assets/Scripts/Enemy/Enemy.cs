@@ -6,6 +6,9 @@ using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.ParticleSystemJobs;
 
+
+
+
 public class Enemy : MonoBehaviour
 {
     public Rigidbody2D rb;

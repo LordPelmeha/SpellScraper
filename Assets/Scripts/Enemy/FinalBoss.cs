@@ -66,7 +66,7 @@ public class FinalBoss : MiniBoss
             destinationPoint = new Vector3(transform.position.x-Random.Range(-tpLength, tpLength), transform.position.y-Random.Range(-tpLength, tpLength), 0);
             
             foreach (GameObject wall in walls)
-                if (Vector3.Distance(wall.transform.position, transform.position) < maxTpLength)
+                if (wall != null && Vector3.Distance(wall.transform.position, transform.position) < maxTpLength)
                     return;
 
             transform.position = Vector3.MoveTowards(transform.position, destinationPoint, 3f);

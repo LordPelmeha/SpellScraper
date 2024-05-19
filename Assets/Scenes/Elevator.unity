@@ -2299,9 +2299,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1732974145}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 0.3
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2612,7 +2612,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 09840fecdd53e7e44a71de296fe90be6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c42559c4d345f6a438d2566a82977668, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -3233,7 +3233,7 @@ MonoBehaviour:
   fireMask: {fileID: 21300000, guid: abcda828a8ef0ac4fbdab9fe68d62886, type: 3}
   airMask: {fileID: 21300000, guid: e05b29f5f966da842bf7dc920b4f20c5, type: 3}
   waterMask: {fileID: 21300000, guid: dc02354117e8fb145b68f1b16c69a12f, type: 3}
-  earthMask: {fileID: 21300000, guid: 36f42b680dc5f19479fae55a4bf4f9b3, type: 3}
+  earthMask: {fileID: 21300000, guid: 887b73aa79375bf43b5416ef259c2129, type: 3}
   forBossSprite: []
   brokenFireMask: {fileID: 21300000, guid: df9ce43287a588d49972d64134f80f78, type: 3}
   brokenAirMask: {fileID: 21300000, guid: b9311b0b45882f54f87dcc52ff0bb37c, type: 3}
@@ -7996,8 +7996,8 @@ MonoBehaviour:
   kindWaterBullet: {fileID: 7971796923087094374, guid: 03d345e585ad7bf43b75d0c174297f68, type: 3}
   kindEarthBullet: {fileID: 7971796923087094374, guid: cb86e4ad0d396314cb428b525f5887ac, type: 3}
   shotPoint: {fileID: 1152881232}
-  evilStartTimeBtwShots: 0.4
-  kindStartTimeBtwShots: 0.8
+  evilStartTimeBtwShots: 0.8
+  kindStartTimeBtwShots: 1.2
 --- !u!212 &1152881234
 SpriteRenderer:
   m_ObjectHideFlags: 0

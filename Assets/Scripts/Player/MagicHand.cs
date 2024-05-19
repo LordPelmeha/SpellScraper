@@ -51,7 +51,7 @@ public class MagicHand : ChangeMask
                     case 3: InstantiateWithRotation(evilAirBullet); break;
                 }
                 evilTimeBtwShots = evilStartTimeBtwShots;
-
+                kindTimeBtwShots += 0.7f;
             }
         }
         else
@@ -70,6 +70,7 @@ public class MagicHand : ChangeMask
                     case 3: InstantiateWithRotation(kindAirBullet); break;
                 }
                 kindTimeBtwShots = kindStartTimeBtwShots;
+                evilTimeBtwShots += 0.7f;
             }
         }
         else

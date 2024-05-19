@@ -21763,8 +21763,8 @@ MonoBehaviour:
   kindWaterBullet: {fileID: 7971796923087094374, guid: 03d345e585ad7bf43b75d0c174297f68, type: 3}
   kindEarthBullet: {fileID: 7971796923087094374, guid: cb86e4ad0d396314cb428b525f5887ac, type: 3}
   shotPoint: {fileID: 1527093689}
-  evilStartTimeBtwShots: 0.4
-  kindStartTimeBtwShots: 0.8
+  evilStartTimeBtwShots: 0.8
+  kindStartTimeBtwShots: 1.2
 --- !u!212 &1527093691
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public float dashSpeed;
     public float dashDuration;
 
+    private float shootCooldown;
+
     private Rigidbody2D rb;
     [Range(0, 10f)] public float speed;
 
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour
     {
         rb=GetComponent<Rigidbody2D>();
         dashCooldown = 0f;
+        shootCooldown= 0f;
     }
 
     void Update()
@@ -36,8 +39,13 @@ public class Player : MonoBehaviour
         animator.SetFloat("Move", Mathf.Abs(moveDelta.y));
         animator.SetFloat("Move", Mathf.Abs(moveDelta.magnitude));
 
-        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        if ((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))&& shootCooldown<=0)
+        {
             StartCoroutine(AnimationCorutine());
+            shootCooldown = 0.8f;
+        }
+        shootCooldown-=Time.deltaTime;
+        
         if (health<=0)
             Death();
         dashCooldown-=Time.deltaTime;

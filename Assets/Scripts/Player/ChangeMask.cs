@@ -21,21 +21,26 @@ public class ChangeMask : MonoBehaviour
 
     public Sprite[] brokenForBossSprite;
 
-    private MiniBoss boss;
-    private bool isBossOnLevel;
+    public MiniBoss boss;
+    public FinalBoss finalBoss;
     protected static int scrollMask;
     protected static int countEnd = 0;
     [SerializeField] Player player;
     private bool checkHPDecrease = true;
     private void Start()
     {
-        isBossOnLevel = GameObject.Find("Boss") != null;
-        if (isBossOnLevel)
-            boss = GameObject.FindWithTag("Enemy").GetComponent<MiniBoss>();
+        
+        if (isMiniBossOnLvl())
+            boss = GameObject.Find("Boss").GetComponent<MiniBoss>();
+        if(isFinalBossOnLvl())
+            finalBoss = GameObject.Find("FinalBoss").GetComponent<FinalBoss>();
+
+
     }
+
     void Update()
     {
-
+        
         if (player.health == 0.5)
         {
             if (checkHPDecrease)
@@ -87,8 +92,11 @@ public class ChangeMask : MonoBehaviour
             Masks.sprite = waterMask;
         else if (scrollMask == 3)
             Masks.sprite = airMask;
-        if (isBossOnLevel)
+
+        if (isMiniBossOnLvl())
             getBossMagic();
+        else if(isFinalBossOnLvl())
+            getFinalBossMagic();
     }
     public int getMagic()
     {
@@ -113,6 +121,17 @@ public class ChangeMask : MonoBehaviour
         waterMask = forBossSprite[10];
         earthMask = forBossSprite[5];
     }
+
+    private bool isFinalBossOnLvl()
+    {
+        return GameObject.Find("FinalBoss") != null;
+    }
+
+    private bool isMiniBossOnLvl()
+    {
+        return GameObject.Find("Boss") != null;
+    }
+
     private void getBossMagic()
     {
         if (player.health > 0.5)
@@ -121,4 +140,14 @@ public class ChangeMask : MonoBehaviour
             Masks.sprite = brokenForBossSprite[4 * (int)boss.magicType + scrollMask];
         Debug.Log((int)boss.magicType + scrollMask);
     }
+
+    private void getFinalBossMagic()
+    {
+        if (player.health > 0.5)
+            Masks.sprite = forBossSprite[4 * (int)finalBoss.magicType + scrollMask];
+        else
+            Masks.sprite = brokenForBossSprite[4 * (int)finalBoss.magicType + scrollMask];
+        Debug.Log((int)finalBoss.magicType + scrollMask);
+    }
+
 }

@@ -7,10 +7,13 @@ using UnityEngine;
 
 public class MiniBoss : PatrolingEnemy
 {
-    
+    public bool isFinalMiniBoss;
     public Magic[] elements;
     bool DashAble = false;
-    
+    public GameObject finalBoss;
+    public int curMagicType;
+
+
     Vector3 dashDirection;
     readonly float _speedRotatee = 30f;
     public float dashSpeed;
@@ -19,6 +22,7 @@ public class MiniBoss : PatrolingEnemy
 
     protected override void Start()
     {
+        
         Invoke(nameof(UnlockDash), 4f);
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -139,7 +143,7 @@ public class MiniBoss : PatrolingEnemy
 
     protected virtual void ChangeElement()
     {
-        int curMagicType =Random.Range(0,elements.Length);
+        curMagicType =Random.Range(0,elements.Length);
         magicType = elements[curMagicType];
     }
 
@@ -164,6 +168,16 @@ public class MiniBoss : PatrolingEnemy
 
     }
 
+
+    public override void Death()
+    {
+        base.Death();
+
+        if(isFinalMiniBoss) 
+        {
+            finalBoss.transform.position = transform.position;
+        }
+    }
 
 }
 

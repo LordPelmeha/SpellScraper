@@ -152,6 +152,7 @@ public class Enemy : MonoBehaviour
     public void Death()
     {
         //сюда анимацию смерти врага
+        
         Destroy(gameObject);
     }
     

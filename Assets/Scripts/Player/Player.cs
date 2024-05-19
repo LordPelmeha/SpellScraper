@@ -120,6 +120,9 @@ public class Player : MonoBehaviour
     public void Death()
     {
         //сюда анимацию смерти игрока
+        animator.SetFloat("Death", 2);
+        //Destroy(gameObject);
+        //SceneManager.LoadScene("Level1");
         Destroy(gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

@@ -121,9 +121,17 @@ public class Player : MonoBehaviour
     {
         //сюда анимацию смерти игрока
         animator.SetFloat("Death", 2);
+        rb.simulated=false;
+        //GetComponent<Player>().GetComponent<CircleCollider2D>().enabled = false;
         //Destroy(gameObject);
         //SceneManager.LoadScene("Level1");
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(restoreAfterDeath());
+    }
+    private IEnumerator restoreAfterDeath()
+    {
+        yield return new WaitForSeconds(3.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

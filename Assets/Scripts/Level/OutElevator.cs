@@ -22,7 +22,7 @@ public class OutElevator : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (previousScene != "Level4")
+            if (previousScene != "Boss4")
             {
                 SceneManager.LoadScene($"Level{int.Parse(previousScene[^1].ToString()) + 1}");
             }

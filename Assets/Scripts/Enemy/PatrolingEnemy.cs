@@ -42,10 +42,10 @@ public class PatrolingEnemy : Enemy
                 animType = "EarthMove";
                 break;
             case Magic.Air:
-                animType = "AirEnemy";
+                animType = "WindMove";
                 break;
             case Magic.Water:
-                animType = "WaterEnemy";
+                animType = "WaterMove";
                 break;
         }
     }

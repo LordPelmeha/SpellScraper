@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
                 animType = "EarthMove";
                 break;
             case Magic.Air:
-                animType = "WindEnemy";
+                animType = "WindMove";
                 break;
             case Magic.Water:
                 animType = "WaterMove";

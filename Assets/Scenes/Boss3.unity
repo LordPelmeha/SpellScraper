@@ -614,6 +614,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cf76fd6609ecb644690466d377637da4, type: 3}
   - {fileID: 21300000, guid: 12a3ca026028f434b81b129655dac43f, type: 3}
   - {fileID: 21300000, guid: b9311b0b45882f54f87dcc52ff0bb37c, type: 3}
+  boss: {fileID: 0}
+  finalBoss: {fileID: 0}
   player: {fileID: 1497298661}
 --- !u!114 &11829673
 MonoBehaviour:
@@ -1247,7 +1249,10 @@ MonoBehaviour:
   isPatrolingRandom: 0
   maxWaitTime: 0
   minWaitTime: 0
-  elements: 0000000001000000
+  isFinalMiniBoss: 0
+  elements: 0200000003000000
+  finalBoss: {fileID: 0}
+  curMagicType: 0
   dashSpeed: 10
   maxDashLength: 0
   walls: []
@@ -15048,7 +15053,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 09840fecdd53e7e44a71de296fe90be6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 81fefe3c15e02bf4b99f1c48d579cf21, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -22134,6 +22139,8 @@ MonoBehaviour:
   brokenWaterMask: {fileID: 0}
   brokeEearthMask: {fileID: 0}
   brokenForBossSprite: []
+  boss: {fileID: 0}
+  finalBoss: {fileID: 0}
   player: {fileID: 0}
   evilFireBullet: {fileID: 7971796923087094374, guid: c2ced6ab48f64f740aa77794b4e0d854, type: 3}
   evilAirBullet: {fileID: 7971796923087094374, guid: cc0a06edb7d9c8241854c5bac0046c20, type: 3}
@@ -111702,8 +111709,8 @@ MonoBehaviour:
   offset: -90
   StartTimeBtwShots: 1
   Bullets:
-  - {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
   - {fileID: 7971796923087094374, guid: cc86845aebbadc341a843e8859e3613f, type: 3}
+  - {fileID: 7971796923087094374, guid: b27210ce5f6be2f40ab740dc5850ce75, type: 3}
 --- !u!212 &1809805647
 SpriteRenderer:
   m_ObjectHideFlags: 0

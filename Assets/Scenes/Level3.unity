@@ -2509,7 +2509,7 @@ MonoBehaviour:
   Owner: {fileID: 1300529831}
   player: {fileID: 1140946305}
   shotPoint: {fileID: 126514258}
-  Bullet: {fileID: 7971796923087094374, guid: 02a02510a955ca54cb72c2b45b805f06, type: 3}
+  Bullet: {fileID: 7971796923087094374, guid: b27210ce5f6be2f40ab740dc5850ce75, type: 3}
   offset: -90
   StartTimeBtwShots: 1
 --- !u!212 &126514260
@@ -4043,7 +4043,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 09840fecdd53e7e44a71de296fe90be6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 81fefe3c15e02bf4b99f1c48d579cf21, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -11628,7 +11628,7 @@ MonoBehaviour:
   Owner: {fileID: 1270202743}
   player: {fileID: 1140946305}
   shotPoint: {fileID: 685725888}
-  Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
+  Bullet: {fileID: 7971796923087094374, guid: cc86845aebbadc341a843e8859e3613f, type: 3}
   offset: -90
   StartTimeBtwShots: 1
 --- !u!212 &685725890
@@ -13038,7 +13038,7 @@ MonoBehaviour:
   Owner: {fileID: 1413475060}
   player: {fileID: 1140946305}
   shotPoint: {fileID: 734010832}
-  Bullet: {fileID: 7971796923087094374, guid: 02a02510a955ca54cb72c2b45b805f06, type: 3}
+  Bullet: {fileID: 7971796923087094374, guid: b27210ce5f6be2f40ab740dc5850ce75, type: 3}
   offset: -90
   StartTimeBtwShots: 1
 --- !u!212 &734010834
@@ -13350,7 +13350,7 @@ MonoBehaviour:
   Owner: {fileID: 1528424760}
   player: {fileID: 1140946305}
   shotPoint: {fileID: 744075585}
-  Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
+  Bullet: {fileID: 7971796923087094374, guid: cc86845aebbadc341a843e8859e3613f, type: 3}
   offset: -90
   StartTimeBtwShots: 1
 --- !u!212 &744075587
@@ -15550,7 +15550,7 @@ MonoBehaviour:
   Owner: {fileID: 1355119769}
   player: {fileID: 1140946305}
   shotPoint: {fileID: 838272114}
-  Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
+  Bullet: {fileID: 7971796923087094374, guid: cc86845aebbadc341a843e8859e3613f, type: 3}
   offset: -90
   StartTimeBtwShots: 1
 --- !u!212 &838272116
@@ -16261,6 +16261,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cf76fd6609ecb644690466d377637da4, type: 3}
   - {fileID: 21300000, guid: 12a3ca026028f434b81b129655dac43f, type: 3}
   - {fileID: 21300000, guid: b9311b0b45882f54f87dcc52ff0bb37c, type: 3}
+  boss: {fileID: 0}
+  finalBoss: {fileID: 0}
   player: {fileID: 1140946303}
 --- !u!114 &881646729
 MonoBehaviour:
@@ -20161,7 +20163,7 @@ MonoBehaviour:
   Owner: {fileID: 1791252937}
   player: {fileID: 1140946305}
   shotPoint: {fileID: 1094786872}
-  Bullet: {fileID: 7971796923087094374, guid: 02a02510a955ca54cb72c2b45b805f06, type: 3}
+  Bullet: {fileID: 7971796923087094374, guid: b27210ce5f6be2f40ab740dc5850ce75, type: 3}
   offset: -90
   StartTimeBtwShots: 1
 --- !u!212 &1094786874
@@ -107048,7 +107050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 1
-  magicType: 0
+  magicType: 2
   detectionRange: 6
   stoppingRange: 0
   health: 1
@@ -107101,7 +107103,7 @@ Animator:
   m_GameObject: {fileID: 1270202742}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a68bba36f2af5e641b3ca7d217d371bd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 813cbc8a54ab0eb49952c5a806a4971f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -107188,7 +107190,7 @@ SpriteRenderer:
   m_SortingLayerID: 156015359
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 21540960c94f7c744ae9dd24237c431b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa4818d7ab9ca3244b1bf97a43ea56f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -107892,7 +107894,7 @@ Animator:
   m_GameObject: {fileID: 1300529827}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cb454685a99272648870ff0ac7d75a21, type: 2}
+  m_Controller: {fileID: 9100000, guid: c4da6194d9f3ec2439151a993e5c0a3c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -107952,7 +107954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 4
-  magicType: 1
+  magicType: 3
   detectionRange: 6
   stoppingRange: 0
   health: 1
@@ -108002,7 +108004,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f41a427899a95f043aa77aa25faade64, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c9e56f9c7bdc724db6a54fe7a4ad1e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108950,7 +108952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 1
-  magicType: 0
+  magicType: 2
   detectionRange: 6
   stoppingRange: 0
   health: 1
@@ -109003,7 +109005,7 @@ Animator:
   m_GameObject: {fileID: 1355119768}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a68bba36f2af5e641b3ca7d217d371bd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 813cbc8a54ab0eb49952c5a806a4971f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -109090,7 +109092,7 @@ SpriteRenderer:
   m_SortingLayerID: 156015359
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 21540960c94f7c744ae9dd24237c431b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa4818d7ab9ca3244b1bf97a43ea56f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110089,7 +110091,7 @@ Animator:
   m_GameObject: {fileID: 1413475056}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cb454685a99272648870ff0ac7d75a21, type: 2}
+  m_Controller: {fileID: 9100000, guid: c4da6194d9f3ec2439151a993e5c0a3c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -110149,7 +110151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 4
-  magicType: 1
+  magicType: 3
   detectionRange: 6
   stoppingRange: 0
   health: 1
@@ -110199,7 +110201,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f41a427899a95f043aa77aa25faade64, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c9e56f9c7bdc724db6a54fe7a4ad1e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111810,7 +111812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 1
-  magicType: 0
+  magicType: 2
   detectionRange: 6
   stoppingRange: 0
   health: 1
@@ -111865,7 +111867,7 @@ Animator:
   m_GameObject: {fileID: 1528424759}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a68bba36f2af5e641b3ca7d217d371bd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 813cbc8a54ab0eb49952c5a806a4971f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -111952,7 +111954,7 @@ SpriteRenderer:
   m_SortingLayerID: 156015359
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9fd888b544ff84d4aa0b32927ecce94c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa4818d7ab9ca3244b1bf97a43ea56f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114988,6 +114990,8 @@ MonoBehaviour:
   brokenWaterMask: {fileID: 0}
   brokeEearthMask: {fileID: 0}
   brokenForBossSprite: []
+  boss: {fileID: 0}
+  finalBoss: {fileID: 0}
   player: {fileID: 0}
   evilFireBullet: {fileID: 7971796923087094374, guid: c2ced6ab48f64f740aa77794b4e0d854, type: 3}
   evilAirBullet: {fileID: 7971796923087094374, guid: cc0a06edb7d9c8241854c5bac0046c20, type: 3}
@@ -115205,7 +115209,7 @@ Animator:
   m_GameObject: {fileID: 1791252933}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cb454685a99272648870ff0ac7d75a21, type: 2}
+  m_Controller: {fileID: 9100000, guid: c4da6194d9f3ec2439151a993e5c0a3c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -115265,7 +115269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 4
-  magicType: 1
+  magicType: 3
   detectionRange: 6
   stoppingRange: 0
   health: 1
@@ -115315,7 +115319,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f41a427899a95f043aa77aa25faade64, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c9e56f9c7bdc724db6a54fe7a4ad1e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120403,22 +120407,22 @@ SceneRoots:
   - {fileID: 897776131}
   - {fileID: 18274876}
   - {fileID: 1140946305}
-  - {fileID: 914369884}
-  - {fileID: 1297791445}
-  - {fileID: 46110329}
-  - {fileID: 1355119774}
-  - {fileID: 1528424765}
-  - {fileID: 1996827622}
-  - {fileID: 426107363}
-  - {fileID: 1343546484}
-  - {fileID: 408325327}
-  - {fileID: 1791252939}
   - {fileID: 1413475062}
-  - {fileID: 2055331329}
-  - {fileID: 1670045928}
   - {fileID: 1300529833}
+  - {fileID: 1791252939}
   - {fileID: 1270202748}
+  - {fileID: 2055331329}
+  - {fileID: 914369884}
+  - {fileID: 1355119774}
+  - {fileID: 408325327}
+  - {fileID: 426107363}
+  - {fileID: 46110329}
+  - {fileID: 1996827622}
+  - {fileID: 1528424765}
+  - {fileID: 1297791445}
   - {fileID: 2088229246}
+  - {fileID: 1343546484}
+  - {fileID: 1670045928}
   - {fileID: 1458250251}
   - {fileID: 577726959}
   - {fileID: 159727}

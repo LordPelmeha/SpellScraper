@@ -1249,9 +1249,9 @@ MonoBehaviour:
   isPatrolingRandom: 1
   maxWaitTime: 0
   minWaitTime: 0
-  isFinalMiniBoss: 1
+  isFinalMiniBoss: 0
   elements: 0000000001000000
-  finalBoss: {fileID: 1711392416}
+  finalBoss: {fileID: 0}
   curMagicType: 0
   dashSpeed: 10
   maxDashLength: 0
@@ -110340,7 +110340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1711392417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112116,7 +112116,7 @@ MonoBehaviour:
   StartTimeBtwShots: 1
   Bullets:
   - {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
-  - {fileID: 7971796923087094374, guid: cc86845aebbadc341a843e8859e3613f, type: 3}
+  - {fileID: 7971796923087094374, guid: 02a02510a955ca54cb72c2b45b805f06, type: 3}
 --- !u!212 &1809805647
 SpriteRenderer:
   m_ObjectHideFlags: 0

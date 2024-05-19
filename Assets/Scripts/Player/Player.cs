@@ -127,6 +127,8 @@ public class Player : MonoBehaviour
         //SceneManager.LoadScene("Level1");
         //Destroy(gameObject);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        moveDelta = Vector3.zero;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
         StartCoroutine(restoreAfterDeath());
     }
     private IEnumerator restoreAfterDeath()

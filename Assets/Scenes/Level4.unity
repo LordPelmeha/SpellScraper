@@ -7136,7 +7136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 1
-  magicType: 1
+  magicType: 0
   detectionRange: 6
   stoppingRange: 0
   health: 1
@@ -7189,7 +7189,7 @@ Animator:
   m_GameObject: {fileID: 389672467}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cb454685a99272648870ff0ac7d75a21, type: 2}
+  m_Controller: {fileID: 9100000, guid: a68bba36f2af5e641b3ca7d217d371bd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8994,7 +8994,7 @@ Animator:
   m_GameObject: {fileID: 583803779}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 813cbc8a54ab0eb49952c5a806a4971f, type: 2}
+  m_Controller: {fileID: 9100000, guid: cb454685a99272648870ff0ac7d75a21, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9054,7 +9054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 4
-  magicType: 2
+  magicType: 1
   detectionRange: 6
   stoppingRange: 0
   health: 1
@@ -11421,7 +11421,7 @@ Animator:
   m_GameObject: {fileID: 725443184}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 813cbc8a54ab0eb49952c5a806a4971f, type: 2}
+  m_Controller: {fileID: 9100000, guid: cb454685a99272648870ff0ac7d75a21, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -11481,7 +11481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 4
-  magicType: 2
+  magicType: 1
   detectionRange: 6
   stoppingRange: 0
   health: 1
@@ -12550,7 +12550,7 @@ Animator:
   m_GameObject: {fileID: 762922107}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 813cbc8a54ab0eb49952c5a806a4971f, type: 2}
+  m_Controller: {fileID: 9100000, guid: cb454685a99272648870ff0ac7d75a21, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -12610,7 +12610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 4
-  magicType: 2
+  magicType: 1
   detectionRange: 6
   stoppingRange: 0
   health: 1
@@ -15709,7 +15709,7 @@ MonoBehaviour:
   Owner: {fileID: 725443188}
   player: {fileID: 1497298663}
   shotPoint: {fileID: 1059085658}
-  Bullet: {fileID: 7971796923087094374, guid: cc86845aebbadc341a843e8859e3613f, type: 3}
+  Bullet: {fileID: 7971796923087094374, guid: 02a02510a955ca54cb72c2b45b805f06, type: 3}
   offset: -90
   StartTimeBtwShots: 1
 --- !u!212 &1059085660
@@ -17755,7 +17755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 2
-  magicType: 1
+  magicType: 0
   detectionRange: 6
   stoppingRange: 0
   health: 1
@@ -17810,7 +17810,7 @@ Animator:
   m_GameObject: {fileID: 1244479314}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cb454685a99272648870ff0ac7d75a21, type: 2}
+  m_Controller: {fileID: 9100000, guid: a68bba36f2af5e641b3ca7d217d371bd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -19882,7 +19882,7 @@ MonoBehaviour:
   Owner: {fileID: 389672468}
   player: {fileID: 1497298663}
   shotPoint: {fileID: 1381697025}
-  Bullet: {fileID: 7971796923087094374, guid: 02a02510a955ca54cb72c2b45b805f06, type: 3}
+  Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
   offset: -90
   StartTimeBtwShots: 1
 --- !u!212 &1381697027
@@ -21852,7 +21852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 1
-  magicType: 1
+  magicType: 0
   detectionRange: 6
   stoppingRange: 0
   health: 1
@@ -21905,7 +21905,7 @@ Animator:
   m_GameObject: {fileID: 1529452999}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cb454685a99272648870ff0ac7d75a21, type: 2}
+  m_Controller: {fileID: 9100000, guid: a68bba36f2af5e641b3ca7d217d371bd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -22647,7 +22647,7 @@ MonoBehaviour:
   Owner: {fileID: 762922111}
   player: {fileID: 1497298663}
   shotPoint: {fileID: 1551564429}
-  Bullet: {fileID: 7971796923087094374, guid: cc86845aebbadc341a843e8859e3613f, type: 3}
+  Bullet: {fileID: 7971796923087094374, guid: 02a02510a955ca54cb72c2b45b805f06, type: 3}
   offset: -90
   StartTimeBtwShots: 1
 --- !u!212 &1551564431
@@ -110672,7 +110672,7 @@ MonoBehaviour:
   Owner: {fileID: 1244479315}
   player: {fileID: 1497298663}
   shotPoint: {fileID: 1759678307}
-  Bullet: {fileID: 7971796923087094374, guid: 02a02510a955ca54cb72c2b45b805f06, type: 3}
+  Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
   offset: -90
   StartTimeBtwShots: 1
 --- !u!212 &1759678309
@@ -112768,7 +112768,7 @@ MonoBehaviour:
   Owner: {fileID: 583803783}
   player: {fileID: 1497298663}
   shotPoint: {fileID: 1976735693}
-  Bullet: {fileID: 7971796923087094374, guid: cc86845aebbadc341a843e8859e3613f, type: 3}
+  Bullet: {fileID: 7971796923087094374, guid: 02a02510a955ca54cb72c2b45b805f06, type: 3}
   offset: -90
   StartTimeBtwShots: 1
 --- !u!212 &1976735695
@@ -113802,7 +113802,7 @@ MonoBehaviour:
   Owner: {fileID: 1529453000}
   player: {fileID: 1497298663}
   shotPoint: {fileID: 2134894896}
-  Bullet: {fileID: 7971796923087094374, guid: 02a02510a955ca54cb72c2b45b805f06, type: 3}
+  Bullet: {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
   offset: -90
   StartTimeBtwShots: 1
 --- !u!212 &2134894898

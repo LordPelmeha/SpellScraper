@@ -37,15 +37,19 @@ public class PatrolingEnemy : Enemy
         {
             case Magic.Fire:
                 animType = "MoveEnemy";
+                DeathName = "Death_Fire";
                 break;
             case Magic.Earth:
                 animType = "EarthMove";
+                DeathName = "Death_Earth";
                 break;
             case Magic.Air:
-                animType = "AirEnemy";
+                animType = "WindEnemy";
+                DeathName = "Death_Wind";
                 break;
             case Magic.Water:
-                animType = "WaterEnemy";
+                animType = "WaterMove";
+                DeathName = "Death_Water";
                 break;
         }
     }
@@ -53,6 +57,8 @@ public class PatrolingEnemy : Enemy
 
     protected override void Update()
     {
+        if(isDead) 
+            return;
         distanceToPlayer = Vector3.Distance(transform.position, player.position);
         if ((distanceToPlayer <= detectionRange) && CanSeePlayer() && (distanceToPlayer > stoppingRange))
         {

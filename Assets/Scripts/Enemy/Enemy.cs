@@ -149,10 +149,10 @@ public class Enemy : MonoBehaviour
             
     }
 
-    public void Death()
+    public virtual void Death()
     {
-        //сюда анимацию смерти врага
-        
+        rb.GetComponent<CapsuleCollider2D>().enabled = false;
+        StartCoroutine(DeathCourutine());
         Destroy(gameObject);
     }
     
@@ -173,7 +173,11 @@ public class Enemy : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * _speedRotate);
     }
 
-   
+    protected virtual IEnumerator DeathCourutine()
+    {
+        yield return new WaitForSeconds(0.3f);
+        StopCoroutine(DeathCourutine());
+    }
 
 }
 

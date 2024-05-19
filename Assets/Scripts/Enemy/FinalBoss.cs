@@ -71,6 +71,8 @@ public class FinalBoss : MiniBoss
 
             transform.position = Vector3.MoveTowards(transform.position, destinationPoint, 3f);
             rb.velocity = new Vector3(0,0,0);
+
+            ChangeElement();
         }
 
 
@@ -100,5 +102,7 @@ public class FinalBoss : MiniBoss
 
 
     }
+
+    
 
 }

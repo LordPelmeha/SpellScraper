@@ -27,6 +27,9 @@ public class EnemyMagicHand : MonoBehaviour
 
     protected virtual void Update()
     {
+        if(Owner.isDead) 
+            return;
+
         Vector3 d = player.transform.position - transform.position;
         z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg;
 

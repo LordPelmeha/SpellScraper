@@ -35,16 +35,16 @@ public class MiniBoss : PatrolingEnemy
         switch (magicType)
         {
             case Magic.Fire:
-                animType = "MoveEnemy";
+                DeathName = "";
                 break;
             case Magic.Earth:
-                animType = "EarthMove";
+                DeathName = "";
                 break;
             case Magic.Air:
-                animType = "AirEnemy";
+                animType = "FinalBoss_Walk";
                 break;
             case Magic.Water:
-                animType = "WaterEnemy";
+                DeathName = "";
                 break;
         }
     }

@@ -32,8 +32,9 @@ public class Enemy : MonoBehaviour
     protected Quaternion rotation;
 
     protected float distanceToPlayer;
-    
+    public bool isDead;
     protected string animType;
+    protected string DeathName;
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -42,15 +43,19 @@ public class Enemy : MonoBehaviour
         {
             case Magic.Fire:
                 animType = "MoveEnemy";
+                DeathName = "Death_Fire";
                 break;
             case Magic.Earth:
                 animType = "EarthMove";
+                DeathName = "Death_Earth";
                 break;
             case Magic.Air:
-                animType = "WindMove";
+                animType = "WindEnemy";
+                DeathName = "Death_Wind";
                 break;
             case Magic.Water:
                 animType = "WaterMove";
+                DeathName = "Death_Water";
                 break;
         }
             
@@ -59,6 +64,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (isDead) return;
         distanceToPlayer = Vector3.Distance(transform.position, player.position);
         if ((distanceToPlayer <= detectionRange) && CanSeePlayer() && (distanceToPlayer > stoppingRange))
         {
@@ -135,6 +141,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            isDead = true;
             if (b.emotion == EvilAndKind.Evil)
             {
                 PlayerPrefs.SetInt("CountEnd", PlayerPrefs.GetInt("CountEnd") - 1);
@@ -152,8 +159,9 @@ public class Enemy : MonoBehaviour
     public virtual void Death()
     {
         rb.GetComponent<CapsuleCollider2D>().enabled = false;
+        animator.SetFloat(DeathName, 2);
         StartCoroutine(DeathCourutine());
-        Destroy(gameObject);
+        
     }
     
     protected virtual void ChasePlayer()
@@ -175,7 +183,8 @@ public class Enemy : MonoBehaviour
 
     protected virtual IEnumerator DeathCourutine()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1.0f);
+        Destroy(gameObject);
         StopCoroutine(DeathCourutine());
     }
 

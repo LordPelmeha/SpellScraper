@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
     protected float distanceToPlayer;
     
     protected string animType;
+    protected string DeathName;
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -42,15 +43,19 @@ public class Enemy : MonoBehaviour
         {
             case Magic.Fire:
                 animType = "MoveEnemy";
+                DeathName = "Death_Fire";
                 break;
             case Magic.Earth:
                 animType = "EarthMove";
+                DeathName = "Death_Earth";
                 break;
             case Magic.Air:
                 animType = "WindEnemy";
+                DeathName = "Death_Wind";
                 break;
             case Magic.Water:
                 animType = "WaterMove";
+                DeathName = "Death_Water";
                 break;
         }
             
@@ -151,9 +156,9 @@ public class Enemy : MonoBehaviour
 
     public virtual void Death()
     {
-        rb.GetComponent<CapsuleCollider2D>().enabled = false;
+        //rb.GetComponent<CapsuleCollider2D>().enabled = false;
         StartCoroutine(DeathCourutine());
-        Destroy(gameObject);
+        animator.SetFloat(DeathName, 2);
     }
     
     protected virtual void ChasePlayer()
@@ -175,7 +180,8 @@ public class Enemy : MonoBehaviour
 
     protected virtual IEnumerator DeathCourutine()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(2.0f);
+        Destroy(gameObject);
         StopCoroutine(DeathCourutine());
     }
 

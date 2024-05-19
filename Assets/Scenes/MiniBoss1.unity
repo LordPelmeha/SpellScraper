@@ -575,28 +575,45 @@ MonoBehaviour:
   fireMask: {fileID: 21300000, guid: abcda828a8ef0ac4fbdab9fe68d62886, type: 3}
   airMask: {fileID: 21300000, guid: e05b29f5f966da842bf7dc920b4f20c5, type: 3}
   waterMask: {fileID: 21300000, guid: dc02354117e8fb145b68f1b16c69a12f, type: 3}
-  earthMask: {fileID: 21300000, guid: 36f42b680dc5f19479fae55a4bf4f9b3, type: 3}
+  earthMask: {fileID: 21300000, guid: 887b73aa79375bf43b5416ef259c2129, type: 3}
   forBossSprite:
-  - {fileID: 21300000, guid: c44339d15e575524e9927af0d60cea40, type: 3}
-  - {fileID: 21300000, guid: ca74de135be230f4db67fedc4002ced4, type: 3}
-  - {fileID: 21300000, guid: f56bd81f836f97d4c9b4673283f115a9, type: 3}
-  - {fileID: 21300000, guid: 91d207d6c571d4d4ca0d4f1f9dc8dad4, type: 3}
-  - {fileID: 21300000, guid: c44339d15e575524e9927af0d60cea40, type: 3}
-  - {fileID: 21300000, guid: ca74de135be230f4db67fedc4002ced4, type: 3}
-  - {fileID: 21300000, guid: f56bd81f836f97d4c9b4673283f115a9, type: 3}
-  - {fileID: 21300000, guid: 91d207d6c571d4d4ca0d4f1f9dc8dad4, type: 3}
-  - {fileID: 21300000, guid: c44339d15e575524e9927af0d60cea40, type: 3}
-  - {fileID: 21300000, guid: ca74de135be230f4db67fedc4002ced4, type: 3}
-  - {fileID: 21300000, guid: f56bd81f836f97d4c9b4673283f115a9, type: 3}
-  - {fileID: 21300000, guid: 91d207d6c571d4d4ca0d4f1f9dc8dad4, type: 3}
-  - {fileID: 21300000, guid: c44339d15e575524e9927af0d60cea40, type: 3}
-  - {fileID: 21300000, guid: ca74de135be230f4db67fedc4002ced4, type: 3}
-  - {fileID: 21300000, guid: f56bd81f836f97d4c9b4673283f115a9, type: 3}
-  - {fileID: 21300000, guid: 91d207d6c571d4d4ca0d4f1f9dc8dad4, type: 3}
+  - {fileID: 21300000, guid: abcda828a8ef0ac4fbdab9fe68d62886, type: 3}
+  - {fileID: 21300000, guid: 8471debc5f9473045a689bb1a669daf6, type: 3}
+  - {fileID: 21300000, guid: c85c30c5e806f89408776b3decd7a294, type: 3}
+  - {fileID: 21300000, guid: 3c59bd61546819c4387e762a247a3cc5, type: 3}
+  - {fileID: 21300000, guid: 504783851c2bee541bb8cd7a6ef7f104, type: 3}
+  - {fileID: 21300000, guid: 887b73aa79375bf43b5416ef259c2129, type: 3}
+  - {fileID: 21300000, guid: b4df1d198fdfe0c479fed61bfd32e91b, type: 3}
+  - {fileID: 21300000, guid: 95876ec7bf07c0b49afffabaa9ba4aa0, type: 3}
+  - {fileID: 21300000, guid: 7c816601acb0dc044904998b834cca07, type: 3}
+  - {fileID: 21300000, guid: 40b9cf7155596ce4ba48949098a2751a, type: 3}
+  - {fileID: 21300000, guid: dc02354117e8fb145b68f1b16c69a12f, type: 3}
+  - {fileID: 21300000, guid: 0b927fcda72935f43a41efb4f167be56, type: 3}
+  - {fileID: 21300000, guid: 7d1db577a4c94884180218a0371d0934, type: 3}
+  - {fileID: 21300000, guid: 703267200eaf7b74286f41b6adef2496, type: 3}
+  - {fileID: 21300000, guid: 0ce432d1168fa444da311013d32537cb, type: 3}
+  - {fileID: 21300000, guid: e05b29f5f966da842bf7dc920b4f20c5, type: 3}
   brokenFireMask: {fileID: 21300000, guid: df9ce43287a588d49972d64134f80f78, type: 3}
   brokenAirMask: {fileID: 21300000, guid: b9311b0b45882f54f87dcc52ff0bb37c, type: 3}
   brokenWaterMask: {fileID: 21300000, guid: 1fc40f9b1867e374e8b20431450a6c08, type: 3}
   brokeEearthMask: {fileID: 21300000, guid: ad5aa11d2e46d4c41bbd69c0eb60f2f0, type: 3}
+  brokenForBossSprite:
+  - {fileID: 21300000, guid: df9ce43287a588d49972d64134f80f78, type: 3}
+  - {fileID: 21300000, guid: a466cc5e0f9babe4a8dd4d6b851e0b75, type: 3}
+  - {fileID: 21300000, guid: ce0c9754c60af1d48b1b1d53cb3801c8, type: 3}
+  - {fileID: 21300000, guid: e1b3f4bf47a6804429cbe89380596b0e, type: 3}
+  - {fileID: 21300000, guid: 7bfd503eb7ed29745bc65565a7f5c4db, type: 3}
+  - {fileID: 21300000, guid: ad5aa11d2e46d4c41bbd69c0eb60f2f0, type: 3}
+  - {fileID: 21300000, guid: 9ae182fee27d76e49b3625c93240941c, type: 3}
+  - {fileID: 21300000, guid: 2085fbb9850c478438e9a1f5872cb594, type: 3}
+  - {fileID: 21300000, guid: 785d6a2514b52a44e8c2357c7c2f8539, type: 3}
+  - {fileID: 21300000, guid: 57d72bfaa80d62c4c91568ec1d3cb4f4, type: 3}
+  - {fileID: 21300000, guid: 1fc40f9b1867e374e8b20431450a6c08, type: 3}
+  - {fileID: 21300000, guid: 7b2caff5f36a22546aace429e041ba0f, type: 3}
+  - {fileID: 21300000, guid: 7d1db577a4c94884180218a0371d0934, type: 3}
+  - {fileID: 21300000, guid: cf76fd6609ecb644690466d377637da4, type: 3}
+  - {fileID: 21300000, guid: 12a3ca026028f434b81b129655dac43f, type: 3}
+  - {fileID: 21300000, guid: b9311b0b45882f54f87dcc52ff0bb37c, type: 3}
   player: {fileID: 1497298661}
 --- !u!114 &11829673
 MonoBehaviour:
@@ -1230,9 +1247,10 @@ MonoBehaviour:
   isPatrolingRandom: 0
   maxWaitTime: 0
   minWaitTime: 0
-  elements: 0000000003000000
+  elements: 0000000001000000
   dashSpeed: 10
   maxDashLength: 0
+  walls: []
 --- !u!50 &41157667
 Rigidbody2D:
   serializedVersion: 4
@@ -7148,7 +7166,7 @@ GameObject:
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &367043991
 Transform:
   m_ObjectHideFlags: 0
@@ -9741,7 +9759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &633012366
 Transform:
   m_ObjectHideFlags: 0
@@ -10607,7 +10625,7 @@ GameObject:
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &688483553
 Transform:
   m_ObjectHideFlags: 0
@@ -14987,7 +15005,7 @@ GameObject:
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &913872337
 Transform:
   m_ObjectHideFlags: 0
@@ -15527,7 +15545,7 @@ GameObject:
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1008336726
 Transform:
   m_ObjectHideFlags: 0
@@ -16566,7 +16584,7 @@ GameObject:
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1107805641
 Transform:
   m_ObjectHideFlags: 0
@@ -22111,6 +22129,7 @@ MonoBehaviour:
   brokenAirMask: {fileID: 0}
   brokenWaterMask: {fileID: 0}
   brokeEearthMask: {fileID: 0}
+  brokenForBossSprite: []
   player: {fileID: 0}
   evilFireBullet: {fileID: 7971796923087094374, guid: c2ced6ab48f64f740aa77794b4e0d854, type: 3}
   evilAirBullet: {fileID: 7971796923087094374, guid: cc0a06edb7d9c8241854c5bac0046c20, type: 3}
@@ -109397,7 +109416,7 @@ GameObject:
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1686690978
 Transform:
   m_ObjectHideFlags: 0
@@ -111611,7 +111630,7 @@ GameObject:
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1806282770
 Transform:
   m_ObjectHideFlags: 0
@@ -114158,7 +114177,7 @@ GameObject:
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2106399512
 Transform:
   m_ObjectHideFlags: 0
@@ -114361,8 +114380,9 @@ SceneRoots:
   - {fileID: 246334562}
   - {fileID: 728282714}
   - {fileID: 1497298663}
-  - {fileID: 633012366}
+  - {fileID: 41157671}
   - {fileID: 244606473}
+  - {fileID: 633012366}
   - {fileID: 946411771}
   - {fileID: 725443190}
   - {fileID: 762922113}
@@ -114383,7 +114403,6 @@ SceneRoots:
   - {fileID: 1140424125}
   - {fileID: 1636710561}
   - {fileID: 1146284034}
-  - {fileID: 41157671}
   - {fileID: 183890315}
   - {fileID: 504768145}
   - {fileID: 503220101}

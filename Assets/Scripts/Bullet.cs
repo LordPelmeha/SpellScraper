@@ -5,7 +5,7 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 public enum EvilAndKind { Evil, Kind };
-public enum Magic { Fire, Air, Water, Earth };
+public enum Magic { Fire, Earth, Water, Air };
 public class Bullet : MagicHand
 {
     public Rigidbody2D bulletrb;
@@ -17,12 +17,12 @@ public class Bullet : MagicHand
     [SerializeField] public Magic element;
     private bool isCounterMagic;
 
-    
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && !enemyBullet)
         {
-            
+
             if (collision.gameObject.GetComponent<Enemy>().health <= 0)
             {
                 if (emotion == EvilAndKind.Evil)
@@ -52,7 +52,7 @@ public class Bullet : MagicHand
             }
             else
             {
-                Physics2D.IgnoreCollision(GetComponent<Collider2D>(),collision.collider,true);
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider, true);
             }
         }
         if (!enemyBullet && (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Enemy")))
@@ -64,7 +64,7 @@ public class Bullet : MagicHand
         {
             DestroyBullet();
         }
-        
+
     }
     void Update()
     {
@@ -76,7 +76,7 @@ public class Bullet : MagicHand
         //сюда анмиацию уничтожения пули
 
         Destroy(gameObject);
-        
+
     }
     private double PlayerTakeDamage()
     {
@@ -85,7 +85,7 @@ public class Bullet : MagicHand
     private void Counterattack(ref bool isCounterMagic, Collision2D collision)
     {
         Bullet obj = collision.gameObject.GetComponent<Bullet>();
-       // Debug.Log($"{(int)obj.element} {(int)element}");
-        isCounterMagic = (math.abs((int)obj.element - (int)element) % 2 == 0) &&(obj.element!=element);
+        // Debug.Log($"{(int)obj.element} {(int)element}");
+        isCounterMagic = (math.abs((int)obj.element - (int)element) % 2 == 0) && (obj.element != element);
     }
 }

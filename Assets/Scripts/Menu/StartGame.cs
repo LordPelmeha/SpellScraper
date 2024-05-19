@@ -8,5 +8,6 @@ public class StartGame : MonoBehaviour
     public void GameStart()
     {
         SceneManager.LoadScene("Level1");
+        PlayerPrefs.SetInt("CountEnd", 0);
     }
 }

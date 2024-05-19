@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     [Range(0, 10f)] public float speed;
 
+    public GameObject respawnPoint;
+
     public Animator animator;
 
     private void Start()
@@ -111,6 +113,6 @@ public class Player : MonoBehaviour
     {
         //сюда анимацию смерти игрока
         Destroy(gameObject);
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

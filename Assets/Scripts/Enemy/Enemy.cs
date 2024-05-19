@@ -110,13 +110,13 @@ public class Enemy : MonoBehaviour
             Magic buletElement = info.element;
 
             if(!info.enemyBullet)
-                TakeDamage(buletElement);
+                TakeDamage(buletElement,info);
         }
         
 
     }
 
-    public void TakeDamage(Magic buletMagicType)
+    public void TakeDamage(Magic buletMagicType,Bullet b)
     {
         int difference = Math.Abs(magicType - buletMagicType);
         switch(difference)
@@ -131,7 +131,19 @@ public class Enemy : MonoBehaviour
         }
 
         if (health <= 0)
+        {
+            if (b.emotion == EvilAndKind.Evil)
+            {
+                PlayerPrefs.SetInt("CountEnd", PlayerPrefs.GetInt("CountEnd") - 1);
+            }
+            if (b.emotion == EvilAndKind.Kind)
+            {
+                PlayerPrefs.SetInt("CountEnd", PlayerPrefs.GetInt("CountEnd") + 1);
+            }
+            Debug.Log(PlayerPrefs.GetInt("CountEnd"));
             Death();
+        }
+            
     }
 
     public void Death()

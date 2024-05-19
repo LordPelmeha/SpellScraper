@@ -97,6 +97,7 @@ public class ChangeMask : MonoBehaviour
     public int getEnding()
     {
         return countEnd;
+        
     }
     private void breakMask()
     {

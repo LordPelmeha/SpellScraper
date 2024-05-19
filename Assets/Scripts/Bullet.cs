@@ -13,7 +13,7 @@ public class Bullet : MagicHand
     [SerializeField] LayerMask WhatIsSolid;
     protected LayerMask excludeLayers;
     public bool enemyBullet;
-    [SerializeField] EvilAndKind emotion;
+    [SerializeField] public EvilAndKind emotion;
     [SerializeField] public Magic element;
     private bool isCounterMagic;
 
@@ -23,17 +23,12 @@ public class Bullet : MagicHand
         if (collision.gameObject.CompareTag("Enemy") && !enemyBullet)
         {
 
-            if (collision.gameObject.GetComponent<Enemy>().health <= 0)
-            {
-                if (emotion == EvilAndKind.Evil)
-                {
-                    countEnd--;
-                }
-                if (emotion == EvilAndKind.Kind)
-                {
-                    countEnd++;
-                }
-            }
+            //if (collision.gameObject.GetComponent<Enemy>().health <= 0)
+            //{
+                
+                
+            //}
+            
         }
         if (collision.gameObject.CompareTag("Player") && enemyBullet)
         {

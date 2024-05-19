@@ -95,7 +95,7 @@ public class FinalBoss : MiniBoss
             Magic buletElement = info.element;
 
             if (!info.enemyBullet)
-                TakeDamage(buletElement);
+                TakeDamage(buletElement, info);
         }
 
 

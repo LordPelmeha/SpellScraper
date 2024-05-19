@@ -154,7 +154,7 @@ public class PatrolingEnemy : Enemy
             Magic buletElement = info.element;
 
             if (!info.enemyBullet)
-                TakeDamage(buletElement);
+                TakeDamage(buletElement, info);
         }
 
 

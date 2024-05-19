@@ -158,7 +158,7 @@ public class MiniBoss : PatrolingEnemy
             Magic buletElement = info.element;
 
             if (!info.enemyBullet)
-                TakeDamage(buletElement);
+                TakeDamage(buletElement,info);
         }
 
 

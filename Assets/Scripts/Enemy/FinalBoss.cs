@@ -46,7 +46,6 @@ public class FinalBoss : MiniBoss
             Patroling();
             Teleportation();
             transform.position = Vector3.MoveTowards(transform.position, targetPoints[currentPoint].position, moveSpeed * Time.deltaTime);
-            //transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
 
         }
 

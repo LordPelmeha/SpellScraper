@@ -1195,7 +1195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  broken: {fileID: 21300000, guid: 8bb81009383b1e84d8165b9ed835b40e, type: 3}
+  broken: {fileID: 1669324984, guid: 4e8630b3bad896849996812fcb42ff73, type: 3}
 --- !u!1 &41157665
 GameObject:
   m_ObjectHideFlags: 0
@@ -5005,7 +5005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 244606473}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9761,7 +9761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 633012366}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: design
   m_TagString: Untagged
   m_Icon: {fileID: 0}

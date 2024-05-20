@@ -29,12 +29,6 @@ public class MagicHand : ChangeMask
 
     void Update()
     {
-        //Vector3 d = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        //z = Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg;
-
-
-
-        //Quaternion bulletRotation = Quaternion.Euler(0, 0, z - 90f);
 
         //кулдаун стрельбы
         if (evilTimeBtwShots <= 0)

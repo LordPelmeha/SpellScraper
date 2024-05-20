@@ -49,15 +49,13 @@ public class MiniBoss : PatrolingEnemy
 
     protected override void Update()
     {
-        //Debug.Log(walls.Count);
+        if (isDead) return;
         distanceToPlayer = Vector3.Distance(transform.position, player.position);
         if ((distanceToPlayer <= detectionRange) && CanSeePlayer())
         {
             Patroling();
             Dash();
             transform.position = Vector3.MoveTowards(transform.position, targetPoints[currentPoint].position, moveSpeed * Time.deltaTime);
-            //transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-
         }
     }
 
@@ -169,12 +167,9 @@ public class MiniBoss : PatrolingEnemy
             Destroy(gameObject);
             finalBoss.transform.position = transform.position;
         }
-        rb.GetComponent<CapsuleCollider2D>().enabled = false;
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0);
-        animator.SetFloat(DeathName, 2);
-        StartCoroutine(DeathCourutine());
-
-        
+        transform.rotation = Quaternion.Euler(player.position);
+        rb.velocity = Vector3.zero;
+        base.Death();
     }
 
 }

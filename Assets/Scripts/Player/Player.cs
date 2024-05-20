@@ -58,17 +58,7 @@ public class Player : MonoBehaviour
         {
 
             dashCooldown = dashStartTime;
-            //Invoke(nameof(UnlockDash), 4f);
-            // rb.velocity = new Vector3(0, 0, 0);
-            //dashDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
-            //Vector3 move = dashDirection * dashSpeed;
-
-            //foreach (GameObject wall in walls)
-            //    if (Vector3.Distance(wall.transform.position, transform.position) < maxDashLength)
-            //        return;
-            //Vector3 normalizedMoveDelta = moveDelta.normalized;
             rb.velocity = moveDelta.normalized*dashSpeed;
-            //StartCoroutine(DashCoroutine());
             StartCoroutine(DashCoroutine());
         }
     }
@@ -121,11 +111,6 @@ public class Player : MonoBehaviour
         //сюда анимацию смерти игрока
         animator.SetFloat("Death", 2);
         rb.simulated=false;
-        //GetComponent<Player>().GetComponent<CircleCollider2D>().enabled = false;
-        //Destroy(gameObject);
-        //SceneManager.LoadScene("Level1");
-        //Destroy(gameObject);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         moveDelta = Vector3.zero;
         transform.rotation = Quaternion.Euler(0, 0, 0);
         StartCoroutine(restoreAfterDeath());

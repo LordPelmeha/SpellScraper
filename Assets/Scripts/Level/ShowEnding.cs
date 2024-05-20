@@ -17,8 +17,6 @@ public class ShowEnding : ChangeMask
 
      private void Start()
     {
-        //ending = PlayerPrefs.GetInt("CountEnd") >= 0 ? "хорошую" : "плохую";
-        //MyText.text = $"Поздравляем! Вы прошли игру на {ending} концовку. Дальше будет больше.\nСпасибо, что играли!";
         if (PlayerPrefs.GetInt("CountEnd") >= 0)
             ending.sprite = end1;
         else

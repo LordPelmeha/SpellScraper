@@ -20,16 +20,7 @@ public class Bullet : MagicHand
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && !enemyBullet)
-        {
 
-            //if (collision.gameObject.GetComponent<Enemy>().health <= 0)
-            //{
-                
-                
-            //}
-            
-        }
         if (collision.gameObject.CompareTag("Player") && enemyBullet)
         {
             Player player = collision.gameObject.GetComponent<Player>();
@@ -53,7 +44,7 @@ public class Bullet : MagicHand
         if (!enemyBullet && (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Enemy")))
         {
             DestroyBullet();
-            //Destroy(airHit);
+            
         }
         if (enemyBullet && (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Wall")))
         {
@@ -80,7 +71,6 @@ public class Bullet : MagicHand
     private void Counterattack(ref bool isCounterMagic, Collision2D collision)
     {
         Bullet obj = collision.gameObject.GetComponent<Bullet>();
-        // Debug.Log($"{(int)obj.element} {(int)element}");
         isCounterMagic = (math.abs((int)obj.element - (int)element) % 2 == 0) && (obj.element != element);
     }
 }

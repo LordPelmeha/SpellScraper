@@ -51,7 +51,7 @@ public class EnemyMagicHand : MonoBehaviour
 
     protected void InstantiateWithRotation(GameObject bulletPrefab)
     {
-        //Quaternion bulletRotation = Quaternion.Euler(0, 0, angle - 90f);
+        
         Instantiate(bulletPrefab, shotPoint.position, shotPoint.rotation);
     }
     protected bool CanSeePlayer()

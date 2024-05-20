@@ -10,7 +10,6 @@ public class Reflection : MonoBehaviour
     private float currentTimer;
     public void OnTriggerStay2D(Collider2D collision)
     {
-        // Debug.Log(UnityEngine.Input.GetKeyDown(KeyCode.E));
         if (collision.gameObject.CompareTag("Projectile")  && collision.gameObject.GetComponent<Bullet>().enemyBullet 
             && UnityEngine.Input.GetKey(KeyCode.Space) && currentTimer <= 0)
         {

@@ -21975,7 +21975,7 @@ MonoBehaviour:
   dashSpeed: 7
   dashDuration: 0.2
   speed: 9
-  animator: {fileID: 1497298660}
+  animator: {fileID: 0}
 --- !u!212 &1497298662
 SpriteRenderer:
   m_ObjectHideFlags: 0

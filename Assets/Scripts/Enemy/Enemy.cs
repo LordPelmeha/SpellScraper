@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
                 DeathName = "Death_Earth";
                 break;
             case Magic.Air:
-                animType = "WindMove";
+                animType = "WindEnemy";
                 DeathName = "Death_Wind";
                 break;
             case Magic.Water:

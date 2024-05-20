@@ -35,16 +35,13 @@ public class MiniBoss : PatrolingEnemy
         switch (magicType)
         {
             case Magic.Fire:
-                DeathName = "";
-                break;
-            case Magic.Earth:
-                DeathName = "";
+                DeathName = "Death_EarthFire";
                 break;
             case Magic.Air:
-                animType = "FinalBoss_Walk";
+                DeathName = "Death_FireWind";
                 break;
             case Magic.Water:
-                DeathName = "";
+                DeathName = "Death_WaterWind";
                 break;
         }
     }
@@ -74,15 +71,11 @@ public class MiniBoss : PatrolingEnemy
         moveDelta = new Vector3(transform.position.y, transform.position.x, 0f);
         if (moveDelta.magnitude > 1f)
             moveDelta.Normalize();
-        animator.SetFloat(animType, Mathf.Abs(moveDelta.x));
-        animator.SetFloat(animType, Mathf.Abs(moveDelta.y));
-        animator.SetFloat(animType, Mathf.Abs(moveDelta.magnitude));
+        
 
         if (transform.position == targetPoints[currentPoint].position)
         {
-            animator.SetFloat(animType, 0);
-            animator.SetFloat(animType, 0);
-            animator.SetFloat(animType, 0);
+            
 
             if (waitTimeCounter <= 0)
                 RandomizeCurrentPoint();
@@ -171,9 +164,11 @@ public class MiniBoss : PatrolingEnemy
 
     public override void Death()
     {
-        base.Death();
+        rb.GetComponent<CapsuleCollider2D>().enabled = false;
+        animator.SetFloat(DeathName, 2);
+        StartCoroutine(DeathCourutine());
 
-        if(isFinalMiniBoss) 
+        if (isFinalMiniBoss) 
         {
             finalBoss.transform.position = transform.position;
         }

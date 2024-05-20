@@ -1195,7 +1195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  broken: {fileID: 21300000, guid: 8bb81009383b1e84d8165b9ed835b40e, type: 3}
+  broken: {fileID: 1669324984, guid: 4e8630b3bad896849996812fcb42ff73, type: 3}
 --- !u!1 &41157665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,6 +1240,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 1636710561}
   - {fileID: 504768145}
@@ -1293,7 +1294,7 @@ Animator:
   m_GameObject: {fileID: 41157665}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a68bba36f2af5e641b3ca7d217d371bd, type: 2}
+  m_Controller: {fileID: 9100000, guid: c911bebc46404ae46b83de529fdf4599, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1380,7 +1381,7 @@ SpriteRenderer:
   m_SortingLayerID: 156015359
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 21540960c94f7c744ae9dd24237c431b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f70b2cc29b3d5b429dd57ca37287901, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7389,6 +7390,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 1806282770}
   - {fileID: 367043991}
@@ -9369,6 +9371,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &583803784
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11796,6 +11799,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &725443189
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12925,6 +12929,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &762922112
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18132,6 +18137,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 913872337}
   - {fileID: 1008336726}
@@ -22249,6 +22255,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 688483553}
   - {fileID: 2106399512}

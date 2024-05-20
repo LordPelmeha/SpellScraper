@@ -1195,7 +1195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  broken: {fileID: 21300000, guid: 8bb81009383b1e84d8165b9ed835b40e, type: 3}
+  broken: {fileID: 1669324984, guid: 4e8630b3bad896849996812fcb42ff73, type: 3}
 --- !u!1 &52781810
 GameObject:
   m_ObjectHideFlags: 0
@@ -4383,7 +4383,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10.820068, y: 0.5500488}
+  m_AnchoredPosition: {x: 10.719971, y: 0.5500488}
   m_SizeDelta: {x: 254.6328, y: 143.25989}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &203981205
@@ -7147,6 +7147,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 1806282770}
   - {fileID: 367043991}
@@ -9065,6 +9066,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &583803784
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11492,6 +11494,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &725443189
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12621,6 +12624,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &762922112
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17766,6 +17770,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 913872337}
   - {fileID: 1008336726}
@@ -21865,6 +21870,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 688483553}
   - {fileID: 2106399512}

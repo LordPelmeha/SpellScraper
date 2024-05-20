@@ -138,7 +138,6 @@ public class ChangeMask : MonoBehaviour
             Masks.sprite = forBossSprite[4 * (int)boss.magicType + scrollMask];
         else
             Masks.sprite = brokenForBossSprite[4 * (int)boss.magicType + scrollMask];
-        Debug.Log((int)boss.magicType + scrollMask);
     }
 
     private void getFinalBossMagic()
@@ -147,7 +146,6 @@ public class ChangeMask : MonoBehaviour
             Masks.sprite = forBossSprite[4 * (int)finalBoss.magicType + scrollMask];
         else
             Masks.sprite = brokenForBossSprite[4 * (int)finalBoss.magicType + scrollMask];
-        Debug.Log((int)finalBoss.magicType + scrollMask);
     }
 
 }

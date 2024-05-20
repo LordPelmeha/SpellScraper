@@ -18,6 +18,7 @@ public class Reflection : MonoBehaviour
             bullet.GetComponent<SpriteRenderer>().flipY = true ;
             bullet.bulletSpead *= -2;
             bullet.enemyBullet = false;
+            bullet.gameObject.layer = 9;
             currentTimer = startTimer;
         }   
     }

@@ -22,9 +22,10 @@ public class GoElevator : MonoBehaviour
     private IEnumerator FadeAndLoadScene()
     {
         yield return StartCoroutine(fadeScreen.FadeIn());
-        if (prev.Contains("Level"))
-            SceneManager.LoadScene($"Boss{int.Parse(prev[^1].ToString())}");
-        if (prev.Contains("Boss"))
+
+        if (prev.Contains("Boss") || prev.Contains("Level5"))
             SceneManager.LoadScene("Elevator");
+        else if (prev.Contains("Level"))
+            SceneManager.LoadScene($"Boss{int.Parse(prev[^1].ToString())}");
     }
 }

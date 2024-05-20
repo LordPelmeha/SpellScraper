@@ -5837,7 +5837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f747ca28b01004543aecd9a2d553dd37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimer: 0
+  startTimer: 0.4
 --- !u!70 &307200844
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -21867,6 +21867,7 @@ GameObject:
   - component: {fileID: 1497298660}
   - component: {fileID: 1497298659}
   - component: {fileID: 1497298658}
+  - component: {fileID: 1497298664}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -21969,13 +21970,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4144336fa8f3b2245832ef0631d3ef8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  dashStartTime: 0
-  dashSpeed: 0
-  dashDuration: 0
+  health: 1
+  dashStartTime: 1.5
+  dashSpeed: 7
+  dashDuration: 0.2
   speed: 9
-  respawnPoint: {fileID: 0}
-  animator: {fileID: 1497298660}
+  animator: {fileID: 0}
 --- !u!212 &1497298662
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22045,6 +22045,18 @@ Transform:
   - {fileID: 307200842}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1497298664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497298657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3232d15102618a245a5d58a45aa45904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1523468805
 GameObject:
   m_ObjectHideFlags: 0

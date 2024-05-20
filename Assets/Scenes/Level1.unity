@@ -5594,7 +5594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f747ca28b01004543aecd9a2d553dd37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimer: 0
+  startTimer: 0.4
 --- !u!70 &307200844
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7139,7 +7139,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 1
   magicType: 0
-  detectionRange: 6
+  detectionRange: 10
   stoppingRange: 0
   health: 1
   player: {fileID: 1497298663}
@@ -9058,7 +9058,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 4
   magicType: 1
-  detectionRange: 6
+  detectionRange: 10
   stoppingRange: 0
   health: 1
   player: {fileID: 1497298663}
@@ -11486,7 +11486,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 4
   magicType: 1
-  detectionRange: 6
+  detectionRange: 10
   stoppingRange: 0
   health: 1
   player: {fileID: 1497298663}
@@ -12616,7 +12616,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 4
   magicType: 1
-  detectionRange: 6
+  detectionRange: 10
   stoppingRange: 0
   health: 1
   player: {fileID: 1497298663}
@@ -17762,7 +17762,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 2
   magicType: 0
-  detectionRange: 6
+  detectionRange: 10
   stoppingRange: 0
   health: 1
   player: {fileID: 1497298663}
@@ -21577,7 +21577,6 @@ MonoBehaviour:
   dashSpeed: 7
   dashDuration: 0.2
   speed: 9
-  respawnPoint: {fileID: 0}
   animator: {fileID: 1497298660}
 --- !u!212 &1497298662
 SpriteRenderer:
@@ -21862,7 +21861,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 1
   magicType: 0
-  detectionRange: 6
+  detectionRange: 10
   stoppingRange: 0
   health: 1
   player: {fileID: 1497298663}

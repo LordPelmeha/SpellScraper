@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6584498686761490186}
   - component: {fileID: 1385692099223897308}
   - component: {fileID: 2356872679774547120}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: EarthEnemyBullet
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -111,6 +111,8 @@ MonoBehaviour:
   brokenWaterMask: {fileID: 0}
   brokeEearthMask: {fileID: 0}
   brokenForBossSprite: []
+  boss: {fileID: 0}
+  finalBoss: {fileID: 0}
   player: {fileID: 0}
   evilFireBullet: {fileID: 0}
   evilAirBullet: {fileID: 0}

@@ -16373,7 +16373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f747ca28b01004543aecd9a2d553dd37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimer: 0
+  startTimer: 0.4
 --- !u!70 &895480700
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -105046,6 +105046,7 @@ GameObject:
   - component: {fileID: 1140946308}
   - component: {fileID: 1140946307}
   - component: {fileID: 1140946306}
+  - component: {fileID: 1140946310}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -105070,7 +105071,6 @@ MonoBehaviour:
   dashSpeed: 7
   dashDuration: 0.2
   speed: 9
-  respawnPoint: {fileID: 0}
   animator: {fileID: 1140946304}
 --- !u!95 &1140946304
 Animator:
@@ -105236,6 +105236,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1140946310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140946302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3232d15102618a245a5d58a45aa45904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1141466270
 GameObject:
   m_ObjectHideFlags: 0
@@ -107051,7 +107063,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 1
   magicType: 2
-  detectionRange: 6
+  detectionRange: 10
   stoppingRange: 0
   health: 1
   player: {fileID: 1140946305}
@@ -107059,6 +107071,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 1297791445}
   - {fileID: 2088229246}
@@ -107955,7 +107968,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 4
   magicType: 3
-  detectionRange: 6
+  detectionRange: 10
   stoppingRange: 0
   health: 1
   player: {fileID: 1140946305}
@@ -107963,6 +107976,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &1300529832
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -108953,7 +108967,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 1
   magicType: 2
-  detectionRange: 6
+  detectionRange: 10
   stoppingRange: 0
   health: 1
   player: {fileID: 1140946305}
@@ -108961,6 +108975,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 2055331329}
   - {fileID: 914369884}
@@ -110152,7 +110167,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 4
   magicType: 3
-  detectionRange: 6
+  detectionRange: 10
   stoppingRange: 0
   health: 1
   player: {fileID: 1140946305}
@@ -110160,6 +110175,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &1413475061
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -111813,7 +111829,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 1
   magicType: 2
-  detectionRange: 6
+  detectionRange: 10
   stoppingRange: 0
   health: 1
   player: {fileID: 1140946305}
@@ -111821,6 +111837,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 408325327}
   - {fileID: 426107363}
@@ -113565,7 +113582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1670045928}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: design
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115270,7 +115287,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 4
   magicType: 3
-  detectionRange: 6
+  detectionRange: 10
   stoppingRange: 0
   health: 1
   player: {fileID: 1140946305}
@@ -115278,6 +115295,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &1791252938
 SpriteRenderer:
   m_ObjectHideFlags: 0

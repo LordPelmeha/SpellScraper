@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     [Range(0, 10f)] public float speed;
 
-    public GameObject respawnPoint;
 
     public Animator animator;
 
@@ -112,7 +111,7 @@ public class Player : MonoBehaviour
             // Если столкнулись со стеной, останавливаемся
             
             GetComponent<Player>().GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-
+            rb.velocity = Vector3.zero;
         }
         
     }

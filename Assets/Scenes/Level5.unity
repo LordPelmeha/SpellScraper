@@ -1234,7 +1234,7 @@ MonoBehaviour:
   magicType: 1
   detectionRange: 15
   stoppingRange: 2
-  health: 5
+  health: 4
   player: {fileID: 0}
   animator: {fileID: 41157668}
   moveDelta: {x: 0, y: 0, z: 0}
@@ -1423,7 +1423,7 @@ GameObject:
   - component: {fileID: 52781813}
   - component: {fileID: 52781812}
   - component: {fileID: 52781814}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1848,7 +1848,7 @@ GameObject:
   - component: {fileID: 66874666}
   - component: {fileID: 66874665}
   - component: {fileID: 66874667}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (18)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2179,7 +2179,7 @@ GameObject:
   - component: {fileID: 83303118}
   - component: {fileID: 83303117}
   - component: {fileID: 83303119}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (22)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2835,7 +2835,7 @@ GameObject:
   - component: {fileID: 151584314}
   - component: {fileID: 151584313}
   - component: {fileID: 151584315}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (10)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -3343,7 +3343,7 @@ GameObject:
   - component: {fileID: 161335879}
   - component: {fileID: 161335878}
   - component: {fileID: 161335880}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (23)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4695,7 +4695,7 @@ GameObject:
   - component: {fileID: 225753043}
   - component: {fileID: 225753042}
   - component: {fileID: 225753044}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (21)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4853,7 +4853,7 @@ GameObject:
   - component: {fileID: 233163173}
   - component: {fileID: 233163172}
   - component: {fileID: 233163174}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (15)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -5008,7 +5008,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 244606473}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5827,7 +5827,7 @@ MonoBehaviour:
   magicType: 1
   detectionRange: 50
   stoppingRange: 0
-  health: 7
+  health: 6
   player: {fileID: 0}
   animator: {fileID: 302881502}
   moveDelta: {x: 0, y: 0, z: 0}
@@ -6058,7 +6058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f747ca28b01004543aecd9a2d553dd37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimer: 0
+  startTimer: 0.4
 --- !u!70 &307200844
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7156,7 +7156,7 @@ GameObject:
   - component: {fileID: 347322149}
   - component: {fileID: 347322148}
   - component: {fileID: 347322150}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (25)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -7421,7 +7421,7 @@ GameObject:
   - component: {fileID: 383899845}
   - component: {fileID: 383899844}
   - component: {fileID: 383899846}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (4)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -7916,7 +7916,7 @@ GameObject:
   - component: {fileID: 410891572}
   - component: {fileID: 410891571}
   - component: {fileID: 410891573}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (9)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -8247,7 +8247,7 @@ GameObject:
   - component: {fileID: 454725278}
   - component: {fileID: 454725277}
   - component: {fileID: 454725279}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -9982,7 +9982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 633012366}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: design
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11855,7 +11855,7 @@ GameObject:
   - component: {fileID: 723419330}
   - component: {fileID: 723419329}
   - component: {fileID: 723419331}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (17)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -13465,7 +13465,7 @@ GameObject:
   - component: {fileID: 779443490}
   - component: {fileID: 779443489}
   - component: {fileID: 779443491}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (6)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -13874,7 +13874,7 @@ GameObject:
   - component: {fileID: 844391948}
   - component: {fileID: 844391947}
   - component: {fileID: 844391949}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (13)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -15183,7 +15183,7 @@ GameObject:
   - component: {fileID: 913273602}
   - component: {fileID: 913273601}
   - component: {fileID: 913273603}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (8)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -15723,7 +15723,7 @@ GameObject:
   - component: {fileID: 989457577}
   - component: {fileID: 989457576}
   - component: {fileID: 989457578}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (16)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -16416,7 +16416,7 @@ GameObject:
   - component: {fileID: 1063323973}
   - component: {fileID: 1063323972}
   - component: {fileID: 1063323974}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (19)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -17838,7 +17838,7 @@ GameObject:
   - component: {fileID: 1203580988}
   - component: {fileID: 1203580987}
   - component: {fileID: 1203580989}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (12)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -18725,7 +18725,7 @@ GameObject:
   - component: {fileID: 1252260197}
   - component: {fileID: 1252260196}
   - component: {fileID: 1252260198}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (24)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -22117,7 +22117,7 @@ GameObject:
   - component: {fileID: 1489577976}
   - component: {fileID: 1489577975}
   - component: {fileID: 1489577977}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (20)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -22277,6 +22277,7 @@ GameObject:
   - component: {fileID: 1497298660}
   - component: {fileID: 1497298659}
   - component: {fileID: 1497298658}
+  - component: {fileID: 1497298664}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -22379,12 +22380,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4144336fa8f3b2245832ef0631d3ef8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  dashStartTime: 0
-  dashSpeed: 0
-  dashDuration: 0
+  health: 1
+  dashStartTime: 1.5
+  dashSpeed: 7
+  dashDuration: 0.2
   speed: 9
-  respawnPoint: {fileID: 0}
   animator: {fileID: 1497298660}
 --- !u!212 &1497298662
 SpriteRenderer:
@@ -22455,6 +22455,18 @@ Transform:
   - {fileID: 307200842}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1497298664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497298657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3232d15102618a245a5d58a45aa45904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1523468805
 GameObject:
   m_ObjectHideFlags: 0
@@ -22912,7 +22924,7 @@ GameObject:
   - component: {fileID: 1532273120}
   - component: {fileID: 1532273119}
   - component: {fileID: 1532273121}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (5)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -24938,7 +24950,7 @@ GameObject:
   - component: {fileID: 1623391865}
   - component: {fileID: 1623391864}
   - component: {fileID: 1623391866}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (7)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -25096,7 +25108,7 @@ GameObject:
   - component: {fileID: 1629988137}
   - component: {fileID: 1629988136}
   - component: {fileID: 1629988138}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -109872,7 +109884,7 @@ GameObject:
   - component: {fileID: 1689672120}
   - component: {fileID: 1689672119}
   - component: {fileID: 1689672121}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (11)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -110402,7 +110414,7 @@ GameObject:
   - component: {fileID: 1706983867}
   - component: {fileID: 1706983866}
   - component: {fileID: 1706983868}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -112128,6 +112140,8 @@ MonoBehaviour:
   Bullets:
   - {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
   - {fileID: 7971796923087094374, guid: cc86845aebbadc341a843e8859e3613f, type: 3}
+  - {fileID: 7971796923087094374, guid: 02a02510a955ca54cb72c2b45b805f06, type: 3}
+  - {fileID: 7971796923087094374, guid: b27210ce5f6be2f40ab740dc5850ce75, type: 3}
 --- !u!212 &1809805647
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -112192,7 +112206,7 @@ GameObject:
   - component: {fileID: 1829771375}
   - component: {fileID: 1829771374}
   - component: {fileID: 1829771376}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Square (14)
   m_TagString: Wall
   m_Icon: {fileID: 0}

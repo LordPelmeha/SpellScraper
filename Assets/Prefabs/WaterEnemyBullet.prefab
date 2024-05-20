@@ -105,10 +105,14 @@ MonoBehaviour:
   airMask: {fileID: 0}
   waterMask: {fileID: 0}
   earthMask: {fileID: 0}
+  forBossSprite: []
   brokenFireMask: {fileID: 0}
   brokenAirMask: {fileID: 0}
   brokenWaterMask: {fileID: 0}
   brokeEearthMask: {fileID: 0}
+  brokenForBossSprite: []
+  boss: {fileID: 0}
+  finalBoss: {fileID: 0}
   player: {fileID: 0}
   evilFireBullet: {fileID: 0}
   evilAirBullet: {fileID: 0}

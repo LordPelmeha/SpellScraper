@@ -781,7 +781,6 @@ MonoBehaviour:
   dashSpeed: 0
   dashDuration: 0
   speed: 9
-  respawnPoint: {fileID: 0}
   animator: {fileID: 88662609}
 --- !u!212 &88662611
 SpriteRenderer:
@@ -1454,7 +1453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f747ca28b01004543aecd9a2d553dd37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimer: 0
+  startTimer: 0.4
 --- !u!70 &253691480
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3240,6 +3239,8 @@ MonoBehaviour:
   brokenWaterMask: {fileID: 21300000, guid: 1fc40f9b1867e374e8b20431450a6c08, type: 3}
   brokeEearthMask: {fileID: 21300000, guid: ad5aa11d2e46d4c41bbd69c0eb60f2f0, type: 3}
   brokenForBossSprite: []
+  boss: {fileID: 0}
+  finalBoss: {fileID: 0}
   player: {fileID: 88662610}
 --- !u!114 &623499613
 MonoBehaviour:
@@ -7986,6 +7987,8 @@ MonoBehaviour:
   brokenWaterMask: {fileID: 0}
   brokeEearthMask: {fileID: 0}
   brokenForBossSprite: []
+  boss: {fileID: 0}
+  finalBoss: {fileID: 0}
   player: {fileID: 0}
   evilFireBullet: {fileID: 7971796923087094374, guid: c2ced6ab48f64f740aa77794b4e0d854, type: 3}
   evilAirBullet: {fileID: 7971796923087094374, guid: cc0a06edb7d9c8241854c5bac0046c20, type: 3}

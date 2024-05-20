@@ -1250,7 +1250,7 @@ MonoBehaviour:
   isPatrolingRandom: 1
   maxWaitTime: 0
   minWaitTime: 0
-  isFinalMiniBoss: 1
+  isFinalMiniBoss: 0
   elements: 0300000000000000
   finalBoss: {fileID: 0}
   curMagicType: 0

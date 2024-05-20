@@ -44,7 +44,7 @@ public class PatrolingEnemy : Enemy
                 DeathName = "Death_Earth";
                 break;
             case Magic.Air:
-                animType = "WindEnemy";
+                animType = "WindMove";
                 DeathName = "Death_Wind";
                 break;
             case Magic.Water:

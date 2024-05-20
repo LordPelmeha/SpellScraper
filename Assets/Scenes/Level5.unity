@@ -5935,8 +5935,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0047845705, y: 0.013051756}
-  m_Size: {x: 0.23051895, y: 0.109175}
+  m_Offset: {x: 0.029468793, y: -0.021446675}
+  m_Size: {x: 0.4244734, y: 0.17816056}
   m_Direction: 1
 --- !u!212 &302881504
 SpriteRenderer:
@@ -17542,7 +17542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504ac741555ecaf4182c5f56928038e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimer: 1
+  startTimer: 4
 --- !u!70 &1182925169
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -17575,8 +17575,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.3, y: 0.05}
+  m_Offset: {x: 0.041633762, y: 0.0020596238}
+  m_Size: {x: 0.55076134, y: 0.054119032}
   m_Direction: 1
 --- !u!1 &1192559500
 GameObject:

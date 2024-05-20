@@ -41,7 +41,7 @@ public class MiniBoss : PatrolingEnemy
                 DeathName = "Death_FireWind";
                 break;
             case Magic.Water:
-                DeathName = "Death_WaterWind";
+                DeathName = "WaterWind_Death";
                 break;
         }
     }
@@ -164,14 +164,17 @@ public class MiniBoss : PatrolingEnemy
 
     public override void Death()
     {
+        if (isFinalMiniBoss)
+        {
+            Destroy(gameObject);
+            finalBoss.transform.position = transform.position;
+        }
         rb.GetComponent<CapsuleCollider2D>().enabled = false;
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0);
         animator.SetFloat(DeathName, 2);
         StartCoroutine(DeathCourutine());
 
-        if (isFinalMiniBoss) 
-        {
-            finalBoss.transform.position = transform.position;
-        }
+        
     }
 
 }

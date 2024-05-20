@@ -1195,7 +1195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  broken: {fileID: 21300000, guid: 8bb81009383b1e84d8165b9ed835b40e, type: 3}
+  broken: {fileID: 1669324984, guid: 4e8630b3bad896849996812fcb42ff73, type: 3}
 --- !u!1 &41157665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,27 +1230,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  moveSpeed: 1
-  magicType: 0
+  moveSpeed: 2
+  magicType: 1
   detectionRange: 15
   stoppingRange: 2
-  health: 4
+  health: 5
   player: {fileID: 0}
   animator: {fileID: 41157668}
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
-  - {fileID: 1636710561}
-  - {fileID: 504768145}
+  - {fileID: 1404838303}
   - {fileID: 1140424125}
+  - {fileID: 1636710561}
+  - {fileID: 1146284034}
   - {fileID: 183890315}
+  - {fileID: 504768145}
+  - {fileID: 503220101}
   currentPoint: 0
-  isPatrolingRandom: 0
+  isPatrolingRandom: 1
   maxWaitTime: 0
   minWaitTime: 0
   isFinalMiniBoss: 1
-  elements: 0300000000000000
+  elements: 03000000000000000200000001000000
   finalBoss: {fileID: 302881499}
   curMagicType: 0
   dashSpeed: 10
@@ -1293,7 +1297,7 @@ Animator:
   m_GameObject: {fileID: 41157665}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a68bba36f2af5e641b3ca7d217d371bd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6594583e6c94d834490d19b5eec1ef6c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1319,7 +1323,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -1336,8 +1340,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0047845705, y: 0.013051756}
-  m_Size: {x: 0.23051895, y: 0.109175}
+  m_Offset: {x: 0.004784571, y: 0.0026726956}
+  m_Size: {x: 0.23990731, y: 0.23990731}
   m_Direction: 1
 --- !u!212 &41157670
 SpriteRenderer:
@@ -1380,7 +1384,7 @@ SpriteRenderer:
   m_SortingLayerID: 156015359
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 21540960c94f7c744ae9dd24237c431b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 448c3f097b19def46aaa00b02f83eb6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4065,7 +4069,7 @@ Transform:
   m_GameObject: {fileID: 183890314}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.21, y: 6.54, z: 0.007477224}
+  m_LocalPosition: {x: -0.26999998, y: 2.67, z: 0.007477224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5819,24 +5823,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  moveSpeed: 1
-  magicType: 0
+  moveSpeed: 3
+  magicType: 1
   detectionRange: 50
   stoppingRange: 0
-  health: 10
+  health: 7
   player: {fileID: 0}
   animator: {fileID: 302881502}
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1404838303}
+  - {fileID: 1140424125}
+  - {fileID: 1636710561}
+  - {fileID: 1146284034}
+  - {fileID: 183890315}
+  - {fileID: 504768145}
+  - {fileID: 503220101}
   currentPoint: 0
   isPatrolingRandom: 1
   maxWaitTime: 0
@@ -5848,8 +5853,8 @@ MonoBehaviour:
   dashSpeed: 0
   maxDashLength: 0
   walls: []
-  tpLength: 10
-  maxTpLength: 11
+  tpLength: 3
+  maxTpLength: 4
 --- !u!50 &302881501
 Rigidbody2D:
   serializedVersion: 4
@@ -5887,7 +5892,7 @@ Animator:
   m_GameObject: {fileID: 302881499}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a68bba36f2af5e641b3ca7d217d371bd, type: 2}
+  m_Controller: {fileID: 9100000, guid: dfc5ffd3a62aa4548bfb744a6f085d75, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5974,7 +5979,7 @@ SpriteRenderer:
   m_SortingLayerID: 156015359
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 21540960c94f7c744ae9dd24237c431b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad490fa9109babc48b104ed1be4a563d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7606,6 +7611,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 1806282770}
   - {fileID: 367043991}
@@ -8932,7 +8938,7 @@ Transform:
   m_GameObject: {fileID: 503220100}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.25, y: 7.69, z: 0.007477224}
+  m_LocalPosition: {x: 2.5, y: 7.94, z: 0.007477224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8963,7 +8969,7 @@ Transform:
   m_GameObject: {fileID: 504768144}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.68, y: 5.64, z: 0.007477224}
+  m_LocalPosition: {x: -3.43, y: 5.89, z: 0.007477224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9586,6 +9592,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &583803784
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12121,6 +12128,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &725443189
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13250,6 +13258,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &762922112
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17203,7 +17212,7 @@ Transform:
   m_GameObject: {fileID: 1140424124}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.8600006, y: 6.9799995, z: 0.007477224}
+  m_LocalPosition: {x: 6.17, y: 8.059999, z: 0.007477224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17309,7 +17318,7 @@ Transform:
   m_GameObject: {fileID: 1146284033}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.56, y: 7.37, z: 0.007477224}
+  m_LocalPosition: {x: -7.03, y: 8.25, z: 0.007477224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18538,6 +18547,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 913872337}
   - {fileID: 1008336726}
@@ -21216,7 +21226,7 @@ Transform:
   m_GameObject: {fileID: 1404838302}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.75, y: 6.7, z: 0.007477224}
+  m_LocalPosition: {x: 4.62, y: 2.53, z: 0.007477224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22655,6 +22665,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 688483553}
   - {fileID: 2106399512}
@@ -25256,7 +25267,7 @@ Transform:
   m_GameObject: {fileID: 1636710560}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.3599997, y: 6.530001, z: 0.007477224}
+  m_LocalPosition: {x: -7.49, y: 2.21, z: 0.007477224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

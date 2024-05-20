@@ -103,6 +103,14 @@ public class FinalBoss : MiniBoss
 
     }
 
-    
+    public override void Death()
+    {
+        rb.GetComponent<CapsuleCollider2D>().enabled = false;
+        Destroy(gameObject);
+        
+
+
+    }
+
 
 }

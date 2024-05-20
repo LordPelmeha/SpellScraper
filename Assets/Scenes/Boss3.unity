@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 1
-  magicType: 0
+  magicType: 2
   detectionRange: 15
   stoppingRange: 2
   health: 4
@@ -1247,7 +1247,7 @@ MonoBehaviour:
   - {fileID: 1140424125}
   - {fileID: 183890315}
   currentPoint: 0
-  isPatrolingRandom: 0
+  isPatrolingRandom: 1
   maxWaitTime: 0
   minWaitTime: 0
   isFinalMiniBoss: 0
@@ -1294,7 +1294,7 @@ Animator:
   m_GameObject: {fileID: 41157665}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 318ed16c98c18c84a8263af4bdf7cc77, type: 2}
+  m_Controller: {fileID: 9100000, guid: d58129e1ba0763347ac63f0f7742fb09, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1320,7 +1320,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -1381,7 +1381,7 @@ SpriteRenderer:
   m_SortingLayerID: 156015359
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a4c6002a7a22c264c80e1ac16ca6e86f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e8ae097ae76502246a034ed74d47311c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4626,7 +4626,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10.87, y: 0.5500488}
+  m_AnchoredPosition: {x: 10.960022, y: 0.51000977}
   m_SizeDelta: {x: 254.6328, y: 143.25989}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &203981205

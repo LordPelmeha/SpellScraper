@@ -614,6 +614,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cf76fd6609ecb644690466d377637da4, type: 3}
   - {fileID: 21300000, guid: 12a3ca026028f434b81b129655dac43f, type: 3}
   - {fileID: 21300000, guid: b9311b0b45882f54f87dcc52ff0bb37c, type: 3}
+  boss: {fileID: 0}
+  finalBoss: {fileID: 0}
   player: {fileID: 1497298661}
 --- !u!114 &11829673
 MonoBehaviour:
@@ -1229,25 +1231,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 1
-  magicType: 0
+  magicType: 3
   detectionRange: 15
   stoppingRange: 2
   health: 4
-  player: {fileID: 0}
+  player: {fileID: 1497298663}
   animator: {fileID: 41157668}
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 1636710561}
   - {fileID: 504768145}
   - {fileID: 1140424125}
   - {fileID: 183890315}
   currentPoint: 0
-  isPatrolingRandom: 0
+  isPatrolingRandom: 1
   maxWaitTime: 0
   minWaitTime: 0
-  elements: 0000000001000000
+  isFinalMiniBoss: 1
+  elements: 0300000000000000
+  finalBoss: {fileID: 0}
+  curMagicType: 0
   dashSpeed: 10
   maxDashLength: 0
   walls: []
@@ -1288,7 +1294,7 @@ Animator:
   m_GameObject: {fileID: 41157665}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a68bba36f2af5e641b3ca7d217d371bd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7061d1925127bcb4892166e5ff21d1c0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1314,7 +1320,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -1375,7 +1381,7 @@ SpriteRenderer:
   m_SortingLayerID: 156015359
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 21540960c94f7c744ae9dd24237c431b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a923afeba9ba3f6408fc66e4e1a2ba1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7384,6 +7390,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 1806282770}
   - {fileID: 367043991}
@@ -9364,6 +9371,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &583803784
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11791,6 +11799,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &725443189
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12920,6 +12929,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
 --- !u!212 &762922112
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15048,7 +15058,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 09840fecdd53e7e44a71de296fe90be6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 61e3a607b6f1fbb45abdb53d7673785e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -18127,6 +18137,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 913872337}
   - {fileID: 1008336726}
@@ -22134,6 +22145,8 @@ MonoBehaviour:
   brokenWaterMask: {fileID: 0}
   brokeEearthMask: {fileID: 0}
   brokenForBossSprite: []
+  boss: {fileID: 0}
+  finalBoss: {fileID: 0}
   player: {fileID: 0}
   evilFireBullet: {fileID: 7971796923087094374, guid: c2ced6ab48f64f740aa77794b4e0d854, type: 3}
   evilAirBullet: {fileID: 7971796923087094374, guid: cc0a06edb7d9c8241854c5bac0046c20, type: 3}
@@ -22242,6 +22255,7 @@ MonoBehaviour:
   moveDelta: {x: 0, y: 0, z: 0}
   rotationOffset: -90
   rotZ: 0
+  isDead: 0
   targetPoints:
   - {fileID: 688483553}
   - {fileID: 2106399512}
@@ -111703,7 +111717,7 @@ MonoBehaviour:
   StartTimeBtwShots: 1
   Bullets:
   - {fileID: 7971796923087094374, guid: f2211a3e0553e194296d957e94576722, type: 3}
-  - {fileID: 7971796923087094374, guid: cc86845aebbadc341a843e8859e3613f, type: 3}
+  - {fileID: 7971796923087094374, guid: b27210ce5f6be2f40ab740dc5850ce75, type: 3}
 --- !u!212 &1809805647
 SpriteRenderer:
   m_ObjectHideFlags: 0

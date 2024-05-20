@@ -2461,7 +2461,7 @@ Animator:
   m_GameObject: {fileID: 371897108}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 813cbc8a54ab0eb49952c5a806a4971f, type: 2}
+  m_Controller: {fileID: 9100000, guid: d58129e1ba0763347ac63f0f7742fb09, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4224,7 +4224,10 @@ MonoBehaviour:
   isPatrolingRandom: 0
   maxWaitTime: 0
   minWaitTime: 0
+  isFinalMiniBoss: 0
   elements: 0000000003000000
+  finalBoss: {fileID: 0}
+  curMagicType: 0
   dashSpeed: 10
   maxDashLength: 11
   walls: []
@@ -5103,6 +5106,8 @@ MonoBehaviour:
   brokenWaterMask: {fileID: 0}
   brokeEearthMask: {fileID: 0}
   brokenForBossSprite: []
+  boss: {fileID: 0}
+  finalBoss: {fileID: 0}
   player: {fileID: 0}
   evilFireBullet: {fileID: 7971796923087094374, guid: c2ced6ab48f64f740aa77794b4e0d854, type: 3}
   evilAirBullet: {fileID: 7971796923087094374, guid: cc0a06edb7d9c8241854c5bac0046c20, type: 3}
@@ -34609,6 +34614,8 @@ MonoBehaviour:
   brokenWaterMask: {fileID: 0}
   brokeEearthMask: {fileID: 0}
   brokenForBossSprite: []
+  boss: {fileID: 0}
+  finalBoss: {fileID: 0}
   player: {fileID: 1068875543}
 --- !u!1 &1695915212
 GameObject:
@@ -36356,7 +36363,10 @@ MonoBehaviour:
   isPatrolingRandom: 0
   maxWaitTime: 0
   minWaitTime: 0
+  isFinalMiniBoss: 0
   elements: 00000000030000000100000002000000
+  finalBoss: {fileID: 0}
+  curMagicType: 0
   dashSpeed: 0
   maxDashLength: 0
   walls: []
@@ -36399,7 +36409,7 @@ Animator:
   m_GameObject: {fileID: 1817298183}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a68bba36f2af5e641b3ca7d217d371bd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7061d1925127bcb4892166e5ff21d1c0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

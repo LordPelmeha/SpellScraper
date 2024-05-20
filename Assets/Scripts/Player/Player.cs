@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     private float dashCooldown;
     public float dashSpeed;
     public float dashDuration;
-
+    private bool deathPos=true;
+    private Quaternion rotPos;
     private float shootCooldown;
 
     private Rigidbody2D rb;
@@ -46,7 +47,16 @@ public class Player : MonoBehaviour
         shootCooldown-=Time.deltaTime;
         
         if (health<=0)
+        {
+            if (deathPos)
+            {
+                rotPos = transform.rotation;
+            }
+            deathPos = false;
+            //deathPos=transform.position; 
             Death();
+        }
+            
         dashCooldown-=Time.deltaTime;
         if (Input.GetKey(KeyCode.LeftShift))
             Dash();
@@ -120,14 +130,18 @@ public class Player : MonoBehaviour
     {
         //сюда анимацию смерти игрока
         animator.SetFloat("Death", 2);
-        rb.simulated=false;
-        //GetComponent<Player>().GetComponent<CircleCollider2D>().enabled = false;
+        // rb.simulated=false;
+        //rb.constraints= RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        // GetComponent<Player>().GetComponent<CapsuleCollider2D>().enabled = false;
         //Destroy(gameObject);
         //SceneManager.LoadScene("Level1");
         //Destroy(gameObject);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        moveDelta = Vector3.zero;
-        transform.rotation = Quaternion.Euler(0, 0, 0);
+        // moveDelta = Vector3.zero;
+        //transform.position = deathPos; //transform.rotation = Quaternion.identity;
+        speed = 0f;
+        //rb.freezeRotation = true;
+        transform.rotation = rotPos;
         StartCoroutine(restoreAfterDeath());
     }
     private IEnumerator restoreAfterDeath()

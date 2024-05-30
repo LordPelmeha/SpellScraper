@@ -1,4 +1,7 @@
 # SpellScraper
+
+![alt text](https://github.com/LordPelmeha/SpellScraper/blob/main/Assets/Artwork/Menu/Для%20гита.png?raw=true)
+
 ***SpellScraper*** - пиксельная Top-Down 2D игра в жанре экшн с магией и моральным выбором. 
 
 Игроку предлагается добраться до финального босса на самом верху небоскрёба. В процессе продвижения наверх ему придется сразиться с врагами и минибоссами, используя магию.
